@@ -1,0 +1,45 @@
+|septseg
+HEX00 << <GND>
+HEX01 << <VCC>
+HEX02 << <GND>
+HEX03 << <VCC>
+HEX04 << <GND>
+HEX05 << <VCC>
+HEX06 << <VCC>
+HEX10 << <GND>
+HEX11 << <GND>
+HEX12 << <VCC>
+HEX13 << <VCC>
+HEX14 << <GND>
+HEX15 << <GND>
+HEX16 << <GND>
+HEX20 << <GND>
+HEX21 << <VCC>
+HEX22 << <GND>
+HEX23 << <GND>
+HEX24 << <VCC>
+HEX25 << <GND>
+HEX26 << <GND>
+HEX30 << <GND>
+HEX31 << <VCC>
+HEX32 << <VCC>
+HEX33 << <GND>
+HEX34 << <GND>
+HEX35 << <GND>
+HEX36 << <VCC>
+HEX40 << <GND>
+HEX41 << <VCC>
+HEX42 << <GND>
+HEX43 << <VCC>
+HEX44 << <GND>
+HEX45 << <VCC>
+HEX46 << <VCC>
+HEX50 << <VCC>
+HEX51 << <GND>
+HEX52 << <GND>
+HEX53 << <GND>
+HEX54 << <GND>
+HEX55 << <VCC>
+HEX56 << <VCC>
+
+
