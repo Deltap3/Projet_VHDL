@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "03/04/2020 14:07:01"
+-- DATE "03/04/2020 23:39:01"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -87,16 +87,18 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	septseg IS
     PORT (
-	HEX0 : OUT std_logic_vector(0 TO 6);
-	HEX1 : OUT std_logic_vector(0 TO 6);
-	HEX2 : OUT std_logic_vector(0 TO 6);
-	HEX3 : OUT std_logic_vector(0 TO 6);
-	HEX4 : OUT std_logic_vector(0 TO 6);
-	HEX5 : OUT std_logic_vector(0 TO 6)
+	clk : IN std_logic;
+	HEX0 : BUFFER std_logic_vector(0 TO 6);
+	HEX1 : BUFFER std_logic_vector(0 TO 6);
+	HEX2 : BUFFER std_logic_vector(0 TO 6);
+	HEX3 : BUFFER std_logic_vector(0 TO 6);
+	HEX4 : BUFFER std_logic_vector(0 TO 6);
+	HEX5 : BUFFER std_logic_vector(0 TO 6)
 	);
 END septseg;
 
 -- Design Ports Information
+-- clk	=>  Location: PIN_T19,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[6]	=>  Location: PIN_C17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[5]	=>  Location: PIN_D17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[4]	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -151,6 +153,7 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
+SIGNAL ww_clk : std_logic;
 SIGNAL ww_HEX0 : std_logic_vector(0 TO 6);
 SIGNAL ww_HEX1 : std_logic_vector(0 TO 6);
 SIGNAL ww_HEX2 : std_logic_vector(0 TO 6);
@@ -159,6 +162,7 @@ SIGNAL ww_HEX4 : std_logic_vector(0 TO 6);
 SIGNAL ww_HEX5 : std_logic_vector(0 TO 6);
 SIGNAL \~QUARTUS_CREATED_ADC1~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \~QUARTUS_CREATED_ADC2~_CHSEL_bus\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_GND~I_combout\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_UNVM~~busy\ : std_logic;
 SIGNAL \~QUARTUS_CREATED_ADC1~~eoc\ : std_logic;
@@ -215,6 +219,7 @@ END COMPONENT;
 
 BEGIN
 
+ww_clk <= clk;
 HEX0 <= ww_HEX0;
 HEX1 <= ww_HEX1;
 HEX2 <= ww_HEX2;
@@ -234,7 +239,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X1_Y1_N24
+-- Location: LCCOMB_X44_Y41_N8
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -750,6 +755,18 @@ PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
+
+-- Location: IOIBUF_X78_Y20_N23
+\clk~input\ : fiftyfivenm_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	listen_to_nsleep_signal => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_clk,
+	o => \clk~input_o\);
 
 -- Location: UNVM_X0_Y40_N40
 \~QUARTUS_CREATED_UNVM~\ : fiftyfivenm_unvm
