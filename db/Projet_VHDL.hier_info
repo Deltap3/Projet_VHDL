@@ -1,3 +1,46 @@
 |septseg
+clk => ~NO_FANOUT~
+HEX0[6] <> <UNC>
+HEX0[5] <> <UNC>
+HEX0[4] <> <UNC>
+HEX0[3] <> <UNC>
+HEX0[2] <> <UNC>
+HEX0[1] <> <UNC>
+HEX0[0] <> <UNC>
+HEX1[6] <> <UNC>
+HEX1[5] <> <UNC>
+HEX1[4] <> <UNC>
+HEX1[3] <> <UNC>
+HEX1[2] <> <UNC>
+HEX1[1] <> <UNC>
+HEX1[0] <> <UNC>
+HEX2[6] <> <UNC>
+HEX2[5] <> <UNC>
+HEX2[4] <> <UNC>
+HEX2[3] <> <UNC>
+HEX2[2] <> <UNC>
+HEX2[1] <> <UNC>
+HEX2[0] <> <UNC>
+HEX3[6] <> <UNC>
+HEX3[5] <> <UNC>
+HEX3[4] <> <UNC>
+HEX3[3] <> <UNC>
+HEX3[2] <> <UNC>
+HEX3[1] <> <UNC>
+HEX3[0] <> <UNC>
+HEX4[6] <> <UNC>
+HEX4[5] <> <UNC>
+HEX4[4] <> <UNC>
+HEX4[3] <> <UNC>
+HEX4[2] <> <UNC>
+HEX4[1] <> <UNC>
+HEX4[0] <> <UNC>
+HEX5[6] <> <UNC>
+HEX5[5] <> <UNC>
+HEX5[4] <> <UNC>
+HEX5[3] <> <UNC>
+HEX5[2] <> <UNC>
+HEX5[1] <> <UNC>
+HEX5[0] <> <UNC>
 
 
