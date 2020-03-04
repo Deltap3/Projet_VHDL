@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Sat Feb 29 17:13:12 2020
+Wed Mar 04 13:51:55 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,13 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -42,22 +36,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Feb 29 17:13:12 2020       ;
+; Analysis & Synthesis Status        ; Failed - Wed Mar 04 13:51:55 2020           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 42                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -167,161 +161,27 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
-; septseg.vhd                      ; yes             ; User VHDL File  ; D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
-
-
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-;                                             ;              ;
-; Total combinational functions               ; 0            ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 0            ;
-;     -- 3 input functions                    ; 0            ;
-;     -- <=2 input functions                  ; 0            ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 0            ;
-;     -- arithmetic mode                      ; 0            ;
-;                                             ;              ;
-; Total registers                             ; 0            ;
-;     -- Dedicated logic registers            ; 0            ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 42           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; HEX00~output ;
-; Maximum fan-out                             ; 1            ;
-; Total fan-out                               ; 42           ;
-; Average fan-out                             ; 0.50         ;
-+---------------------------------------------+--------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |septseg                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 42                          ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Feb 29 17:12:59 2020
+    Info: Processing started: Wed Mar 04 13:51:42 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file septseg.vhd
-    Info (12022): Found design unit 1: septseg-rtl File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 50
+    Info (12022): Found design unit 1: septseg-yes File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
     Info (12023): Found entity 1: septseg File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 4
 Info (12127): Elaborating entity "septseg" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX00" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 6
-    Warning (13410): Pin "HEX01" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 7
-    Warning (13410): Pin "HEX02" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13410): Pin "HEX03" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13410): Pin "HEX04" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13410): Pin "HEX05" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13410): Pin "HEX06" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13410): Pin "HEX10" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13410): Pin "HEX11" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 14
-    Warning (13410): Pin "HEX12" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 15
-    Warning (13410): Pin "HEX13" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 16
-    Warning (13410): Pin "HEX14" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 17
-    Warning (13410): Pin "HEX15" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 18
-    Warning (13410): Pin "HEX16" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 19
-    Warning (13410): Pin "HEX20" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 20
-    Warning (13410): Pin "HEX21" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 21
-    Warning (13410): Pin "HEX22" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 22
-    Warning (13410): Pin "HEX23" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 23
-    Warning (13410): Pin "HEX24" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 24
-    Warning (13410): Pin "HEX25" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 25
-    Warning (13410): Pin "HEX26" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 26
-    Warning (13410): Pin "HEX30" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 27
-    Warning (13410): Pin "HEX31" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 28
-    Warning (13410): Pin "HEX32" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 29
-    Warning (13410): Pin "HEX33" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 30
-    Warning (13410): Pin "HEX34" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 31
-    Warning (13410): Pin "HEX35" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 32
-    Warning (13410): Pin "HEX36" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 33
-    Warning (13410): Pin "HEX40" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 34
-    Warning (13410): Pin "HEX41" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 35
-    Warning (13410): Pin "HEX42" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 36
-    Warning (13410): Pin "HEX43" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 37
-    Warning (13410): Pin "HEX44" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 38
-    Warning (13410): Pin "HEX45" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 39
-    Warning (13410): Pin "HEX46" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 40
-    Warning (13410): Pin "HEX50" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 41
-    Warning (13410): Pin "HEX51" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 42
-    Warning (13410): Pin "HEX52" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 43
-    Warning (13410): Pin "HEX53" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 44
-    Warning (13410): Pin "HEX54" is stuck at GND File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 45
-    Warning (13410): Pin "HEX55" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 46
-    Warning (13410): Pin "HEX56" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 0 input pins
-    Info (21059): Implemented 42 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
-    Info: Peak virtual memory: 4776 megabytes
-    Info: Processing ended: Sat Feb 29 17:13:12 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+Warning (10036): Verilog HDL or VHDL warning at septseg.vhd(6): object "tab" assigned a value but never read File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 6
+Warning (12158): Entity "septseg" contains only dangling pins
+Error (12061): Can't synthesize current design -- Top partition does not contain any logic
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 3 warnings
+    Error: Peak virtual memory: 4768 megabytes
+    Error: Processing ended: Wed Mar 04 13:51:55 2020
+    Error: Elapsed time: 00:00:13
+    Error: Total CPU time (on all processors): 00:00:24
 
 

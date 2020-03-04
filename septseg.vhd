@@ -1,94 +1,29 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
-ENTITY septseg IS
- PORT (
- HEX00 : OUT STD_LOGIC;
- HEX01 : OUT STD_LOGIC;
- HEX02 : OUT STD_LOGIC;
- HEX03 : OUT STD_LOGIC;
- HEX04 : OUT STD_LOGIC;
- HEX05 : OUT STD_LOGIC;
- HEX06 : OUT STD_LOGIC;
- HEX10 : OUT STD_LOGIC;
- HEX11 : OUT STD_LOGIC;
- HEX12 : OUT STD_LOGIC;
- HEX13 : OUT STD_LOGIC;
- HEX14 : OUT STD_LOGIC;
- HEX15 : OUT STD_LOGIC;
- HEX16 : OUT STD_LOGIC;
- HEX20 : OUT STD_LOGIC;
- HEX21 : OUT STD_LOGIC;
- HEX22 : OUT STD_LOGIC;
- HEX23 : OUT STD_LOGIC;
- HEX24 : OUT STD_LOGIC;
- HEX25 : OUT STD_LOGIC;
- HEX26 : OUT STD_LOGIC;
- HEX30 : OUT STD_LOGIC;
- HEX31 : OUT STD_LOGIC;
- HEX32 : OUT STD_LOGIC;
- HEX33 : OUT STD_LOGIC;
- HEX34 : OUT STD_LOGIC;
- HEX35 : OUT STD_LOGIC;
- HEX36 : OUT STD_LOGIC;
- HEX40 : OUT STD_LOGIC;
- HEX41 : OUT STD_LOGIC;
- HEX42 : OUT STD_LOGIC;
- HEX43 : OUT STD_LOGIC;
- HEX44 : OUT STD_LOGIC;
- HEX45 : OUT STD_LOGIC;
- HEX46 : OUT STD_LOGIC;
- HEX50 : OUT STD_LOGIC;
- HEX51 : OUT STD_LOGIC;
- HEX52 : OUT STD_LOGIC;
- HEX53 : OUT STD_LOGIC;
- HEX54 : OUT STD_LOGIC;
- HEX55 : OUT STD_LOGIC;
- HEX56 : OUT STD_LOGIC
- );
-END septseg;
-ARCHITECTURE rtl OF septseg IS
+entity septseg is
+type t_Memory is array (0 to 5) of std_logic_vector(6 downto 0);
+signal tab : t_Memory;
+end septseg;
+architecture yes of septseg is
 BEGIN
- HEX10 <= '0';
- HEX11 <= '0';
- HEX12 <= '1';
- HEX13 <= '1';
- HEX14 <= '0';
- HEX15 <= '0';
- HEX16 <= '0';
- HEX00 <= '0';
- HEX01 <= '1';
- HEX02 <= '0';
- HEX03 <= '1';
- HEX04 <= '0';
- HEX05 <= '1';
- HEX06 <= '1';
- HEX30 <= '0';
- HEX31 <= '1';
- HEX32 <= '1';
- HEX33 <= '0';
- HEX34 <= '0';
- HEX35 <= '0';
- HEX36 <= '1';
- HEX20 <= '0';
- HEX21 <= '1';
- HEX22 <= '0';
- HEX23 <= '0';
- HEX24 <= '1';
- HEX25 <= '0';
- HEX26 <= '0';
- HEX50 <= '1';
- HEX51 <= '0';
- HEX52 <= '0';
- HEX53 <= '0';
- HEX54 <= '0';
- HEX55 <= '1';
- HEX56 <= '1';
- HEX40 <= '0';
- HEX41 <= '1';
- HEX42 <= '0';
- HEX43 <= '1';
- HEX44 <= '0';
- HEX45 <= '1';
- HEX46 <= '1';
+tab(0) <= "0101011";
+tab(1) <= "0011000";
+tab(2) <= "0100100";
+tab(3) <= "0110001";
+tab(4) <= "0101011";
+tab(5) <= "1000011";
 END;
+--entity septseg is
+--	 t_Memory is array (0 to 5) of std_logic_vector(0 to 6);
+--signal tab : t_Memory;
+--end septseg;
+--architecture yes of septseg is
+--BEGIN
+ --tab(0) <= "0101011";
+ --tab(1) <= "0011000";
+ --tab(2) <= "0100100";
+ --tab(3) <= "0110001";
+ --tab(4) <= "0101011";
+ --tab(5) <= "1000011";
+--END;
