@@ -1,5 +1,5 @@
 Fitter report for Projet_VHDL
-Tue Mar 03 13:08:48 2020
+Wed Mar 04 14:06:46 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Mar 03 13:08:48 2020       ;
+; Fitter Status                      ; Successful - Wed Mar 04 14:06:46 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
@@ -1257,7 +1257,7 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1271,18 +1271,18 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.07 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info (144001): Generated suppressed messages file D:/intelFPGA_lite/18.1/Projet_VHDL/output_files/Projet_VHDL.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 5543 megabytes
-    Info: Processing ended: Tue Mar 03 13:08:49 2020
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Processing ended: Wed Mar 04 14:06:46 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:13
 
 
 +----------------------------+
