@@ -12,6 +12,9 @@ ENTITY septseg IS
  HEX1: OUT STD_LOGIC_VECTOR (0 to 6):= "0011001";
  HEX0: OUT STD_LOGIC_VECTOR (0 to 6):= "0110000"
  );
+type t_Memory is array (0 to 29) of std_logic_vector(0 to 6);
+signal tab : t_Memory:=("0011000","1111001","0110000","0011001","0011001","0110000","1111111","0110000","0011001","0011001","0110000","1111001");
+
 END septseg;
 
 ARCHITECTURE rtl OF septseg IS
@@ -24,8 +27,9 @@ signal e : std_logic_vector(0 to 6):= "0110000";
 signal r : std_logic_vector(0 to 6):= "0011001";
 signal c : std_logic_vector(0 to 6):= "0110001";
 signal h : std_logic_vector(0 to 6):= "1101000";
+signal n : std_logic_vector(0 to 6):= "0001001";
 signal espace : std_logic_vector(0 to 6):= "1111111";
-signal count : std_logic_vector(5 downto 0) := "000000";
+signal count : std_logic_vector(0 to 6):= "0000000";
 
 BEGIN
  PROCESS (clk)
@@ -47,63 +51,15 @@ END PROCESS;
 PROCESS (s_clk_lent)
 BEGIN
  IF s_clk_lent'EVENT AND s_clk_lent = '1' THEN
-	 CASE count IS
-	 WHEN "000000" =>
-		 HEX0<=e;
-		 HEX1<=r;
-		 HEX2<=r;
-		 HEX3<=e;
-		 HEX4<=i;
-		 HEX5<=p;
-	 WHEN "000001" =>
-		 HEX0<=r;
-		 HEX1<=r;
-		 HEX2<=e;
-		 HEX3<=i;
-		 HEX4<=p;
-		 HEX5<=espace;
-	 WHEN "000010" =>
-		 HEX0<=r;
-		 HEX1<=e;
-		 HEX2<=i;
-		 HEX3<=p;
-		 HEX4<=espace;
-		 HEX5<=e;
-	 WHEN "000011" =>
-		 HEX0<=e;
-		 HEX1<=i;
-		 HEX2<=p;
-		 HEX3<=espace;
-		 HEX4<=e;
-		 HEX5<=r;
-	 WHEN "000100" =>
-		 HEX0<=i;
-		 HEX1<=p;
-		 HEX2<=espace;
-		 HEX3<=e;
-		 HEX4<=r;
-		 HEX5<=r;
-	 WHEN "000101" =>
-		 HEX0<=p;
-		 HEX1<=espace;
-		 HEX2<=e;
-		 HEX3<=r;
-		 HEX4<=r;
-		 HEX5<=e;
-	 WHEN "000110" =>
-		 HEX0<=espace;
-		 HEX1<=e;
-		 HEX2<=r;
-		 HEX3<=r;
-		 HEX4<=e;
-		 HEX5<=i;
-	 WHEN OTHERS =>
-		 count<="000000";
-		 
-	 END CASE;
+	 HEX0<=tab(count);
+	 HEX1<=tab(count+'1');
+	 HEX2<=tab(count+'2');
+	 HEX3<=tab(count+'3');
+	 HEX4<=tab(count+'4');
+	 HEX5<=tab(count+'5');
 	 count<=count+1;
-	 if(count="000110") then
-	 count<="000000";
+	 if(count="0000111") then
+	 count<="0000000";
 	 end if;
 	 
  END IF;
