@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Mar 04 18:10:24 2020
+Analysis & Synthesis Status : Successful - Thu Mar 05 15:17:17 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Projet_VHDL
 Top-level Entity Name : septseg
 Family : MAX 10
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
+Total logic elements : 85
+    Total combinational functions : 79
+    Dedicated logic registers : 63
+Total registers : 63
 Total pins : 43
 Total virtual pins : 0
 Total memory bits : 0

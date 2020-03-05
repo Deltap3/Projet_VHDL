@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Wed Mar 04 18:10:24 2020
+Thu Mar 05 15:17:17 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,10 +13,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -42,15 +45,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 04 18:10:24 2020       ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 05 15:17:17 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
+; Total logic elements               ; 85                                          ;
+;     Total combinational functions  ; 79                                          ;
+;     Dedicated logic registers      ; 63                                          ;
+; Total registers                    ; 63                                          ;
 ; Total pins                         ; 43                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -160,10 +163,11 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -176,35 +180,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-;                                             ;                ;
-; Total combinational functions               ; 0              ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 0              ;
-;     -- 3 input functions                    ; 0              ;
-;     -- <=2 input functions                  ; 0              ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 0              ;
-;     -- arithmetic mode                      ; 0              ;
-;                                             ;                ;
-; Total registers                             ; 0              ;
-;     -- Dedicated logic registers            ; 0              ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 43             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; HEX0[6]~output ;
-; Maximum fan-out                             ; 1              ;
-; Total fan-out                               ; 85             ;
-; Average fan-out                             ; 0.66           ;
-+---------------------------------------------+----------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 85         ;
+;                                             ;            ;
+; Total combinational functions               ; 79         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 15         ;
+;     -- 3 input functions                    ; 19         ;
+;     -- <=2 input functions                  ; 45         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 49         ;
+;     -- arithmetic mode                      ; 30         ;
+;                                             ;            ;
+; Total registers                             ; 63         ;
+;     -- Dedicated logic registers            ; 63         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 43         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; s_clk_lent ;
+; Maximum fan-out                             ; 36         ;
+; Total fan-out                               ; 480        ;
+; Average fan-out                             ; 2.11       ;
++---------------------------------------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -212,9 +217,30 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |septseg                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
+; |septseg                   ; 79 (79)             ; 63 (63)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; HEX5[5]~reg0                           ; Merged with HEX5[4]~reg0               ;
+; HEX1[2]~reg0                           ; Merged with HEX0[2]~reg0               ;
+; HEX2[2]~reg0                           ; Merged with HEX0[2]~reg0               ;
+; HEX3[2]~reg0                           ; Merged with HEX0[2]~reg0               ;
+; HEX4[2]~reg0                           ; Merged with HEX0[2]~reg0               ;
+; HEX5[2]~reg0                           ; Merged with HEX0[2]~reg0               ;
+; HEX4[5]~reg0                           ; Merged with HEX4[4]~reg0               ;
+; HEX3[5]~reg0                           ; Merged with HEX3[4]~reg0               ;
+; HEX2[5]~reg0                           ; Merged with HEX2[4]~reg0               ;
+; HEX1[5]~reg0                           ; Merged with HEX1[4]~reg0               ;
+; HEX0[5]~reg0                           ; Merged with HEX0[4]~reg0               ;
+; HEX0[2]~reg0                           ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 12 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -222,27 +248,71 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; HEX5[3]~reg0                            ; 1       ;
+; HEX4[6]~reg0                            ; 1       ;
+; HEX4[3]~reg0                            ; 1       ;
+; HEX4[1]~reg0                            ; 1       ;
+; HEX4[0]~reg0                            ; 1       ;
+; HEX3[1]~reg0                            ; 1       ;
+; HEX2[6]~reg0                            ; 1       ;
+; HEX2[3]~reg0                            ; 1       ;
+; HEX1[6]~reg0                            ; 1       ;
+; HEX1[3]~reg0                            ; 1       ;
+; HEX0[1]~reg0                            ; 1       ;
+; Total number of inverted registers = 11 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 64:1               ; 19 bits   ; 798 LEs       ; 76 LEs               ; 722 LEs                ; Yes        ; |septseg|HEX5[6]~reg0      ;
+; 64:1               ; 12 bits   ; 504 LEs       ; 48 LEs               ; 456 LEs                ; Yes        ; |septseg|HEX5[3]~reg0      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+--------------------+--------------------------------+
-; Type               ; Count                          ;
-+--------------------+--------------------------------+
-; boundary_port      ; 43                             ;
-; cycloneiii_io_obuf ; 42                             ;
-;                    ;                                ;
-; Max LUT depth      ; 0.00                           ;
-; Average LUT depth  ; 0.00                           ;
-+--------------------+--------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 63                          ;
+;     ENA               ; 17                          ;
+;     ENA SCLR          ; 6                           ;
+;     ENA SLD           ; 7                           ;
+;     SCLR              ; 26                          ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 91                          ;
+;     arith             ; 30                          ;
+;         2 data inputs ; 30                          ;
+;     normal            ; 61                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.27                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -260,7 +330,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Mar 04 18:10:11 2020
+    Info: Processing started: Thu Mar 05 15:17:04 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -268,61 +338,29 @@ Info (12021): Found 2 design units, including 1 entities, in source file septseg
     Info (12022): Found design unit 1: septseg-rtl File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 17
     Info (12023): Found entity 1: septseg File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 5
 Info (12127): Elaborating entity "septseg" for the top level hierarchy
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "HEX0[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX0[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 8
-    Warning (13040): bidirectional pin "HEX1[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX1[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 9
-    Warning (13040): bidirectional pin "HEX2[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX2[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 10
-    Warning (13040): bidirectional pin "HEX3[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX3[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 11
-    Warning (13040): bidirectional pin "HEX4[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX4[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 12
-    Warning (13040): bidirectional pin "HEX5[6]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[5]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[4]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[3]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[2]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[1]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
-    Warning (13040): bidirectional pin "HEX5[0]" has no driver File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
+Warning (10540): VHDL Signal Declaration warning at septseg.vhd(21): used explicit default value for signal "p" because signal was never assigned a value File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 21
+Warning (10540): VHDL Signal Declaration warning at septseg.vhd(22): used explicit default value for signal "i" because signal was never assigned a value File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 22
+Warning (10540): VHDL Signal Declaration warning at septseg.vhd(23): used explicit default value for signal "e" because signal was never assigned a value File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 23
+Warning (10540): VHDL Signal Declaration warning at septseg.vhd(24): used explicit default value for signal "r" because signal was never assigned a value File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 24
+Warning (10540): VHDL Signal Declaration warning at septseg.vhd(25): used explicit default value for signal "espace" because signal was never assigned a value File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 25
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 47
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 7
-Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-    Info (21060): Implemented 42 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 91 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 4778 megabytes
-    Info: Processing ended: Wed Mar 04 18:10:24 2020
+    Info: Processing ended: Thu Mar 05 15:17:17 2020
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:26
 
 
