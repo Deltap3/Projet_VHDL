@@ -18,29 +18,35 @@ END septseg;
 
 ARCHITECTURE rtl OF septseg IS
 
-signal count : std_logic_vector(0 to 7) := "00000000";
+signal count : std_logic_vector(25 downto 0) := "00000000000000000000000000";
+signal oui : bit := '0';
 
 BEGIN
  
 PROCESS(clk)
 BEGIN
-	HEX0 <= "0101011";
-	HEX1 <= "0011000";
-	HEX2 <= "0100100";
-	HEX3 <= "0110001";
-	HEX4 <= "0101011";
-	HEX5 <= "1000011";
 
 	if(rising_edge(clk)) then
+		
+		IF(oui = '0') then
+		HEX0 <= "0101011";
+		HEX1 <= "0011000";
+		HEX2 <= "0100100";
+		HEX3 <= "0110001";
+		HEX4 <= "0101011";
+		HEX5 <= "1000011";
+		oui<='1';
+		END if;
+		
 		count<=count+1;
 		
-		if(count=00050000) then
+		if(count=11111111111111111111111111/2) then
 			HEX0 <= "1111111";
 		END if;
 	
-		if(count=10000000) then
-			HEX0 <= "0101011";
-			count<="00000000";
+		if(count>11111111111111111111111111) then
+			HEX0 <= "0000000";
+			count<=count-11111111111111111111111111;
 		END if;
 		
 	END if;

@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
--- DATE "03/04/2020 23:39:01"
+-- DATE "03/05/2020 14:53:19"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -88,17 +88,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 ENTITY 	septseg IS
     PORT (
 	clk : IN std_logic;
-	HEX0 : BUFFER std_logic_vector(0 TO 6);
-	HEX1 : BUFFER std_logic_vector(0 TO 6);
-	HEX2 : BUFFER std_logic_vector(0 TO 6);
-	HEX3 : BUFFER std_logic_vector(0 TO 6);
-	HEX4 : BUFFER std_logic_vector(0 TO 6);
-	HEX5 : BUFFER std_logic_vector(0 TO 6)
+	HEX0 : OUT std_logic_vector(0 TO 6);
+	HEX1 : OUT std_logic_vector(0 TO 6);
+	HEX2 : OUT std_logic_vector(0 TO 6);
+	HEX3 : OUT std_logic_vector(0 TO 6);
+	HEX4 : OUT std_logic_vector(0 TO 6);
+	HEX5 : OUT std_logic_vector(0 TO 6)
 	);
 END septseg;
 
 -- Design Ports Information
--- clk	=>  Location: PIN_T19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_N5,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[6]	=>  Location: PIN_C17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[5]	=>  Location: PIN_D17,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- HEX0[4]	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -239,7 +239,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: LCCOMB_X44_Y41_N8
+-- Location: LCCOMB_X1_Y1_N24
 \~QUARTUS_CREATED_GND~I\ : fiftyfivenm_lcell_comb
 -- Equation(s):
 -- \~QUARTUS_CREATED_GND~I_combout\ = GND
@@ -260,7 +260,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX0[6]~output_o\);
 
@@ -272,7 +272,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX0[5]~output_o\);
 
@@ -296,7 +296,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX0[3]~output_o\);
 
@@ -320,7 +320,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \HEX0[1]~output_o\);
 
@@ -756,7 +756,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \HEX5[0]~output_o\);
 
--- Location: IOIBUF_X78_Y20_N23
+-- Location: IOIBUF_X0_Y23_N22
 \clk~input\ : fiftyfivenm_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
