@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Thu Mar 05 20:19:49 2020
+Thu Mar 05 21:53:04 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -36,22 +44,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Mar 05 20:19:49 2020           ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 05 21:53:04 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 173                                         ;
+;     Total combinational functions  ; 87                                          ;
+;     Dedicated logic registers      ; 159                                         ;
+; Total registers                    ; 159                                         ;
+; Total pins                         ; 43                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -154,11 +162,208 @@ refer to the applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; septseg.vhd                      ; yes             ; User VHDL File  ; D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 173        ;
+;                                             ;            ;
+; Total combinational functions               ; 87         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 10         ;
+;     -- 3 input functions                    ; 5          ;
+;     -- <=2 input functions                  ; 72         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 62         ;
+;     -- arithmetic mode                      ; 25         ;
+;                                             ;            ;
+; Total registers                             ; 159        ;
+;     -- Dedicated logic registers            ; 159        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 43         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; s_clk_lent ;
+; Maximum fan-out                             ; 132        ;
+; Total fan-out                               ; 581        ;
+; Average fan-out                             ; 1.75       ;
++---------------------------------------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |septseg                   ; 87 (87)             ; 159 (159)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++----------------------------------------+-----------------------+
+; Register name                          ; Reason for Removal    ;
++----------------------------------------+-----------------------+
+; mess[5]                                ; Merged with mess[4]   ;
+; mess[103]                              ; Merged with mess[102] ;
+; mess[96]                               ; Merged with mess[95]  ;
+; mess[33]                               ; Merged with mess[32]  ;
+; mess[26]                               ; Merged with mess[25]  ;
+; mess[19]                               ; Merged with mess[18]  ;
+; mess[12]                               ; Merged with mess[11]  ;
+; mess[54]                               ; Merged with mess[53]  ;
+; mess[47]                               ; Merged with mess[46]  ;
+; mess[40]                               ; Merged with mess[39]  ;
+; mess[89]                               ; Merged with mess[88]  ;
+; mess[82]                               ; Merged with mess[81]  ;
+; mess[75]                               ; Merged with mess[74]  ;
+; mess[68]                               ; Merged with mess[67]  ;
+; mess[61]                               ; Merged with mess[60]  ;
+; Total Number of Removed Registers = 15 ;                       ;
++----------------------------------------+-----------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 159   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; HEX5[3]~reg0                            ; 1       ;
+; HEX5[2]~reg0                            ; 1       ;
+; HEX4[6]~reg0                            ; 1       ;
+; HEX4[3]~reg0                            ; 1       ;
+; HEX4[2]~reg0                            ; 1       ;
+; HEX4[1]~reg0                            ; 1       ;
+; HEX4[0]~reg0                            ; 1       ;
+; HEX3[2]~reg0                            ; 1       ;
+; HEX3[1]~reg0                            ; 1       ;
+; HEX2[6]~reg0                            ; 1       ;
+; HEX2[3]~reg0                            ; 1       ;
+; HEX2[2]~reg0                            ; 1       ;
+; HEX1[6]~reg0                            ; 1       ;
+; HEX1[3]~reg0                            ; 1       ;
+; HEX1[2]~reg0                            ; 1       ;
+; HEX0[2]~reg0                            ; 1       ;
+; HEX0[1]~reg0                            ; 1       ;
+; mess[3]                                 ; 2       ;
+; mess[2]                                 ; 2       ;
+; mess[13]                                ; 2       ;
+; mess[10]                                ; 2       ;
+; mess[9]                                 ; 2       ;
+; mess[8]                                 ; 2       ;
+; mess[7]                                 ; 2       ;
+; mess[16]                                ; 2       ;
+; mess[15]                                ; 2       ;
+; mess[27]                                ; 2       ;
+; mess[24]                                ; 2       ;
+; mess[23]                                ; 2       ;
+; mess[34]                                ; 2       ;
+; mess[31]                                ; 2       ;
+; mess[30]                                ; 2       ;
+; mess[37]                                ; 2       ;
+; mess[36]                                ; 2       ;
+; mess[48]                                ; 1       ;
+; mess[46]                                ; 1       ;
+; mess[45]                                ; 1       ;
+; mess[44]                                ; 1       ;
+; mess[43]                                ; 1       ;
+; mess[42]                                ; 1       ;
+; mess[55]                                ; 1       ;
+; mess[51]                                ; 1       ;
+; mess[50]                                ; 1       ;
+; mess[59]                                ; 1       ;
+; mess[57]                                ; 1       ;
+; mess[56]                                ; 1       ;
+; mess[65]                                ; 1       ;
+; mess[64]                                ; 1       ;
+; mess[76]                                ; 1       ;
+; mess[73]                                ; 1       ;
+; mess[72]                                ; 1       ;
+; mess[83]                                ; 1       ;
+; mess[80]                                ; 1       ;
+; mess[79]                                ; 1       ;
+; mess[78]                                ; 1       ;
+; mess[77]                                ; 1       ;
+; mess[90]                                ; 1       ;
+; mess[87]                                ; 1       ;
+; mess[93]                                ; 1       ;
+; mess[92]                                ; 1       ;
+; mess[104]                               ; 1       ;
+; mess[102]                               ; 1       ;
+; mess[101]                               ; 1       ;
+; mess[100]                               ; 1       ;
+; mess[99]                                ; 1       ;
+; mess[98]                                ; 1       ;
+; Total number of inverted registers = 66 ;         ;
++-----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 159                         ;
+;     SCLR              ; 26                          ;
+;     plain             ; 133                         ;
+; cycloneiii_lcell_comb ; 104                         ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 79                          ;
+;         1 data inputs ; 64                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 1.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -167,18 +372,25 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar 05 20:19:37 2020
+    Info: Processing started: Thu Mar 05 21:52:50 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file septseg.vhd
-    Info (12022): Found design unit 1: septseg-rtl File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 20
+    Info (12022): Found design unit 1: septseg-rtl File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 18
     Info (12023): Found entity 1: septseg File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 5
-Error (10476): VHDL error at septseg.vhd(54): type of identifier "count" does not agree with its usage as "integer" type File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 54
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4765 megabytes
-    Error: Processing ended: Thu Mar 05 20:19:49 2020
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:24
+Info (12127): Elaborating entity "septseg" for the top level hierarchy
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 216 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 173 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Thu Mar 05 21:53:04 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:27
 
 

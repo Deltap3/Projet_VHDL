@@ -12,25 +12,15 @@ ENTITY septseg IS
  HEX1: OUT STD_LOGIC_VECTOR (0 to 6):= "0011001";
  HEX0: OUT STD_LOGIC_VECTOR (0 to 6):= "0110000"
  );
-type t_Memory is array (0 to 29) of std_logic_vector(0 to 6);
-signal tab : t_Memory:=("0011000","1111001","0110000","0011001","0011001","0110000","1111111","0110000","0011001","0011001","0110000","1111001");
-
+type count is range 0 to 255;
 END septseg;
 
 ARCHITECTURE rtl OF septseg IS
 
 SIGNAL s_clk_compte : STD_LOGIC_VECTOR(25 DOWNTO 0);
 SIGNAL s_clk_lent : STD_LOGIC;
-signal p : std_logic_vector(0 to 6):= "0011000";
-signal i : std_logic_vector(0 to 6):= "1111001";
-signal e : std_logic_vector(0 to 6):= "0110000";
-signal r : std_logic_vector(0 to 6):= "0011001";
-signal c : std_logic_vector(0 to 6):= "0110001";
-signal h : std_logic_vector(0 to 6):= "1101000";
-signal n : std_logic_vector(0 to 6):= "0001001";
-signal espace : std_logic_vector(0 to 6):= "1111111";
-signal count : std_logic_vector(0 to 6):= "0000000";
-
+signal mess : std_logic_vector(0 to 104):=("001100011110010110000001100100110010110000111111101100011101000011000000110011111001000100101100001111111");
+signal texte : std_logic_vector(0 to 6);
 BEGIN
  PROCESS (clk)
 BEGIN
@@ -48,20 +38,16 @@ BEGIN
  END IF;
  END IF;
 END PROCESS;
-PROCESS (s_clk_lent)
+ PROCESS (s_clk_lent)
 BEGIN
- IF s_clk_lent'EVENT AND s_clk_lent = '1' THEN
-	 HEX0<=tab(count);
-	 HEX1<=tab(count+'1');
-	 HEX2<=tab(count+'2');
-	 HEX3<=tab(count+'3');
-	 HEX4<=tab(count+'4');
-	 HEX5<=tab(count+'5');
-	 count<=count+1;
-	 if(count="0000111") then
-	 count<="0000000";
-	 end if;
-	 
- END IF;
+	IF s_clk_lent'EVENT AND s_clk_lent = '1' THEN
+	 HEX5<=mess(0 to 6);
+	 HEX4<=mess(7 to 13);
+	 HEX3<=mess(14 to 20);
+	 HEX2<=mess(21 to 27);
+	 HEX1<=mess(28 to 34);
+	 HEX0<=mess(35 to 41);
+	 mess <= mess(7 to 104) & mess(0 to 6);
+	END IF;
 END PROCESS;
 END;

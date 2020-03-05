@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.330
-TNS   : -83.111
+Slack : -3.715
+TNS   : -88.853
 
 Type  : Slow 1200mV 85C Model Setup 's_clk_lent'
-Slack : -1.778
-TNS   : -59.424
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.443
-TNS   : 0.000
+Slack : -0.035
+TNS   : -0.147
 
 Type  : Slow 1200mV 85C Model Hold 's_clk_lent'
-Slack : 0.483
+Slack : 0.409
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.411
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -24,22 +24,22 @@ TNS   : -40.881
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 's_clk_lent'
 Slack : -1.403
-TNS   : -58.926
+TNS   : -185.196
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -2.942
-TNS   : -73.191
+Slack : -3.294
+TNS   : -78.458
 
 Type  : Slow 1200mV 0C Model Setup 's_clk_lent'
-Slack : -1.565
-TNS   : -51.342
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.408
+Slack : 0.061
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 's_clk_lent'
-Slack : 0.444
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.377
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -48,30 +48,30 @@ TNS   : -40.881
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 's_clk_lent'
 Slack : -1.403
-TNS   : -58.926
+TNS   : -185.196
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.796
-TNS   : -18.352
+Slack : -0.997
+TNS   : -21.410
 
 Type  : Fast 1200mV 0C Model Setup 's_clk_lent'
-Slack : -0.180
-TNS   : -2.173
-
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.178
+Slack : 0.547
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 's_clk_lent'
-Slack : 0.199
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.164
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -30.966
+TNS   : -31.110
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 's_clk_lent'
 Slack : -1.000
-TNS   : -42.000
+TNS   : -132.000
 
 ------------------------------------------------------------
