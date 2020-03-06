@@ -99,4 +99,6 @@ set_location_assignment PIN_M20 -to HEX5[4]
 set_location_assignment PIN_N19 -to HEX5[5]
 set_location_assignment PIN_N20 -to HEX5[6]
 set_location_assignment PIN_N14 -to clk
+set_location_assignment PIN_C10 -to trigger1
+set_location_assignment PIN_A8 -to led1
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

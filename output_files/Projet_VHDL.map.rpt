@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Thu Mar 05 22:33:22 2020
+Fri Mar 06 09:11:22 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,16 +44,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 05 22:33:22 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 06 09:11:22 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
 ; Total logic elements               ; 173                                         ;
-;     Total combinational functions  ; 87                                          ;
+;     Total combinational functions  ; 112                                         ;
 ;     Dedicated logic registers      ; 159                                         ;
 ; Total registers                    ; 159                                         ;
-; Total pins                         ; 43                                          ;
+; Total pins                         ; 45                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -179,36 +179,36 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimated Total logic elements              ; 173        ;
-;                                             ;            ;
-; Total combinational functions               ; 87         ;
-; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 10         ;
-;     -- 3 input functions                    ; 5          ;
-;     -- <=2 input functions                  ; 72         ;
-;                                             ;            ;
-; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 62         ;
-;     -- arithmetic mode                      ; 25         ;
-;                                             ;            ;
-; Total registers                             ; 159        ;
-;     -- Dedicated logic registers            ; 159        ;
-;     -- I/O registers                        ; 0          ;
-;                                             ;            ;
-; I/O pins                                    ; 43         ;
-;                                             ;            ;
-; Embedded Multiplier 9-bit elements          ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; s_clk_lent ;
-; Maximum fan-out                             ; 132        ;
-; Total fan-out                               ; 581        ;
-; Average fan-out                             ; 1.75       ;
-+---------------------------------------------+------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 173            ;
+;                                             ;                ;
+; Total combinational functions               ; 112            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 10             ;
+;     -- 3 input functions                    ; 5              ;
+;     -- <=2 input functions                  ; 97             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 87             ;
+;     -- arithmetic mode                      ; 25             ;
+;                                             ;                ;
+; Total registers                             ; 159            ;
+;     -- Dedicated logic registers            ; 159            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 45             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; trigger1~input ;
+; Maximum fan-out                             ; 133            ;
+; Total fan-out                               ; 741            ;
+; Average fan-out                             ; 2.05           ;
++---------------------------------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -216,7 +216,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |septseg                   ; 87 (87)             ; 159 (159)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
+; |septseg                   ; 112 (112)           ; 159 (159)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 45   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -253,9 +253,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total registers                              ; 159   ;
 ; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 90    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -265,23 +265,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------+---------+
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
+; HEX5[6]~reg0                            ; 1       ;
+; HEX5[5]~reg0                            ; 1       ;
+; HEX5[4]~reg0                            ; 1       ;
 ; HEX5[3]~reg0                            ; 1       ;
 ; HEX5[2]~reg0                            ; 1       ;
+; HEX5[1]~reg0                            ; 1       ;
+; HEX5[0]~reg0                            ; 1       ;
 ; HEX4[6]~reg0                            ; 1       ;
+; HEX4[5]~reg0                            ; 1       ;
+; HEX4[4]~reg0                            ; 1       ;
 ; HEX4[3]~reg0                            ; 1       ;
 ; HEX4[2]~reg0                            ; 1       ;
 ; HEX4[1]~reg0                            ; 1       ;
 ; HEX4[0]~reg0                            ; 1       ;
+; HEX3[6]~reg0                            ; 1       ;
+; HEX3[5]~reg0                            ; 1       ;
+; HEX3[4]~reg0                            ; 1       ;
+; HEX3[3]~reg0                            ; 1       ;
 ; HEX3[2]~reg0                            ; 1       ;
 ; HEX3[1]~reg0                            ; 1       ;
+; HEX3[0]~reg0                            ; 1       ;
 ; HEX2[6]~reg0                            ; 1       ;
+; HEX2[5]~reg0                            ; 1       ;
+; HEX2[4]~reg0                            ; 1       ;
 ; HEX2[3]~reg0                            ; 1       ;
 ; HEX2[2]~reg0                            ; 1       ;
+; HEX2[1]~reg0                            ; 1       ;
+; HEX2[0]~reg0                            ; 1       ;
 ; HEX1[6]~reg0                            ; 1       ;
+; HEX1[5]~reg0                            ; 1       ;
+; HEX1[4]~reg0                            ; 1       ;
 ; HEX1[3]~reg0                            ; 1       ;
 ; HEX1[2]~reg0                            ; 1       ;
+; HEX1[1]~reg0                            ; 1       ;
+; HEX1[0]~reg0                            ; 1       ;
+; HEX0[6]~reg0                            ; 1       ;
+; HEX0[5]~reg0                            ; 1       ;
+; HEX0[4]~reg0                            ; 1       ;
+; HEX0[3]~reg0                            ; 1       ;
 ; HEX0[2]~reg0                            ; 1       ;
 ; HEX0[1]~reg0                            ; 1       ;
+; HEX0[0]~reg0                            ; 1       ;
 ; mess[3]                                 ; 2       ;
 ; mess[2]                                 ; 2       ;
 ; mess[13]                                ; 2       ;
@@ -331,7 +356,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; mess[100]                               ; 1       ;
 ; mess[99]                                ; 1       ;
 ; mess[98]                                ; 1       ;
-; Total number of inverted registers = 66 ;         ;
+; Total number of inverted registers = 91 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -340,20 +365,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 43                          ;
+; boundary_port         ; 45                          ;
 ; cycloneiii_ff         ; 159                         ;
+;     CLR               ; 42                          ;
+;     ENA               ; 90                          ;
 ;     SCLR              ; 26                          ;
-;     plain             ; 133                         ;
-; cycloneiii_lcell_comb ; 104                         ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 155                         ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 25                          ;
-;     normal            ; 79                          ;
-;         1 data inputs ; 64                          ;
+;     normal            ; 130                         ;
+;         1 data inputs ; 115                         ;
 ;         3 data inputs ; 5                           ;
 ;         4 data inputs ; 10                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.53                        ;
+; Average LUT depth     ; 1.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -372,25 +399,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar 05 22:32:54 2020
+    Info: Processing started: Fri Mar 06 09:10:59 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file septseg.vhd
-    Info (12022): Found design unit 1: septseg-rtl File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Info (12022): Found design unit 1: septseg-rtl File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
     Info (12023): Found entity 1: septseg File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 5
 Info (12127): Elaborating entity "septseg" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at septseg.vhd(49): signal "trigger1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 49
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register HEX5[6]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX5[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX5[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX5[1]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX5[0]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX4[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX4[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX3[6]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX3[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX3[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX3[3]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX3[0]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX2[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX2[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX2[1]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX2[0]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX1[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX1[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX1[1]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX1[0]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX0[6]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX0[5]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX0[4]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX0[3]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
+    Critical Warning (18010): Register HEX0[0]~reg0 will power up to High File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 51
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 216 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 42 output pins
+Info (21057): Implemented 218 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 43 output pins
     Info (21061): Implemented 173 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Thu Mar 05 22:33:22 2020
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:55
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4792 megabytes
+    Info: Processing ended: Fri Mar 06 09:11:22 2020
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:50
 
 
