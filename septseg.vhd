@@ -8,6 +8,8 @@ ENTITY septseg IS
  trigger0 : IN STD_LOGIC;
  trigger1 : IN STD_LOGIC;
  trigger2 : IN STD_LOGIC;
+ bouton0 : IN STD_LOGIC;
+ bouton1 : IN STD_LOGIC;
  led0 : OUT STD_LOGIC;
  led1 : OUT STD_LOGIC;
  led2 : OUT STD_LOGIC;
@@ -32,6 +34,7 @@ BEGIN
 
 PROCESS (clk)
 BEGIN
+
  IF clk'EVENT AND clk = '1' THEN
 	 IF s_clk_compte > 50000000 THEN
 	 s_clk_compte <= (OTHERS => '0');
@@ -50,10 +53,12 @@ END PROCESS;
 PROCESS (s_clk_lent)
 BEGIN
 
-	if(trigger0='1') then
+	if(trigger0='0') then
 		led0<='0';
+		
 		if(trigger1='0') then
 			led1<='0';
+			
 			IF s_clk_lent'EVENT AND s_clk_lent = '1' THEN
 				HEX5<=mess(0 to 6);
 				HEX4<=mess(7 to 13);
@@ -61,10 +66,17 @@ BEGIN
 				HEX2<=mess(21 to 27);
 				HEX1<=mess(28 to 34);
 				HEX0<=mess(35 to 41);
-				mess <= mess(7 to 349) & mess(0 to 6);
+				
+				if(trigger2='0') then
+					led2<='0';
+					mess <= mess(7 to 349) & mess(0 to 6);
+				else mess <= mess(343 to 349) & mess(0 to 342);
+				led2<='1';
+				end if;
+				
 			END IF;
+			
 		else led1<='1';
-		
 		end if;
 		
 	else led0<='1';
