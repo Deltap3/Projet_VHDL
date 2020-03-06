@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "led0",
+					"strict" : false
+				},
+				{
 					"name" : "led1",
 					"strict" : false
 				},
@@ -173,6 +177,10 @@
 				},
 				{
 					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "trigger0",
 					"strict" : false
 				},
 				{
