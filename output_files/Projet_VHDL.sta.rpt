@@ -1,5 +1,5 @@
 Timing Analyzer report for Projet_VHDL
-Fri Mar 06 10:49:17 2020
+Fri Mar 06 11:22:23 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -93,12 +93,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.11        ;
+; Average used               ; 1.32        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  11.0%      ;
+;     Processor 2            ;  31.7%      ;
 +----------------------------+-------------+
 
 
@@ -113,25 +113,27 @@ refer to the applicable agreement for further details.
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                         ;
-+------------+-----------------+------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                           ;
-+------------+-----------------+------------+------------------------------------------------+
-; 212.45 MHz ; 212.45 MHz      ; clk        ;                                                ;
-; 526.87 MHz ; 416.15 MHz      ; s_clk_lent ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------+------------------------------------------------+
++--------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary               ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 45.61 MHz  ; 45.61 MHz       ; trigger0   ;      ;
+; 89.17 MHz  ; 89.17 MHz       ; s_clk_lent ;      ;
+; 218.05 MHz ; 218.05 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------+
-; Slow 1200mV 85C Model Setup Summary ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; clk        ; -3.707 ; -89.661       ;
-; s_clk_lent ; -2.334 ; -776.701      ;
-+------------+--------+---------------+
++--------------------------------------+
+; Slow 1200mV 85C Model Setup Summary  ;
++------------+---------+---------------+
+; Clock      ; Slack   ; End Point TNS ;
++------------+---------+---------------+
+; s_clk_lent ; -12.299 ; -2223.462     ;
+; trigger0   ; -11.370 ; -1838.525     ;
+; clk        ; -3.586  ; -87.039       ;
++------------+---------+---------------+
 
 
 +------------------------------------+
@@ -139,8 +141,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+-------+---------------+
 ; Clock      ; Slack ; End Point TNS ;
 +------------+-------+---------------+
-; s_clk_lent ; 0.417 ; 0.000         ;
-; clk        ; 0.435 ; 0.000         ;
+; clk        ; 0.417 ; 0.000         ;
+; trigger0   ; 1.056 ; 0.000         ;
+; s_clk_lent ; 1.078 ; 0.000         ;
 +------------+-------+---------------+
 
 
@@ -149,7 +152,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+------------------+
 ; Clock      ; Slack  ; End Point TNS    ;
 +------------+--------+------------------+
-; s_clk_lent ; -0.819 ; -24.770          ;
+; trigger0   ; -2.635 ; -89.930          ;
+; s_clk_lent ; -2.489 ; -795.916         ;
 +------------+--------+------------------+
 
 
@@ -158,7 +162,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+-------+------------------+
 ; Clock      ; Slack ; End Point TNS    ;
 +------------+-------+------------------+
-; s_clk_lent ; 0.354 ; 0.000            ;
+; trigger0   ; 0.888 ; 0.000            ;
+; s_clk_lent ; 1.069 ; 0.000            ;
 +------------+-------+------------------+
 
 
@@ -179,25 +184,27 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                                                          ;
-+------------+-----------------+------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note                                           ;
-+------------+-----------------+------------+------------------------------------------------+
-; 233.48 MHz ; 233.48 MHz      ; clk        ;                                                ;
-; 562.75 MHz ; 416.15 MHz      ; s_clk_lent ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+------------+------------------------------------------------+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 48.44 MHz  ; 48.44 MHz       ; trigger0   ;      ;
+; 95.49 MHz  ; 95.49 MHz       ; s_clk_lent ;      ;
+; 240.21 MHz ; 240.21 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+-------------------------------------+
-; Slow 1200mV 0C Model Setup Summary  ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; clk        ; -3.283 ; -79.088       ;
-; s_clk_lent ; -2.161 ; -721.173      ;
-+------------+--------+---------------+
++--------------------------------------+
+; Slow 1200mV 0C Model Setup Summary   ;
++------------+---------+---------------+
+; Clock      ; Slack   ; End Point TNS ;
++------------+---------+---------------+
+; s_clk_lent ; -11.431 ; -2040.757     ;
+; trigger0   ; -10.566 ; -1689.948     ;
+; clk        ; -3.163  ; -76.644       ;
++------------+---------+---------------+
 
 
 +------------------------------------+
@@ -205,8 +212,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+-------+---------------+
 ; Clock      ; Slack ; End Point TNS ;
 +------------+-------+---------------+
-; s_clk_lent ; 0.381 ; 0.000         ;
-; clk        ; 0.399 ; 0.000         ;
+; clk        ; 0.382 ; 0.000         ;
+; trigger0   ; 0.861 ; 0.000         ;
+; s_clk_lent ; 1.047 ; 0.000         ;
 +------------+-------+---------------+
 
 
@@ -215,7 +223,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+-----------------+
 ; Clock      ; Slack  ; End Point TNS   ;
 +------------+--------+-----------------+
-; s_clk_lent ; -0.708 ; -21.106         ;
+; trigger0   ; -2.332 ; -77.731         ;
+; s_clk_lent ; -2.292 ; -733.849        ;
 +------------+--------+-----------------+
 
 
@@ -224,7 +233,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+-------+-----------------+
 ; Clock      ; Slack ; End Point TNS   ;
 +------------+-------+-----------------+
-; s_clk_lent ; 0.425 ; 0.000           ;
+; trigger0   ; 0.956 ; 0.000           ;
+; s_clk_lent ; 1.114 ; 0.000           ;
 +------------+-------+-----------------+
 
 
@@ -250,8 +260,9 @@ No synchronizer chains to report.
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; clk        ; -0.986 ; -21.670       ;
-; s_clk_lent ; -0.810 ; -265.344      ;
+; s_clk_lent ; -4.730 ; -741.617      ;
+; trigger0   ; -4.446 ; -635.973      ;
+; clk        ; -0.936 ; -20.606       ;
 +------------+--------+---------------+
 
 
@@ -260,8 +271,9 @@ No synchronizer chains to report.
 +------------+-------+---------------+
 ; Clock      ; Slack ; End Point TNS ;
 +------------+-------+---------------+
-; s_clk_lent ; 0.164 ; 0.000         ;
-; clk        ; 0.175 ; 0.000         ;
+; s_clk_lent ; 0.128 ; 0.000         ;
+; clk        ; 0.167 ; 0.000         ;
+; trigger0   ; 0.308 ; 0.000         ;
 +------------+-------+---------------+
 
 
@@ -270,17 +282,19 @@ No synchronizer chains to report.
 +------------+--------+-----------------+
 ; Clock      ; Slack  ; End Point TNS   ;
 +------------+--------+-----------------+
-; s_clk_lent ; -0.274 ; -7.211          ;
+; trigger0   ; -1.352 ; -46.277         ;
+; s_clk_lent ; -1.012 ; -313.114        ;
 +------------+--------+-----------------+
 
 
 +--------------------------------------+
 ; Fast 1200mV 0C Model Removal Summary ;
-+------------+--------+----------------+
-; Clock      ; Slack  ; End Point TNS  ;
-+------------+--------+----------------+
-; s_clk_lent ; -0.120 ; -3.656         ;
-+------------+--------+----------------+
++------------+-------+-----------------+
+; Clock      ; Slack ; End Point TNS   ;
++------------+-------+-----------------+
+; s_clk_lent ; 0.188 ; 0.000           ;
+; trigger0   ; 0.214 ; 0.000           ;
++------------+-------+-----------------+
 
 
 +--------------------------------------------------+
@@ -288,7 +302,7 @@ No synchronizer chains to report.
 +------------+--------+----------------------------+
 ; Clock      ; Slack  ; End Point TNS              ;
 +------------+--------+----------------------------+
-; clk        ; -3.000 ; -31.034                    ;
+; clk        ; -3.000 ; -30.928                    ;
 ; trigger0   ; -3.000 ; -3.000                     ;
 ; s_clk_lent ; -1.000 ; -393.000                   ;
 +------------+--------+----------------------------+
@@ -300,20 +314,20 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                            ;
-+------------------+----------+-------+----------+---------+---------------------+
-; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -3.707   ; 0.164 ; -0.819   ; -0.120  ; -3.000              ;
-;  clk             ; -3.707   ; 0.175 ; N/A      ; N/A     ; -3.000              ;
-;  s_clk_lent      ; -2.334   ; 0.164 ; -0.819   ; -0.120  ; -1.403              ;
-;  trigger0        ; N/A      ; N/A   ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -866.362 ; 0.0   ; -24.77   ; -3.656  ; -595.26             ;
-;  clk             ; -89.661  ; 0.000 ; N/A      ; N/A     ; -40.881             ;
-;  s_clk_lent      ; -776.701 ; 0.000 ; -24.770  ; -3.656  ; -551.379            ;
-;  trigger0        ; N/A      ; N/A   ; N/A      ; N/A     ; -3.000              ;
-+------------------+----------+-------+----------+---------+---------------------+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -12.299   ; 0.128 ; -2.635   ; 0.188   ; -3.000              ;
+;  clk             ; -3.586    ; 0.167 ; N/A      ; N/A     ; -3.000              ;
+;  s_clk_lent      ; -12.299   ; 0.128 ; -2.489   ; 0.188   ; -1.403              ;
+;  trigger0        ; -11.370   ; 0.308 ; -2.635   ; 0.214   ; -3.000              ;
+; Design-wide TNS  ; -4149.026 ; 0.0   ; -885.846 ; 0.0     ; -595.26             ;
+;  clk             ; -87.039   ; 0.000 ; N/A      ; N/A     ; -40.881             ;
+;  s_clk_lent      ; -2223.462 ; 0.000 ; -795.916 ; 0.000   ; -551.379            ;
+;  trigger0        ; -1838.525 ; 0.000 ; -89.930  ; 0.000   ; -3.000              ;
++------------------+-----------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -376,11 +390,11 @@ No synchronizer chains to report.
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
 ; bouton0             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; bouton1             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; trigger0            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; trigger1            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; trigger2            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; clk                 ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; bouton1             ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -558,9 +572,11 @@ No synchronizer chains to report.
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; clk        ; clk        ; 1073     ; 0        ; 0        ; 0        ;
-; s_clk_lent ; s_clk_lent ; 742      ; 0        ; 0        ; 0        ;
-; trigger0   ; s_clk_lent ; 351      ; 351      ; 0        ; 0        ;
+; clk        ; clk        ; 1281     ; 0        ; 0        ; 0        ;
+; s_clk_lent ; s_clk_lent ; 37101    ; 0        ; 0        ; 0        ;
+; trigger0   ; s_clk_lent ; 74943    ; 37451    ; 0        ; 0        ;
+; s_clk_lent ; trigger0   ; 19642    ; 0        ; 0        ; 0        ;
+; trigger0   ; trigger0   ; 39326    ; 19684    ; 0        ; 0        ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -570,9 +586,11 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; clk        ; clk        ; 1073     ; 0        ; 0        ; 0        ;
-; s_clk_lent ; s_clk_lent ; 742      ; 0        ; 0        ; 0        ;
-; trigger0   ; s_clk_lent ; 351      ; 351      ; 0        ; 0        ;
+; clk        ; clk        ; 1281     ; 0        ; 0        ; 0        ;
+; s_clk_lent ; s_clk_lent ; 37101    ; 0        ; 0        ; 0        ;
+; trigger0   ; s_clk_lent ; 74943    ; 37451    ; 0        ; 0        ;
+; s_clk_lent ; trigger0   ; 19642    ; 0        ; 0        ; 0        ;
+; trigger0   ; trigger0   ; 39326    ; 19684    ; 0        ; 0        ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -582,7 +600,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; trigger0   ; s_clk_lent ; 42       ; 42       ; 0        ; 0        ;
+; trigger0   ; s_clk_lent ; 434      ; 434      ; 0        ; 0        ;
+; trigger0   ; trigger0   ; 42       ; 42       ; 0        ; 0        ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -592,7 +611,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+------------+----------+----------+----------+----------+
 ; From Clock ; To Clock   ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+------------+----------+----------+----------+----------+
-; trigger0   ; s_clk_lent ; 42       ; 42       ; 0        ; 0        ;
+; trigger0   ; s_clk_lent ; 434      ; 434      ; 0        ; 0        ;
+; trigger0   ; trigger0   ; 42       ; 42       ; 0        ; 0        ;
 +------------+------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -616,10 +636,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 3     ; 3    ;
-; Unconstrained Input Port Paths  ; 746   ; 746  ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 2048  ; 2048 ;
 ; Unconstrained Output Ports      ; 45    ; 45   ;
-; Unconstrained Output Port Paths ; 45    ; 45   ;
+; Unconstrained Output Port Paths ; 4413  ; 4413 ;
 +---------------------------------+-------+------+
 
 
@@ -639,6 +659,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 ; Input Port ; Comment                                                                              ;
 +------------+--------------------------------------------------------------------------------------+
+; bouton1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger0   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger1   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger2   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -703,6 +724,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 ; Input Port ; Comment                                                                              ;
 +------------+--------------------------------------------------------------------------------------+
+; bouton1    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger0   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger1   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; trigger2   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -768,44 +790,2022 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Mar 06 10:49:11 2020
+    Info: Processing started: Fri Mar 06 11:22:12 2020
 Info: Command: quartus_sta Projet_VHDL -c Projet_VHDL
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 1 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 393 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Projet_VHDL.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
     Info (332105): create_clock -period 1.000 -name s_clk_lent s_clk_lent
     Info (332105): create_clock -period 1.000 -name trigger0 trigger0
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~55|combout"
+    Warning (332126): Node "HEX0[0]~32|datad"
+    Warning (332126): Node "HEX0[0]~32|combout"
+    Warning (332126): Node "HEX0~55|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~54|combout"
+    Warning (332126): Node "HEX0[1]~27|datad"
+    Warning (332126): Node "HEX0[1]~27|combout"
+    Warning (332126): Node "HEX0~54|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~53|combout"
+    Warning (332126): Node "HEX0[2]~22|datad"
+    Warning (332126): Node "HEX0[2]~22|combout"
+    Warning (332126): Node "HEX0~53|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~52|combout"
+    Warning (332126): Node "HEX0[3]~17|datad"
+    Warning (332126): Node "HEX0[3]~17|combout"
+    Warning (332126): Node "HEX0~52|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~51|combout"
+    Warning (332126): Node "HEX0[4]~12|datac"
+    Warning (332126): Node "HEX0[4]~12|combout"
+    Warning (332126): Node "HEX0~51|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~50|combout"
+    Warning (332126): Node "HEX0[5]~7|datac"
+    Warning (332126): Node "HEX0[5]~7|combout"
+    Warning (332126): Node "HEX0~50|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 21
+    Warning (332126): Node "HEX0~49|combout"
+    Warning (332126): Node "HEX0[6]~2|datab"
+    Warning (332126): Node "HEX0[6]~2|combout"
+    Warning (332126): Node "HEX0~49|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~55|combout"
+    Warning (332126): Node "HEX1[0]~32|datad"
+    Warning (332126): Node "HEX1[0]~32|combout"
+    Warning (332126): Node "HEX1~55|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~54|combout"
+    Warning (332126): Node "HEX1[1]~27|datad"
+    Warning (332126): Node "HEX1[1]~27|combout"
+    Warning (332126): Node "HEX1~54|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~53|combout"
+    Warning (332126): Node "HEX1[2]~22|datad"
+    Warning (332126): Node "HEX1[2]~22|combout"
+    Warning (332126): Node "HEX1~53|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~52|combout"
+    Warning (332126): Node "HEX1[3]~17|datad"
+    Warning (332126): Node "HEX1[3]~17|combout"
+    Warning (332126): Node "HEX1~52|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~51|combout"
+    Warning (332126): Node "HEX1[4]~12|datad"
+    Warning (332126): Node "HEX1[4]~12|combout"
+    Warning (332126): Node "HEX1~51|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~50|combout"
+    Warning (332126): Node "HEX1[5]~7|datab"
+    Warning (332126): Node "HEX1[5]~7|combout"
+    Warning (332126): Node "HEX1~50|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 20
+    Warning (332126): Node "HEX1~49|combout"
+    Warning (332126): Node "HEX1[6]~2|datad"
+    Warning (332126): Node "HEX1[6]~2|combout"
+    Warning (332126): Node "HEX1~49|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~55|combout"
+    Warning (332126): Node "HEX2[0]~32|datad"
+    Warning (332126): Node "HEX2[0]~32|combout"
+    Warning (332126): Node "HEX2~55|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~54|combout"
+    Warning (332126): Node "HEX2[1]~27|datad"
+    Warning (332126): Node "HEX2[1]~27|combout"
+    Warning (332126): Node "HEX2~54|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~53|combout"
+    Warning (332126): Node "HEX2[2]~22|datad"
+    Warning (332126): Node "HEX2[2]~22|combout"
+    Warning (332126): Node "HEX2~53|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~52|combout"
+    Warning (332126): Node "HEX2[3]~17|datad"
+    Warning (332126): Node "HEX2[3]~17|combout"
+    Warning (332126): Node "HEX2~52|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~51|combout"
+    Warning (332126): Node "HEX2[4]~12|datab"
+    Warning (332126): Node "HEX2[4]~12|combout"
+    Warning (332126): Node "HEX2~51|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~50|combout"
+    Warning (332126): Node "HEX2[5]~7|datac"
+    Warning (332126): Node "HEX2[5]~7|combout"
+    Warning (332126): Node "HEX2~50|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 19
+    Warning (332126): Node "HEX2~49|combout"
+    Warning (332126): Node "HEX2[6]~2|datac"
+    Warning (332126): Node "HEX2[6]~2|combout"
+    Warning (332126): Node "HEX2~49|dataa"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~55|combout"
+    Warning (332126): Node "HEX3[0]~32|datad"
+    Warning (332126): Node "HEX3[0]~32|combout"
+    Warning (332126): Node "HEX3~55|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~54|combout"
+    Warning (332126): Node "HEX3[1]~27|datad"
+    Warning (332126): Node "HEX3[1]~27|combout"
+    Warning (332126): Node "HEX3~54|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~53|combout"
+    Warning (332126): Node "HEX3[2]~22|datad"
+    Warning (332126): Node "HEX3[2]~22|combout"
+    Warning (332126): Node "HEX3~53|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~52|combout"
+    Warning (332126): Node "HEX3[3]~17|datad"
+    Warning (332126): Node "HEX3[3]~17|combout"
+    Warning (332126): Node "HEX3~52|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~51|combout"
+    Warning (332126): Node "HEX3[4]~12|datad"
+    Warning (332126): Node "HEX3[4]~12|combout"
+    Warning (332126): Node "HEX3~51|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~50|combout"
+    Warning (332126): Node "HEX3[5]~7|datad"
+    Warning (332126): Node "HEX3[5]~7|combout"
+    Warning (332126): Node "HEX3~50|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 18
+    Warning (332126): Node "HEX3~49|combout"
+    Warning (332126): Node "HEX3[6]~2|datac"
+    Warning (332126): Node "HEX3[6]~2|combout"
+    Warning (332126): Node "HEX3~49|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~55|combout"
+    Warning (332126): Node "HEX4[0]~32|datac"
+    Warning (332126): Node "HEX4[0]~32|combout"
+    Warning (332126): Node "HEX4~55|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~54|combout"
+    Warning (332126): Node "HEX4[1]~27|datac"
+    Warning (332126): Node "HEX4[1]~27|combout"
+    Warning (332126): Node "HEX4~54|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~53|combout"
+    Warning (332126): Node "HEX4[2]~22|datad"
+    Warning (332126): Node "HEX4[2]~22|combout"
+    Warning (332126): Node "HEX4~53|datab"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~52|combout"
+    Warning (332126): Node "HEX4[3]~17|dataa"
+    Warning (332126): Node "HEX4[3]~17|combout"
+    Warning (332126): Node "HEX4~52|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~51|combout"
+    Warning (332126): Node "HEX4[4]~12|datad"
+    Warning (332126): Node "HEX4[4]~12|combout"
+    Warning (332126): Node "HEX4~51|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~50|combout"
+    Warning (332126): Node "HEX4[5]~7|datac"
+    Warning (332126): Node "HEX4[5]~7|combout"
+    Warning (332126): Node "HEX4~50|datac"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 17
+    Warning (332126): Node "HEX4~49|combout"
+    Warning (332126): Node "HEX4[6]~2|datad"
+    Warning (332126): Node "HEX4[6]~2|combout"
+    Warning (332126): Node "HEX4~49|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~57|combout"
+    Warning (332126): Node "HEX5[0]~32|datad"
+    Warning (332126): Node "HEX5[0]~32|combout"
+    Warning (332126): Node "HEX5~57|datad"
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 62
+    Warning (332126): Node "mess[0]~26|combout"
+    Warning (332126): Node "mess~1567|datad"
+    Warning (332126): Node "mess~1567|combout"
+    Warning (332126): Node "mess[343]~194|datad"
+    Warning (332126): Node "mess[343]~194|combout"
+    Warning (332126): Node "mess~1567|datac"
+    Warning (332126): Node "mess~1609|datad"
+    Warning (332126): Node "mess~1609|combout"
+    Warning (332126): Node "mess[336]~250|datad"
+    Warning (332126): Node "mess[336]~250|combout"
+    Warning (332126): Node "mess~1609|datac"
+    Warning (332126): Node "mess~1651|datac"
+    Warning (332126): Node "mess~1651|combout"
+    Warning (332126): Node "mess[329]~306|datab"
+    Warning (332126): Node "mess[329]~306|combout"
+    Warning (332126): Node "mess~1651|datad"
+    Warning (332126): Node "mess~1693|datad"
+    Warning (332126): Node "mess~1693|combout"
+    Warning (332126): Node "mess[322]~362|dataa"
+    Warning (332126): Node "mess[322]~362|combout"
+    Warning (332126): Node "mess~1693|datab"
+    Warning (332126): Node "mess~1735|datad"
+    Warning (332126): Node "mess~1735|combout"
+    Warning (332126): Node "mess[315]~418|datac"
+    Warning (332126): Node "mess[315]~418|combout"
+    Warning (332126): Node "mess~1735|datab"
+    Warning (332126): Node "mess~1777|datab"
+    Warning (332126): Node "mess~1777|combout"
+    Warning (332126): Node "mess[308]~474|datac"
+    Warning (332126): Node "mess[308]~474|combout"
+    Warning (332126): Node "mess~1777|datad"
+    Warning (332126): Node "mess~1819|dataa"
+    Warning (332126): Node "mess~1819|combout"
+    Warning (332126): Node "mess[301]~530|datab"
+    Warning (332126): Node "mess[301]~530|combout"
+    Warning (332126): Node "mess~1819|datad"
+    Warning (332126): Node "mess~1861|datac"
+    Warning (332126): Node "mess~1861|combout"
+    Warning (332126): Node "mess[294]~586|datad"
+    Warning (332126): Node "mess[294]~586|combout"
+    Warning (332126): Node "mess~1861|datad"
+    Warning (332126): Node "mess~1903|datad"
+    Warning (332126): Node "mess~1903|combout"
+    Warning (332126): Node "mess[287]~642|datab"
+    Warning (332126): Node "mess[287]~642|combout"
+    Warning (332126): Node "mess~1903|datab"
+    Warning (332126): Node "mess~1945|datad"
+    Warning (332126): Node "mess~1945|combout"
+    Warning (332126): Node "mess[280]~698|datad"
+    Warning (332126): Node "mess[280]~698|combout"
+    Warning (332126): Node "mess~1945|datac"
+    Warning (332126): Node "mess~1987|datad"
+    Warning (332126): Node "mess~1987|combout"
+    Warning (332126): Node "mess[273]~754|datac"
+    Warning (332126): Node "mess[273]~754|combout"
+    Warning (332126): Node "mess~1987|datac"
+    Warning (332126): Node "mess~2029|datac"
+    Warning (332126): Node "mess~2029|combout"
+    Warning (332126): Node "mess[266]~810|datac"
+    Warning (332126): Node "mess[266]~810|combout"
+    Warning (332126): Node "mess~2029|datad"
+    Warning (332126): Node "mess~2071|datad"
+    Warning (332126): Node "mess~2071|combout"
+    Warning (332126): Node "mess[259]~866|datad"
+    Warning (332126): Node "mess[259]~866|combout"
+    Warning (332126): Node "mess~2071|datab"
+    Warning (332126): Node "mess~2113|datab"
+    Warning (332126): Node "mess~2113|combout"
+    Warning (332126): Node "mess[252]~922|datac"
+    Warning (332126): Node "mess[252]~922|combout"
+    Warning (332126): Node "mess~2113|datad"
+    Warning (332126): Node "mess~2155|datab"
+    Warning (332126): Node "mess~2155|combout"
+    Warning (332126): Node "mess[245]~978|dataa"
+    Warning (332126): Node "mess[245]~978|combout"
+    Warning (332126): Node "mess~2155|datad"
+    Warning (332126): Node "mess~2197|datad"
+    Warning (332126): Node "mess~2197|combout"
+    Warning (332126): Node "mess[238]~1034|datab"
+    Warning (332126): Node "mess[238]~1034|combout"
+    Warning (332126): Node "mess~2197|datac"
+    Warning (332126): Node "mess~2239|datac"
+    Warning (332126): Node "mess~2239|combout"
+    Warning (332126): Node "mess[231]~1090|dataa"
+    Warning (332126): Node "mess[231]~1090|combout"
+    Warning (332126): Node "mess~2239|datad"
+    Warning (332126): Node "mess~2281|datad"
+    Warning (332126): Node "mess~2281|combout"
+    Warning (332126): Node "mess[224]~1146|datac"
+    Warning (332126): Node "mess[224]~1146|combout"
+    Warning (332126): Node "mess~2281|datab"
+    Warning (332126): Node "mess~2323|datad"
+    Warning (332126): Node "mess~2323|combout"
+    Warning (332126): Node "mess[217]~1202|dataa"
+    Warning (332126): Node "mess[217]~1202|combout"
+    Warning (332126): Node "mess~2323|datab"
+    Warning (332126): Node "mess~2365|datad"
+    Warning (332126): Node "mess~2365|combout"
+    Warning (332126): Node "mess[210]~1258|dataa"
+    Warning (332126): Node "mess[210]~1258|combout"
+    Warning (332126): Node "mess~2365|datac"
+    Warning (332126): Node "mess~2407|datac"
+    Warning (332126): Node "mess~2407|combout"
+    Warning (332126): Node "mess[203]~1314|datad"
+    Warning (332126): Node "mess[203]~1314|combout"
+    Warning (332126): Node "mess~2407|datad"
+    Warning (332126): Node "mess~2442|datad"
+    Warning (332126): Node "mess~2442|combout"
+    Warning (332126): Node "mess[196]~1370|datac"
+    Warning (332126): Node "mess[196]~1370|combout"
+    Warning (332126): Node "mess~2442|datab"
+    Warning (332126): Node "mess~2449|datad"
+    Warning (332126): Node "mess~2449|combout"
+    Warning (332126): Node "mess[189]~1398|datac"
+    Warning (332126): Node "mess[189]~1398|combout"
+    Warning (332126): Node "mess~2449|dataa"
+    Warning (332126): Node "mess~2421|dataa"
+    Warning (332126): Node "mess~2421|combout"
+    Warning (332126): Node "mess[182]~1342|datac"
+    Warning (332126): Node "mess[182]~1342|combout"
+    Warning (332126): Node "mess~2421|datad"
+    Warning (332126): Node "mess~2379|datad"
+    Warning (332126): Node "mess~2379|combout"
+    Warning (332126): Node "mess[175]~1286|datab"
+    Warning (332126): Node "mess[175]~1286|combout"
+    Warning (332126): Node "mess~2379|datac"
+    Warning (332126): Node "mess~2337|datac"
+    Warning (332126): Node "mess~2337|combout"
+    Warning (332126): Node "mess[168]~1230|datab"
+    Warning (332126): Node "mess[168]~1230|combout"
+    Warning (332126): Node "mess~2337|datad"
+    Warning (332126): Node "mess~2295|datac"
+    Warning (332126): Node "mess~2295|combout"
+    Warning (332126): Node "mess[161]~1174|datac"
+    Warning (332126): Node "mess[161]~1174|combout"
+    Warning (332126): Node "mess~2295|datad"
+    Warning (332126): Node "mess~2253|datac"
+    Warning (332126): Node "mess~2253|combout"
+    Warning (332126): Node "mess[154]~1118|datac"
+    Warning (332126): Node "mess[154]~1118|combout"
+    Warning (332126): Node "mess~2253|datad"
+    Warning (332126): Node "mess~2211|datad"
+    Warning (332126): Node "mess~2211|combout"
+    Warning (332126): Node "mess[147]~1062|datac"
+    Warning (332126): Node "mess[147]~1062|combout"
+    Warning (332126): Node "mess~2211|datab"
+    Warning (332126): Node "mess~2169|datab"
+    Warning (332126): Node "mess~2169|combout"
+    Warning (332126): Node "mess[140]~1006|dataa"
+    Warning (332126): Node "mess[140]~1006|combout"
+    Warning (332126): Node "mess~2169|datad"
+    Warning (332126): Node "mess~2127|datab"
+    Warning (332126): Node "mess~2127|combout"
+    Warning (332126): Node "mess[133]~950|datad"
+    Warning (332126): Node "mess[133]~950|combout"
+    Warning (332126): Node "mess~2127|datac"
+    Warning (332126): Node "mess~2085|datac"
+    Warning (332126): Node "mess~2085|combout"
+    Warning (332126): Node "mess[126]~894|datac"
+    Warning (332126): Node "mess[126]~894|combout"
+    Warning (332126): Node "mess~2085|datad"
+    Warning (332126): Node "mess~2043|dataa"
+    Warning (332126): Node "mess~2043|combout"
+    Warning (332126): Node "mess[119]~838|datad"
+    Warning (332126): Node "mess[119]~838|combout"
+    Warning (332126): Node "mess~2043|datad"
+    Warning (332126): Node "mess~2001|datad"
+    Warning (332126): Node "mess~2001|combout"
+    Warning (332126): Node "mess[112]~782|datad"
+    Warning (332126): Node "mess[112]~782|combout"
+    Warning (332126): Node "mess~2001|datac"
+    Warning (332126): Node "mess~1959|datad"
+    Warning (332126): Node "mess~1959|combout"
+    Warning (332126): Node "mess[105]~726|datac"
+    Warning (332126): Node "mess[105]~726|combout"
+    Warning (332126): Node "mess~1917|datac"
+    Warning (332126): Node "mess~1917|combout"
+    Warning (332126): Node "mess[98]~670|datac"
+    Warning (332126): Node "mess[98]~670|combout"
+    Warning (332126): Node "mess~1917|datad"
+    Warning (332126): Node "mess~1875|datad"
+    Warning (332126): Node "mess~1875|combout"
+    Warning (332126): Node "mess[91]~614|datab"
+    Warning (332126): Node "mess[91]~614|combout"
+    Warning (332126): Node "mess~1875|datac"
+    Warning (332126): Node "mess~1833|datac"
+    Warning (332126): Node "mess~1833|combout"
+    Warning (332126): Node "mess[84]~558|datab"
+    Warning (332126): Node "mess[84]~558|combout"
+    Warning (332126): Node "mess~1833|datad"
+    Warning (332126): Node "mess~1791|datad"
+    Warning (332126): Node "mess~1791|combout"
+    Warning (332126): Node "mess[77]~502|dataa"
+    Warning (332126): Node "mess[77]~502|combout"
+    Warning (332126): Node "mess~1791|dataa"
+    Warning (332126): Node "mess~1749|datad"
+    Warning (332126): Node "mess~1749|combout"
+    Warning (332126): Node "mess[70]~446|datad"
+    Warning (332126): Node "mess[70]~446|combout"
+    Warning (332126): Node "mess~1749|datac"
+    Warning (332126): Node "mess~1707|datad"
+    Warning (332126): Node "mess~1707|combout"
+    Warning (332126): Node "mess[63]~390|datad"
+    Warning (332126): Node "mess[63]~390|combout"
+    Warning (332126): Node "mess~1707|datac"
+    Warning (332126): Node "mess~1665|datac"
+    Warning (332126): Node "mess~1665|combout"
+    Warning (332126): Node "mess[56]~334|datab"
+    Warning (332126): Node "mess[56]~334|combout"
+    Warning (332126): Node "mess~1665|datad"
+    Warning (332126): Node "mess~1623|datad"
+    Warning (332126): Node "mess~1623|combout"
+    Warning (332126): Node "mess[49]~278|datac"
+    Warning (332126): Node "mess[49]~278|combout"
+    Warning (332126): Node "mess~1623|datac"
+    Warning (332126): Node "mess~1581|datab"
+    Warning (332126): Node "mess~1581|combout"
+    Warning (332126): Node "mess[42]~222|datad"
+    Warning (332126): Node "mess[42]~222|combout"
+    Warning (332126): Node "mess~1539|dataa"
+    Warning (332126): Node "mess~1539|combout"
+    Warning (332126): Node "mess[35]~166|datab"
+    Warning (332126): Node "mess[35]~166|combout"
+    Warning (332126): Node "mess~1539|datad"
+    Warning (332126): Node "mess~1525|datac"
+    Warning (332126): Node "mess~1525|combout"
+    Warning (332126): Node "mess[28]~138|datad"
+    Warning (332126): Node "mess[28]~138|combout"
+    Warning (332126): Node "mess~1525|datad"
+    Warning (332126): Node "mess~1518|datac"
+    Warning (332126): Node "mess~1518|combout"
+    Warning (332126): Node "mess[21]~110|datad"
+    Warning (332126): Node "mess[21]~110|combout"
+    Warning (332126): Node "mess~1518|datad"
+    Warning (332126): Node "mess~1511|datad"
+    Warning (332126): Node "mess~1511|combout"
+    Warning (332126): Node "mess[14]~82|datad"
+    Warning (332126): Node "mess[14]~82|combout"
+    Warning (332126): Node "mess~1511|datac"
+    Warning (332126): Node "mess~1504|datad"
+    Warning (332126): Node "mess~1504|combout"
+    Warning (332126): Node "mess[7]~54|datab"
+    Warning (332126): Node "mess[7]~54|combout"
+    Warning (332126): Node "mess~1504|datac"
+    Warning (332126): Node "mess~1497|datac"
+    Warning (332126): Node "mess~1497|combout"
+    Warning (332126): Node "mess[0]~26|datad"
+    Warning (332126): Node "mess~1581|datad"
+    Warning (332126): Node "mess~1959|datac"
+    Warning (332126): Node "mess~1497|datad"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~56|combout"
+    Warning (332126): Node "HEX5[1]~27|datad"
+    Warning (332126): Node "HEX5[1]~27|combout"
+    Warning (332126): Node "HEX5~56|datac"
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 62
+    Warning (332126): Node "mess[1]~22|combout"
+    Warning (332126): Node "mess~1495|datad"
+    Warning (332126): Node "mess~1495|combout"
+    Warning (332126): Node "mess[1]~22|dataa"
+    Warning (332126): Node "mess~1565|datac"
+    Warning (332126): Node "mess~1565|combout"
+    Warning (332126): Node "mess[344]~190|datab"
+    Warning (332126): Node "mess[344]~190|combout"
+    Warning (332126): Node "mess~1565|datad"
+    Warning (332126): Node "mess~1607|datad"
+    Warning (332126): Node "mess~1607|combout"
+    Warning (332126): Node "mess[337]~246|datab"
+    Warning (332126): Node "mess[337]~246|combout"
+    Warning (332126): Node "mess~1607|datac"
+    Warning (332126): Node "mess~1649|datad"
+    Warning (332126): Node "mess~1649|combout"
+    Warning (332126): Node "mess[330]~302|datac"
+    Warning (332126): Node "mess[330]~302|combout"
+    Warning (332126): Node "mess~1691|datac"
+    Warning (332126): Node "mess~1691|combout"
+    Warning (332126): Node "mess[323]~358|datac"
+    Warning (332126): Node "mess[323]~358|combout"
+    Warning (332126): Node "mess~1733|datad"
+    Warning (332126): Node "mess~1733|combout"
+    Warning (332126): Node "mess[316]~414|datab"
+    Warning (332126): Node "mess[316]~414|combout"
+    Warning (332126): Node "mess~1775|dataa"
+    Warning (332126): Node "mess~1775|combout"
+    Warning (332126): Node "mess[309]~470|datad"
+    Warning (332126): Node "mess[309]~470|combout"
+    Warning (332126): Node "mess~1817|datab"
+    Warning (332126): Node "mess~1817|combout"
+    Warning (332126): Node "mess[302]~526|datab"
+    Warning (332126): Node "mess[302]~526|combout"
+    Warning (332126): Node "mess~1859|datac"
+    Warning (332126): Node "mess~1859|combout"
+    Warning (332126): Node "mess[295]~582|datab"
+    Warning (332126): Node "mess[295]~582|combout"
+    Warning (332126): Node "mess~1901|dataa"
+    Warning (332126): Node "mess~1901|combout"
+    Warning (332126): Node "mess[288]~638|dataa"
+    Warning (332126): Node "mess[288]~638|combout"
+    Warning (332126): Node "mess~1943|datad"
+    Warning (332126): Node "mess~1943|combout"
+    Warning (332126): Node "mess[281]~694|datac"
+    Warning (332126): Node "mess[281]~694|combout"
+    Warning (332126): Node "mess~1985|datad"
+    Warning (332126): Node "mess~1985|combout"
+    Warning (332126): Node "mess[274]~750|datac"
+    Warning (332126): Node "mess[274]~750|combout"
+    Warning (332126): Node "mess~2027|datad"
+    Warning (332126): Node "mess~2027|combout"
+    Warning (332126): Node "mess[267]~806|datac"
+    Warning (332126): Node "mess[267]~806|combout"
+    Warning (332126): Node "mess~2069|datad"
+    Warning (332126): Node "mess~2069|combout"
+    Warning (332126): Node "mess[260]~862|datac"
+    Warning (332126): Node "mess[260]~862|combout"
+    Warning (332126): Node "mess~2111|datac"
+    Warning (332126): Node "mess~2111|combout"
+    Warning (332126): Node "mess[253]~918|datac"
+    Warning (332126): Node "mess[253]~918|combout"
+    Warning (332126): Node "mess~2153|datad"
+    Warning (332126): Node "mess~2153|combout"
+    Warning (332126): Node "mess[246]~974|datab"
+    Warning (332126): Node "mess[246]~974|combout"
+    Warning (332126): Node "mess~2153|datac"
+    Warning (332126): Node "mess~2195|datab"
+    Warning (332126): Node "mess~2195|combout"
+    Warning (332126): Node "mess[239]~1030|datad"
+    Warning (332126): Node "mess[239]~1030|combout"
+    Warning (332126): Node "mess~2237|datad"
+    Warning (332126): Node "mess~2237|combout"
+    Warning (332126): Node "mess[232]~1086|datad"
+    Warning (332126): Node "mess[232]~1086|combout"
+    Warning (332126): Node "mess~2279|datac"
+    Warning (332126): Node "mess~2279|combout"
+    Warning (332126): Node "mess[225]~1142|datad"
+    Warning (332126): Node "mess[225]~1142|combout"
+    Warning (332126): Node "mess~2321|datac"
+    Warning (332126): Node "mess~2321|combout"
+    Warning (332126): Node "mess[218]~1198|datab"
+    Warning (332126): Node "mess[218]~1198|combout"
+    Warning (332126): Node "mess~2363|dataa"
+    Warning (332126): Node "mess~2363|combout"
+    Warning (332126): Node "mess[211]~1254|datad"
+    Warning (332126): Node "mess[211]~1254|combout"
+    Warning (332126): Node "mess~2405|datac"
+    Warning (332126): Node "mess~2405|combout"
+    Warning (332126): Node "mess[204]~1310|datab"
+    Warning (332126): Node "mess[204]~1310|combout"
+    Warning (332126): Node "mess~2441|datad"
+    Warning (332126): Node "mess~2441|combout"
+    Warning (332126): Node "mess[197]~1366|datad"
+    Warning (332126): Node "mess[197]~1366|combout"
+    Warning (332126): Node "mess~2448|datac"
+    Warning (332126): Node "mess~2448|combout"
+    Warning (332126): Node "mess[190]~1394|datad"
+    Warning (332126): Node "mess[190]~1394|combout"
+    Warning (332126): Node "mess~2419|datac"
+    Warning (332126): Node "mess~2419|combout"
+    Warning (332126): Node "mess[183]~1338|datad"
+    Warning (332126): Node "mess[183]~1338|combout"
+    Warning (332126): Node "mess~2377|datad"
+    Warning (332126): Node "mess~2377|combout"
+    Warning (332126): Node "mess[176]~1282|datab"
+    Warning (332126): Node "mess[176]~1282|combout"
+    Warning (332126): Node "mess~2335|datac"
+    Warning (332126): Node "mess~2335|combout"
+    Warning (332126): Node "mess[169]~1226|dataa"
+    Warning (332126): Node "mess[169]~1226|combout"
+    Warning (332126): Node "mess~2293|datad"
+    Warning (332126): Node "mess~2293|combout"
+    Warning (332126): Node "mess[162]~1170|datab"
+    Warning (332126): Node "mess[162]~1170|combout"
+    Warning (332126): Node "mess~2251|datac"
+    Warning (332126): Node "mess~2251|combout"
+    Warning (332126): Node "mess[155]~1114|datac"
+    Warning (332126): Node "mess[155]~1114|combout"
+    Warning (332126): Node "mess~2209|datac"
+    Warning (332126): Node "mess~2209|combout"
+    Warning (332126): Node "mess[148]~1058|datad"
+    Warning (332126): Node "mess[148]~1058|combout"
+    Warning (332126): Node "mess~2167|datad"
+    Warning (332126): Node "mess~2167|combout"
+    Warning (332126): Node "mess[141]~1002|datac"
+    Warning (332126): Node "mess[141]~1002|combout"
+    Warning (332126): Node "mess~2125|datad"
+    Warning (332126): Node "mess~2125|combout"
+    Warning (332126): Node "mess[134]~946|datac"
+    Warning (332126): Node "mess[134]~946|combout"
+    Warning (332126): Node "mess~2083|datab"
+    Warning (332126): Node "mess~2083|combout"
+    Warning (332126): Node "mess[127]~890|dataa"
+    Warning (332126): Node "mess[127]~890|combout"
+    Warning (332126): Node "mess~2041|datab"
+    Warning (332126): Node "mess~2041|combout"
+    Warning (332126): Node "mess[120]~834|datac"
+    Warning (332126): Node "mess[120]~834|combout"
+    Warning (332126): Node "mess~1999|datad"
+    Warning (332126): Node "mess~1999|combout"
+    Warning (332126): Node "mess[113]~778|datab"
+    Warning (332126): Node "mess[113]~778|combout"
+    Warning (332126): Node "mess~1957|datad"
+    Warning (332126): Node "mess~1957|combout"
+    Warning (332126): Node "mess[106]~722|datac"
+    Warning (332126): Node "mess[106]~722|combout"
+    Warning (332126): Node "mess~1915|datad"
+    Warning (332126): Node "mess~1915|combout"
+    Warning (332126): Node "mess[99]~666|datab"
+    Warning (332126): Node "mess[99]~666|combout"
+    Warning (332126): Node "mess~1873|datac"
+    Warning (332126): Node "mess~1873|combout"
+    Warning (332126): Node "mess[92]~610|datab"
+    Warning (332126): Node "mess[92]~610|combout"
+    Warning (332126): Node "mess~1831|datad"
+    Warning (332126): Node "mess~1831|combout"
+    Warning (332126): Node "mess[85]~554|datab"
+    Warning (332126): Node "mess[85]~554|combout"
+    Warning (332126): Node "mess~1789|datad"
+    Warning (332126): Node "mess~1789|combout"
+    Warning (332126): Node "mess[78]~498|dataa"
+    Warning (332126): Node "mess[78]~498|combout"
+    Warning (332126): Node "mess~1747|datac"
+    Warning (332126): Node "mess~1747|combout"
+    Warning (332126): Node "mess[71]~442|dataa"
+    Warning (332126): Node "mess[71]~442|combout"
+    Warning (332126): Node "mess~1705|dataa"
+    Warning (332126): Node "mess~1705|combout"
+    Warning (332126): Node "mess[64]~386|datab"
+    Warning (332126): Node "mess[64]~386|combout"
+    Warning (332126): Node "mess~1663|dataa"
+    Warning (332126): Node "mess~1663|combout"
+    Warning (332126): Node "mess[57]~330|datab"
+    Warning (332126): Node "mess[57]~330|combout"
+    Warning (332126): Node "mess~1621|dataa"
+    Warning (332126): Node "mess~1621|combout"
+    Warning (332126): Node "mess[50]~274|datac"
+    Warning (332126): Node "mess[50]~274|combout"
+    Warning (332126): Node "mess~1579|datad"
+    Warning (332126): Node "mess~1579|combout"
+    Warning (332126): Node "mess[43]~218|datac"
+    Warning (332126): Node "mess[43]~218|combout"
+    Warning (332126): Node "mess~1537|datac"
+    Warning (332126): Node "mess~1537|combout"
+    Warning (332126): Node "mess[36]~162|datab"
+    Warning (332126): Node "mess[36]~162|combout"
+    Warning (332126): Node "mess~1524|datad"
+    Warning (332126): Node "mess~1524|combout"
+    Warning (332126): Node "mess[29]~134|datab"
+    Warning (332126): Node "mess[29]~134|combout"
+    Warning (332126): Node "mess~1517|dataa"
+    Warning (332126): Node "mess~1517|combout"
+    Warning (332126): Node "mess[22]~106|datac"
+    Warning (332126): Node "mess[22]~106|combout"
+    Warning (332126): Node "mess~1510|datad"
+    Warning (332126): Node "mess~1510|combout"
+    Warning (332126): Node "mess[15]~78|datab"
+    Warning (332126): Node "mess[15]~78|combout"
+    Warning (332126): Node "mess~1503|datab"
+    Warning (332126): Node "mess~1503|combout"
+    Warning (332126): Node "mess[8]~50|datab"
+    Warning (332126): Node "mess[8]~50|combout"
+    Warning (332126): Node "mess~1495|datab"
+    Warning (332126): Node "mess~1503|datad"
+    Warning (332126): Node "mess~1510|datac"
+    Warning (332126): Node "mess~1517|datac"
+    Warning (332126): Node "mess~1524|datac"
+    Warning (332126): Node "mess~1537|datad"
+    Warning (332126): Node "mess~1579|datac"
+    Warning (332126): Node "mess~1621|datad"
+    Warning (332126): Node "mess~1663|datad"
+    Warning (332126): Node "mess~1705|datad"
+    Warning (332126): Node "mess~1747|datab"
+    Warning (332126): Node "mess~1789|datac"
+    Warning (332126): Node "mess~1831|dataa"
+    Warning (332126): Node "mess~1873|datad"
+    Warning (332126): Node "mess~1915|datac"
+    Warning (332126): Node "mess~1957|datac"
+    Warning (332126): Node "mess~1999|datac"
+    Warning (332126): Node "mess~2041|datad"
+    Warning (332126): Node "mess~2083|datad"
+    Warning (332126): Node "mess~2125|datab"
+    Warning (332126): Node "mess~2167|datab"
+    Warning (332126): Node "mess~2209|datad"
+    Warning (332126): Node "mess~2251|datab"
+    Warning (332126): Node "mess~2293|datac"
+    Warning (332126): Node "mess~2335|datad"
+    Warning (332126): Node "mess~2377|datac"
+    Warning (332126): Node "mess~2419|datad"
+    Warning (332126): Node "mess~2448|datad"
+    Warning (332126): Node "mess~2441|datac"
+    Warning (332126): Node "mess~2405|datad"
+    Warning (332126): Node "mess~2363|datac"
+    Warning (332126): Node "mess~2321|datab"
+    Warning (332126): Node "mess~2279|datad"
+    Warning (332126): Node "mess~2237|datac"
+    Warning (332126): Node "mess~2195|datad"
+    Warning (332126): Node "mess~2111|datad"
+    Warning (332126): Node "mess~2069|datab"
+    Warning (332126): Node "mess~2027|datab"
+    Warning (332126): Node "mess~1985|datac"
+    Warning (332126): Node "mess~1943|datab"
+    Warning (332126): Node "mess~1901|datad"
+    Warning (332126): Node "mess~1859|datad"
+    Warning (332126): Node "mess~1817|datac"
+    Warning (332126): Node "mess~1775|datad"
+    Warning (332126): Node "mess~1733|dataa"
+    Warning (332126): Node "mess~1691|datad"
+    Warning (332126): Node "mess~1649|datac"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~55|combout"
+    Warning (332126): Node "HEX5[2]~22|datad"
+    Warning (332126): Node "HEX5[2]~22|combout"
+    Warning (332126): Node "HEX5~55|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~54|combout"
+    Warning (332126): Node "HEX5[3]~17|datad"
+    Warning (332126): Node "HEX5[3]~17|combout"
+    Warning (332126): Node "HEX5~54|datab"
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 30
+    Warning (332126): Node "mess~1523|combout"
+    Warning (332126): Node "mess[30]~130|datad"
+    Warning (332126): Node "mess[30]~130|combout"
+    Warning (332126): Node "mess~1523|datac"
+    Warning (332126): Node "mess~1516|datac"
+    Warning (332126): Node "mess~1516|combout"
+    Warning (332126): Node "mess[23]~102|datad"
+    Warning (332126): Node "mess[23]~102|combout"
+    Warning (332126): Node "mess~1516|datad"
+    Warning (332126): Node "mess~1509|datac"
+    Warning (332126): Node "mess~1509|combout"
+    Warning (332126): Node "mess[16]~74|datac"
+    Warning (332126): Node "mess[16]~74|combout"
+    Warning (332126): Node "mess~1509|datad"
+    Warning (332126): Node "mess~1502|datac"
+    Warning (332126): Node "mess~1502|combout"
+    Warning (332126): Node "mess[9]~46|datad"
+    Warning (332126): Node "mess[9]~46|combout"
+    Warning (332126): Node "mess~1502|datad"
+    Warning (332126): Node "mess~1493|datad"
+    Warning (332126): Node "mess~1493|combout"
+    Warning (332126): Node "mess[2]~18|datad"
+    Warning (332126): Node "mess[2]~18|combout"
+    Warning (332126): Node "mess~1493|datac"
+    Warning (332126): Node "mess~1563|datac"
+    Warning (332126): Node "mess~1563|combout"
+    Warning (332126): Node "mess[345]~186|datad"
+    Warning (332126): Node "mess[345]~186|combout"
+    Warning (332126): Node "mess~1563|datad"
+    Warning (332126): Node "mess~1605|datad"
+    Warning (332126): Node "mess~1605|combout"
+    Warning (332126): Node "mess[338]~242|datac"
+    Warning (332126): Node "mess[338]~242|combout"
+    Warning (332126): Node "mess~1605|dataa"
+    Warning (332126): Node "mess~1647|datad"
+    Warning (332126): Node "mess~1647|combout"
+    Warning (332126): Node "mess[331]~298|datad"
+    Warning (332126): Node "mess[331]~298|combout"
+    Warning (332126): Node "mess~1647|datab"
+    Warning (332126): Node "mess~1689|datad"
+    Warning (332126): Node "mess~1689|combout"
+    Warning (332126): Node "mess[324]~354|dataa"
+    Warning (332126): Node "mess[324]~354|combout"
+    Warning (332126): Node "mess~1689|datac"
+    Warning (332126): Node "mess~1731|datad"
+    Warning (332126): Node "mess~1731|combout"
+    Warning (332126): Node "mess[317]~410|datac"
+    Warning (332126): Node "mess[317]~410|combout"
+    Warning (332126): Node "mess~1731|datac"
+    Warning (332126): Node "mess~1773|dataa"
+    Warning (332126): Node "mess~1773|combout"
+    Warning (332126): Node "mess[310]~466|datac"
+    Warning (332126): Node "mess[310]~466|combout"
+    Warning (332126): Node "mess~1773|datac"
+    Warning (332126): Node "mess~1815|datad"
+    Warning (332126): Node "mess~1815|combout"
+    Warning (332126): Node "mess[303]~522|datab"
+    Warning (332126): Node "mess[303]~522|combout"
+    Warning (332126): Node "mess~1815|dataa"
+    Warning (332126): Node "mess~1857|datad"
+    Warning (332126): Node "mess~1857|combout"
+    Warning (332126): Node "mess[296]~578|datac"
+    Warning (332126): Node "mess[296]~578|combout"
+    Warning (332126): Node "mess~1857|dataa"
+    Warning (332126): Node "mess~1899|datad"
+    Warning (332126): Node "mess~1899|combout"
+    Warning (332126): Node "mess[289]~634|datad"
+    Warning (332126): Node "mess[289]~634|combout"
+    Warning (332126): Node "mess~1899|datac"
+    Warning (332126): Node "mess~1941|datac"
+    Warning (332126): Node "mess~1941|combout"
+    Warning (332126): Node "mess[282]~690|datac"
+    Warning (332126): Node "mess[282]~690|combout"
+    Warning (332126): Node "mess~1941|datad"
+    Warning (332126): Node "mess~1983|datac"
+    Warning (332126): Node "mess~1983|combout"
+    Warning (332126): Node "mess[275]~746|datac"
+    Warning (332126): Node "mess[275]~746|combout"
+    Warning (332126): Node "mess~1983|datad"
+    Warning (332126): Node "mess~2025|datac"
+    Warning (332126): Node "mess~2025|combout"
+    Warning (332126): Node "mess[268]~802|datac"
+    Warning (332126): Node "mess[268]~802|combout"
+    Warning (332126): Node "mess~2025|datad"
+    Warning (332126): Node "mess~2067|datad"
+    Warning (332126): Node "mess~2067|combout"
+    Warning (332126): Node "mess[261]~858|datad"
+    Warning (332126): Node "mess[261]~858|combout"
+    Warning (332126): Node "mess~2067|datac"
+    Warning (332126): Node "mess~2109|datac"
+    Warning (332126): Node "mess~2109|combout"
+    Warning (332126): Node "mess[254]~914|datab"
+    Warning (332126): Node "mess[254]~914|combout"
+    Warning (332126): Node "mess~2109|datad"
+    Warning (332126): Node "mess~2151|datad"
+    Warning (332126): Node "mess~2151|combout"
+    Warning (332126): Node "mess[247]~970|datad"
+    Warning (332126): Node "mess[247]~970|combout"
+    Warning (332126): Node "mess~2151|datac"
+    Warning (332126): Node "mess~2193|datac"
+    Warning (332126): Node "mess~2193|combout"
+    Warning (332126): Node "mess[240]~1026|datab"
+    Warning (332126): Node "mess[240]~1026|combout"
+    Warning (332126): Node "mess~2193|datad"
+    Warning (332126): Node "mess~2235|datac"
+    Warning (332126): Node "mess~2235|combout"
+    Warning (332126): Node "mess[233]~1082|datab"
+    Warning (332126): Node "mess[233]~1082|combout"
+    Warning (332126): Node "mess~2235|datab"
+    Warning (332126): Node "mess~2277|datac"
+    Warning (332126): Node "mess~2277|combout"
+    Warning (332126): Node "mess[226]~1138|dataa"
+    Warning (332126): Node "mess[226]~1138|combout"
+    Warning (332126): Node "mess~2277|datad"
+    Warning (332126): Node "mess~2319|datac"
+    Warning (332126): Node "mess~2319|combout"
+    Warning (332126): Node "mess[219]~1194|datab"
+    Warning (332126): Node "mess[219]~1194|combout"
+    Warning (332126): Node "mess~2319|datad"
+    Warning (332126): Node "mess~2361|datad"
+    Warning (332126): Node "mess~2361|combout"
+    Warning (332126): Node "mess[212]~1250|datac"
+    Warning (332126): Node "mess[212]~1250|combout"
+    Warning (332126): Node "mess~2361|datac"
+    Warning (332126): Node "mess~2403|datac"
+    Warning (332126): Node "mess~2403|combout"
+    Warning (332126): Node "mess[205]~1306|datac"
+    Warning (332126): Node "mess[205]~1306|combout"
+    Warning (332126): Node "mess~2440|datab"
+    Warning (332126): Node "mess~2440|combout"
+    Warning (332126): Node "mess[198]~1362|datab"
+    Warning (332126): Node "mess[198]~1362|combout"
+    Warning (332126): Node "mess~2440|datad"
+    Warning (332126): Node "mess~2447|datad"
+    Warning (332126): Node "mess~2447|combout"
+    Warning (332126): Node "mess[191]~1390|dataa"
+    Warning (332126): Node "mess[191]~1390|combout"
+    Warning (332126): Node "mess~2447|datac"
+    Warning (332126): Node "mess~2417|datab"
+    Warning (332126): Node "mess~2417|combout"
+    Warning (332126): Node "mess[184]~1334|datac"
+    Warning (332126): Node "mess[184]~1334|combout"
+    Warning (332126): Node "mess~2417|datad"
+    Warning (332126): Node "mess~2375|datad"
+    Warning (332126): Node "mess~2375|combout"
+    Warning (332126): Node "mess[177]~1278|datac"
+    Warning (332126): Node "mess[177]~1278|combout"
+    Warning (332126): Node "mess~2375|dataa"
+    Warning (332126): Node "mess~2333|datad"
+    Warning (332126): Node "mess~2333|combout"
+    Warning (332126): Node "mess[170]~1222|datac"
+    Warning (332126): Node "mess[170]~1222|combout"
+    Warning (332126): Node "mess~2333|datab"
+    Warning (332126): Node "mess~2291|datad"
+    Warning (332126): Node "mess~2291|combout"
+    Warning (332126): Node "mess[163]~1166|datad"
+    Warning (332126): Node "mess[163]~1166|combout"
+    Warning (332126): Node "mess~2291|dataa"
+    Warning (332126): Node "mess~2249|datac"
+    Warning (332126): Node "mess~2249|combout"
+    Warning (332126): Node "mess[156]~1110|datad"
+    Warning (332126): Node "mess[156]~1110|combout"
+    Warning (332126): Node "mess~2249|datad"
+    Warning (332126): Node "mess~2207|datad"
+    Warning (332126): Node "mess~2207|combout"
+    Warning (332126): Node "mess[149]~1054|datad"
+    Warning (332126): Node "mess[149]~1054|combout"
+    Warning (332126): Node "mess~2207|datac"
+    Warning (332126): Node "mess~2165|datad"
+    Warning (332126): Node "mess~2165|combout"
+    Warning (332126): Node "mess[142]~998|dataa"
+    Warning (332126): Node "mess[142]~998|combout"
+    Warning (332126): Node "mess~2165|datac"
+    Warning (332126): Node "mess~2123|datac"
+    Warning (332126): Node "mess~2123|combout"
+    Warning (332126): Node "mess[135]~942|datad"
+    Warning (332126): Node "mess[135]~942|combout"
+    Warning (332126): Node "mess~2123|datad"
+    Warning (332126): Node "mess~2081|datac"
+    Warning (332126): Node "mess~2081|combout"
+    Warning (332126): Node "mess[128]~886|datac"
+    Warning (332126): Node "mess[128]~886|combout"
+    Warning (332126): Node "mess~2081|datad"
+    Warning (332126): Node "mess~2039|datac"
+    Warning (332126): Node "mess~2039|combout"
+    Warning (332126): Node "mess[121]~830|dataa"
+    Warning (332126): Node "mess[121]~830|combout"
+    Warning (332126): Node "mess~2039|datad"
+    Warning (332126): Node "mess~1997|datad"
+    Warning (332126): Node "mess~1997|combout"
+    Warning (332126): Node "mess[114]~774|datac"
+    Warning (332126): Node "mess[114]~774|combout"
+    Warning (332126): Node "mess~1997|dataa"
+    Warning (332126): Node "mess~1955|datac"
+    Warning (332126): Node "mess~1955|combout"
+    Warning (332126): Node "mess[107]~718|datad"
+    Warning (332126): Node "mess[107]~718|combout"
+    Warning (332126): Node "mess~1955|datad"
+    Warning (332126): Node "mess~1913|datac"
+    Warning (332126): Node "mess~1913|combout"
+    Warning (332126): Node "mess[100]~662|dataa"
+    Warning (332126): Node "mess[100]~662|combout"
+    Warning (332126): Node "mess~1913|datad"
+    Warning (332126): Node "mess~1871|datad"
+    Warning (332126): Node "mess~1871|combout"
+    Warning (332126): Node "mess[93]~606|datab"
+    Warning (332126): Node "mess[93]~606|combout"
+    Warning (332126): Node "mess~1871|datac"
+    Warning (332126): Node "mess~1829|datad"
+    Warning (332126): Node "mess~1829|combout"
+    Warning (332126): Node "mess[86]~550|dataa"
+    Warning (332126): Node "mess[86]~550|combout"
+    Warning (332126): Node "mess~1829|datac"
+    Warning (332126): Node "mess~1787|datad"
+    Warning (332126): Node "mess~1787|combout"
+    Warning (332126): Node "mess[79]~494|datab"
+    Warning (332126): Node "mess[79]~494|combout"
+    Warning (332126): Node "mess~1787|dataa"
+    Warning (332126): Node "mess~1745|datad"
+    Warning (332126): Node "mess~1745|combout"
+    Warning (332126): Node "mess[72]~438|dataa"
+    Warning (332126): Node "mess[72]~438|combout"
+    Warning (332126): Node "mess~1745|datac"
+    Warning (332126): Node "mess~1703|datad"
+    Warning (332126): Node "mess~1703|combout"
+    Warning (332126): Node "mess[65]~382|dataa"
+    Warning (332126): Node "mess[65]~382|combout"
+    Warning (332126): Node "mess~1703|datab"
+    Warning (332126): Node "mess~1661|datad"
+    Warning (332126): Node "mess~1661|combout"
+    Warning (332126): Node "mess[58]~326|datad"
+    Warning (332126): Node "mess[58]~326|combout"
+    Warning (332126): Node "mess~1661|datac"
+    Warning (332126): Node "mess~1619|datac"
+    Warning (332126): Node "mess~1619|combout"
+    Warning (332126): Node "mess[51]~270|datac"
+    Warning (332126): Node "mess[51]~270|combout"
+    Warning (332126): Node "mess~1619|datad"
+    Warning (332126): Node "mess~1577|datad"
+    Warning (332126): Node "mess~1577|combout"
+    Warning (332126): Node "mess[44]~214|dataa"
+    Warning (332126): Node "mess[44]~214|combout"
+    Warning (332126): Node "mess~1577|datac"
+    Warning (332126): Node "mess~1535|datad"
+    Warning (332126): Node "mess~1535|combout"
+    Warning (332126): Node "mess[37]~158|datab"
+    Warning (332126): Node "mess[37]~158|combout"
+    Warning (332126): Node "mess~1535|datac"
+    Warning (332126): Node "mess~1523|datad"
+    Warning (332126): Node "mess~2403|datad"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 30
+    Warning (332126): Node "mess~1522|combout"
+    Warning (332126): Node "mess[31]~126|datad"
+    Warning (332126): Node "mess[31]~126|combout"
+    Warning (332126): Node "mess~1522|datac"
+    Warning (332126): Node "mess~1515|datac"
+    Warning (332126): Node "mess~1515|combout"
+    Warning (332126): Node "mess[24]~98|dataa"
+    Warning (332126): Node "mess[24]~98|combout"
+    Warning (332126): Node "mess~1515|datad"
+    Warning (332126): Node "mess~1508|datad"
+    Warning (332126): Node "mess~1508|combout"
+    Warning (332126): Node "mess[17]~70|datac"
+    Warning (332126): Node "mess[17]~70|combout"
+    Warning (332126): Node "mess~1508|datab"
+    Warning (332126): Node "mess~1501|datac"
+    Warning (332126): Node "mess~1501|combout"
+    Warning (332126): Node "mess[10]~42|dataa"
+    Warning (332126): Node "mess[10]~42|combout"
+    Warning (332126): Node "mess~1501|dataa"
+    Warning (332126): Node "mess~1491|datac"
+    Warning (332126): Node "mess~1491|combout"
+    Warning (332126): Node "mess[3]~14|datad"
+    Warning (332126): Node "mess[3]~14|combout"
+    Warning (332126): Node "mess~1561|datac"
+    Warning (332126): Node "mess~1561|combout"
+    Warning (332126): Node "mess[346]~182|datab"
+    Warning (332126): Node "mess[346]~182|combout"
+    Warning (332126): Node "mess~1561|datad"
+    Warning (332126): Node "mess~1603|datad"
+    Warning (332126): Node "mess~1603|combout"
+    Warning (332126): Node "mess[339]~238|datab"
+    Warning (332126): Node "mess[339]~238|combout"
+    Warning (332126): Node "mess~1603|datac"
+    Warning (332126): Node "mess~1645|datad"
+    Warning (332126): Node "mess~1645|combout"
+    Warning (332126): Node "mess[332]~294|datab"
+    Warning (332126): Node "mess[332]~294|combout"
+    Warning (332126): Node "mess~1687|datac"
+    Warning (332126): Node "mess~1687|combout"
+    Warning (332126): Node "mess[325]~350|datab"
+    Warning (332126): Node "mess[325]~350|combout"
+    Warning (332126): Node "mess~1687|datad"
+    Warning (332126): Node "mess~1729|datac"
+    Warning (332126): Node "mess~1729|combout"
+    Warning (332126): Node "mess[318]~406|datab"
+    Warning (332126): Node "mess[318]~406|combout"
+    Warning (332126): Node "mess~1771|datad"
+    Warning (332126): Node "mess~1771|combout"
+    Warning (332126): Node "mess[311]~462|dataa"
+    Warning (332126): Node "mess[311]~462|combout"
+    Warning (332126): Node "mess~1771|dataa"
+    Warning (332126): Node "mess~1813|datad"
+    Warning (332126): Node "mess~1813|combout"
+    Warning (332126): Node "mess[304]~518|dataa"
+    Warning (332126): Node "mess[304]~518|combout"
+    Warning (332126): Node "mess~1813|datab"
+    Warning (332126): Node "mess~1855|datad"
+    Warning (332126): Node "mess~1855|combout"
+    Warning (332126): Node "mess[297]~574|dataa"
+    Warning (332126): Node "mess[297]~574|combout"
+    Warning (332126): Node "mess~1855|datac"
+    Warning (332126): Node "mess~1897|datac"
+    Warning (332126): Node "mess~1897|combout"
+    Warning (332126): Node "mess[290]~630|datab"
+    Warning (332126): Node "mess[290]~630|combout"
+    Warning (332126): Node "mess~1897|datad"
+    Warning (332126): Node "mess~1939|datad"
+    Warning (332126): Node "mess~1939|combout"
+    Warning (332126): Node "mess[283]~686|datab"
+    Warning (332126): Node "mess[283]~686|combout"
+    Warning (332126): Node "mess~1939|datac"
+    Warning (332126): Node "mess~1981|datac"
+    Warning (332126): Node "mess~1981|combout"
+    Warning (332126): Node "mess[276]~742|dataa"
+    Warning (332126): Node "mess[276]~742|combout"
+    Warning (332126): Node "mess~1981|datad"
+    Warning (332126): Node "mess~2023|datad"
+    Warning (332126): Node "mess~2023|combout"
+    Warning (332126): Node "mess[269]~798|dataa"
+    Warning (332126): Node "mess[269]~798|combout"
+    Warning (332126): Node "mess~2065|datac"
+    Warning (332126): Node "mess~2065|combout"
+    Warning (332126): Node "mess[262]~854|datab"
+    Warning (332126): Node "mess[262]~854|combout"
+    Warning (332126): Node "mess~2107|datac"
+    Warning (332126): Node "mess~2107|combout"
+    Warning (332126): Node "mess[255]~910|datab"
+    Warning (332126): Node "mess[255]~910|combout"
+    Warning (332126): Node "mess~2107|datad"
+    Warning (332126): Node "mess~2149|datad"
+    Warning (332126): Node "mess~2149|combout"
+    Warning (332126): Node "mess[248]~966|datad"
+    Warning (332126): Node "mess[248]~966|combout"
+    Warning (332126): Node "mess~2149|datac"
+    Warning (332126): Node "mess~2191|datac"
+    Warning (332126): Node "mess~2191|combout"
+    Warning (332126): Node "mess[241]~1022|datad"
+    Warning (332126): Node "mess[241]~1022|combout"
+    Warning (332126): Node "mess~2191|datad"
+    Warning (332126): Node "mess~2233|datac"
+    Warning (332126): Node "mess~2233|combout"
+    Warning (332126): Node "mess[234]~1078|datab"
+    Warning (332126): Node "mess[234]~1078|combout"
+    Warning (332126): Node "mess~2233|datad"
+    Warning (332126): Node "mess~2275|dataa"
+    Warning (332126): Node "mess~2275|combout"
+    Warning (332126): Node "mess[227]~1134|dataa"
+    Warning (332126): Node "mess[227]~1134|combout"
+    Warning (332126): Node "mess~2275|datac"
+    Warning (332126): Node "mess~2317|datad"
+    Warning (332126): Node "mess~2317|combout"
+    Warning (332126): Node "mess[220]~1190|datab"
+    Warning (332126): Node "mess[220]~1190|combout"
+    Warning (332126): Node "mess~2317|datac"
+    Warning (332126): Node "mess~2359|datad"
+    Warning (332126): Node "mess~2359|combout"
+    Warning (332126): Node "mess[213]~1246|datab"
+    Warning (332126): Node "mess[213]~1246|combout"
+    Warning (332126): Node "mess~2401|datac"
+    Warning (332126): Node "mess~2401|combout"
+    Warning (332126): Node "mess[206]~1302|datab"
+    Warning (332126): Node "mess[206]~1302|combout"
+    Warning (332126): Node "mess~2439|dataa"
+    Warning (332126): Node "mess~2439|combout"
+    Warning (332126): Node "mess[199]~1358|datab"
+    Warning (332126): Node "mess[199]~1358|combout"
+    Warning (332126): Node "mess~2439|datac"
+    Warning (332126): Node "mess~2446|datac"
+    Warning (332126): Node "mess~2446|combout"
+    Warning (332126): Node "mess[192]~1386|dataa"
+    Warning (332126): Node "mess[192]~1386|combout"
+    Warning (332126): Node "mess~2446|datad"
+    Warning (332126): Node "mess~2415|datac"
+    Warning (332126): Node "mess~2415|combout"
+    Warning (332126): Node "mess[185]~1330|datad"
+    Warning (332126): Node "mess[185]~1330|combout"
+    Warning (332126): Node "mess~2415|datad"
+    Warning (332126): Node "mess~2373|datad"
+    Warning (332126): Node "mess~2373|combout"
+    Warning (332126): Node "mess[178]~1274|datad"
+    Warning (332126): Node "mess[178]~1274|combout"
+    Warning (332126): Node "mess~2373|datac"
+    Warning (332126): Node "mess~2331|datac"
+    Warning (332126): Node "mess~2331|combout"
+    Warning (332126): Node "mess[171]~1218|datad"
+    Warning (332126): Node "mess[171]~1218|combout"
+    Warning (332126): Node "mess~2331|datad"
+    Warning (332126): Node "mess~2289|datac"
+    Warning (332126): Node "mess~2289|combout"
+    Warning (332126): Node "mess[164]~1162|datad"
+    Warning (332126): Node "mess[164]~1162|combout"
+    Warning (332126): Node "mess~2289|dataa"
+    Warning (332126): Node "mess~2247|datad"
+    Warning (332126): Node "mess~2247|combout"
+    Warning (332126): Node "mess[157]~1106|datad"
+    Warning (332126): Node "mess[157]~1106|combout"
+    Warning (332126): Node "mess~2247|datac"
+    Warning (332126): Node "mess~2205|datad"
+    Warning (332126): Node "mess~2205|combout"
+    Warning (332126): Node "mess[150]~1050|datac"
+    Warning (332126): Node "mess[150]~1050|combout"
+    Warning (332126): Node "mess~2205|datac"
+    Warning (332126): Node "mess~2163|datac"
+    Warning (332126): Node "mess~2163|combout"
+    Warning (332126): Node "mess[143]~994|datad"
+    Warning (332126): Node "mess[143]~994|combout"
+    Warning (332126): Node "mess~2163|datad"
+    Warning (332126): Node "mess~2121|datad"
+    Warning (332126): Node "mess~2121|combout"
+    Warning (332126): Node "mess[136]~938|datac"
+    Warning (332126): Node "mess[136]~938|combout"
+    Warning (332126): Node "mess~2121|datac"
+    Warning (332126): Node "mess~2079|datac"
+    Warning (332126): Node "mess~2079|combout"
+    Warning (332126): Node "mess[129]~882|datad"
+    Warning (332126): Node "mess[129]~882|combout"
+    Warning (332126): Node "mess~2037|datad"
+    Warning (332126): Node "mess~2037|combout"
+    Warning (332126): Node "mess[122]~826|dataa"
+    Warning (332126): Node "mess[122]~826|combout"
+    Warning (332126): Node "mess~1995|dataa"
+    Warning (332126): Node "mess~1995|combout"
+    Warning (332126): Node "mess[115]~770|datab"
+    Warning (332126): Node "mess[115]~770|combout"
+    Warning (332126): Node "mess~1995|datac"
+    Warning (332126): Node "mess~1953|datac"
+    Warning (332126): Node "mess~1953|combout"
+    Warning (332126): Node "mess[108]~714|dataa"
+    Warning (332126): Node "mess[108]~714|combout"
+    Warning (332126): Node "mess~1953|datad"
+    Warning (332126): Node "mess~1911|datad"
+    Warning (332126): Node "mess~1911|combout"
+    Warning (332126): Node "mess[101]~658|datad"
+    Warning (332126): Node "mess[101]~658|combout"
+    Warning (332126): Node "mess~1869|datac"
+    Warning (332126): Node "mess~1869|combout"
+    Warning (332126): Node "mess[94]~602|datab"
+    Warning (332126): Node "mess[94]~602|combout"
+    Warning (332126): Node "mess~1869|datad"
+    Warning (332126): Node "mess~1827|datad"
+    Warning (332126): Node "mess~1827|combout"
+    Warning (332126): Node "mess[87]~546|datad"
+    Warning (332126): Node "mess[87]~546|combout"
+    Warning (332126): Node "mess~1827|datac"
+    Warning (332126): Node "mess~1785|datac"
+    Warning (332126): Node "mess~1785|combout"
+    Warning (332126): Node "mess[80]~490|datab"
+    Warning (332126): Node "mess[80]~490|combout"
+    Warning (332126): Node "mess~1785|datab"
+    Warning (332126): Node "mess~1743|datad"
+    Warning (332126): Node "mess~1743|combout"
+    Warning (332126): Node "mess[73]~434|datab"
+    Warning (332126): Node "mess[73]~434|combout"
+    Warning (332126): Node "mess~1743|datac"
+    Warning (332126): Node "mess~1701|datac"
+    Warning (332126): Node "mess~1701|combout"
+    Warning (332126): Node "mess[66]~378|datab"
+    Warning (332126): Node "mess[66]~378|combout"
+    Warning (332126): Node "mess~1701|datad"
+    Warning (332126): Node "mess~1659|dataa"
+    Warning (332126): Node "mess~1659|combout"
+    Warning (332126): Node "mess[59]~322|datab"
+    Warning (332126): Node "mess[59]~322|combout"
+    Warning (332126): Node "mess~1659|datac"
+    Warning (332126): Node "mess~1617|datac"
+    Warning (332126): Node "mess~1617|combout"
+    Warning (332126): Node "mess[52]~266|datab"
+    Warning (332126): Node "mess[52]~266|combout"
+    Warning (332126): Node "mess~1617|datad"
+    Warning (332126): Node "mess~1575|datac"
+    Warning (332126): Node "mess~1575|combout"
+    Warning (332126): Node "mess[45]~210|datab"
+    Warning (332126): Node "mess[45]~210|combout"
+    Warning (332126): Node "mess~1575|datad"
+    Warning (332126): Node "mess~1533|datac"
+    Warning (332126): Node "mess~1533|combout"
+    Warning (332126): Node "mess[38]~154|datab"
+    Warning (332126): Node "mess[38]~154|combout"
+    Warning (332126): Node "mess~1533|datab"
+    Warning (332126): Node "mess~1522|datab"
+    Warning (332126): Node "mess~1911|datac"
+    Warning (332126): Node "mess~2037|datac"
+    Warning (332126): Node "mess~2079|datad"
+    Warning (332126): Node "mess~2401|datad"
+    Warning (332126): Node "mess~2359|datac"
+    Warning (332126): Node "mess~2065|datad"
+    Warning (332126): Node "mess~2023|datac"
+    Warning (332126): Node "mess~1729|dataa"
+    Warning (332126): Node "mess~1645|datac"
+    Warning (332126): Node "mess~1491|datad"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~51|combout"
+    Warning (332126): Node "HEX5[6]~2|datad"
+    Warning (332126): Node "HEX5[6]~2|combout"
+    Warning (332126): Node "HEX5~51|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~53|combout"
+    Warning (332126): Node "HEX5[4]~12|datad"
+    Warning (332126): Node "HEX5[4]~12|combout"
+    Warning (332126): Node "HEX5~53|datad"
+Warning (332125): Found combinational loop of 4 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 16
+    Warning (332126): Node "HEX5~52|combout"
+    Warning (332126): Node "HEX5[5]~7|datac"
+    Warning (332126): Node "HEX5[5]~7|combout"
+    Warning (332126): Node "HEX5~52|datac"
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 30
+    Warning (332126): Node "mess~1489|combout"
+    Warning (332126): Node "mess[4]~10|datad"
+    Warning (332126): Node "mess[4]~10|combout"
+    Warning (332126): Node "mess~1559|datab"
+    Warning (332126): Node "mess~1559|combout"
+    Warning (332126): Node "mess[347]~178|datad"
+    Warning (332126): Node "mess[347]~178|combout"
+    Warning (332126): Node "mess~1559|datac"
+    Warning (332126): Node "mess~1601|datac"
+    Warning (332126): Node "mess~1601|combout"
+    Warning (332126): Node "mess[340]~234|dataa"
+    Warning (332126): Node "mess[340]~234|combout"
+    Warning (332126): Node "mess~1601|datad"
+    Warning (332126): Node "mess~1643|datad"
+    Warning (332126): Node "mess~1643|combout"
+    Warning (332126): Node "mess[333]~290|dataa"
+    Warning (332126): Node "mess[333]~290|combout"
+    Warning (332126): Node "mess~1685|datad"
+    Warning (332126): Node "mess~1685|combout"
+    Warning (332126): Node "mess[326]~346|datab"
+    Warning (332126): Node "mess[326]~346|combout"
+    Warning (332126): Node "mess~1727|datad"
+    Warning (332126): Node "mess~1727|combout"
+    Warning (332126): Node "mess[319]~402|dataa"
+    Warning (332126): Node "mess[319]~402|combout"
+    Warning (332126): Node "mess~1727|datac"
+    Warning (332126): Node "mess~1769|datac"
+    Warning (332126): Node "mess~1769|combout"
+    Warning (332126): Node "mess[312]~458|datab"
+    Warning (332126): Node "mess[312]~458|combout"
+    Warning (332126): Node "mess~1769|datad"
+    Warning (332126): Node "mess~1811|datac"
+    Warning (332126): Node "mess~1811|combout"
+    Warning (332126): Node "mess[305]~514|datab"
+    Warning (332126): Node "mess[305]~514|combout"
+    Warning (332126): Node "mess~1811|datad"
+    Warning (332126): Node "mess~1853|datac"
+    Warning (332126): Node "mess~1853|combout"
+    Warning (332126): Node "mess[298]~570|datad"
+    Warning (332126): Node "mess[298]~570|combout"
+    Warning (332126): Node "mess~1853|dataa"
+    Warning (332126): Node "mess~1895|datac"
+    Warning (332126): Node "mess~1895|combout"
+    Warning (332126): Node "mess[291]~626|datad"
+    Warning (332126): Node "mess[291]~626|combout"
+    Warning (332126): Node "mess~1895|datad"
+    Warning (332126): Node "mess~1937|datad"
+    Warning (332126): Node "mess~1937|combout"
+    Warning (332126): Node "mess[284]~682|datad"
+    Warning (332126): Node "mess[284]~682|combout"
+    Warning (332126): Node "mess~1937|dataa"
+    Warning (332126): Node "mess~1979|dataa"
+    Warning (332126): Node "mess~1979|combout"
+    Warning (332126): Node "mess[277]~738|datad"
+    Warning (332126): Node "mess[277]~738|combout"
+    Warning (332126): Node "mess~1979|datac"
+    Warning (332126): Node "mess~2021|datad"
+    Warning (332126): Node "mess~2021|combout"
+    Warning (332126): Node "mess[270]~794|dataa"
+    Warning (332126): Node "mess[270]~794|combout"
+    Warning (332126): Node "mess~2021|datac"
+    Warning (332126): Node "mess~2063|datad"
+    Warning (332126): Node "mess~2063|combout"
+    Warning (332126): Node "mess[263]~850|datac"
+    Warning (332126): Node "mess[263]~850|combout"
+    Warning (332126): Node "mess~2063|dataa"
+    Warning (332126): Node "mess~2105|datad"
+    Warning (332126): Node "mess~2105|combout"
+    Warning (332126): Node "mess[256]~906|datab"
+    Warning (332126): Node "mess[256]~906|combout"
+    Warning (332126): Node "mess~2105|datab"
+    Warning (332126): Node "mess~2147|datad"
+    Warning (332126): Node "mess~2147|combout"
+    Warning (332126): Node "mess[249]~962|datac"
+    Warning (332126): Node "mess[249]~962|combout"
+    Warning (332126): Node "mess~2147|datac"
+    Warning (332126): Node "mess~2189|datab"
+    Warning (332126): Node "mess~2189|combout"
+    Warning (332126): Node "mess[242]~1018|datab"
+    Warning (332126): Node "mess[242]~1018|combout"
+    Warning (332126): Node "mess~2189|datac"
+    Warning (332126): Node "mess~2231|datac"
+    Warning (332126): Node "mess~2231|combout"
+    Warning (332126): Node "mess[235]~1074|datab"
+    Warning (332126): Node "mess[235]~1074|combout"
+    Warning (332126): Node "mess~2231|datab"
+    Warning (332126): Node "mess~2273|datad"
+    Warning (332126): Node "mess~2273|combout"
+    Warning (332126): Node "mess[228]~1130|datab"
+    Warning (332126): Node "mess[228]~1130|combout"
+    Warning (332126): Node "mess~2273|datac"
+    Warning (332126): Node "mess~2315|datad"
+    Warning (332126): Node "mess~2315|combout"
+    Warning (332126): Node "mess[221]~1186|datab"
+    Warning (332126): Node "mess[221]~1186|combout"
+    Warning (332126): Node "mess~2315|datac"
+    Warning (332126): Node "mess~2357|datac"
+    Warning (332126): Node "mess~2357|combout"
+    Warning (332126): Node "mess[214]~1242|datad"
+    Warning (332126): Node "mess[214]~1242|combout"
+    Warning (332126): Node "mess~2357|datad"
+    Warning (332126): Node "mess~2399|datad"
+    Warning (332126): Node "mess~2399|combout"
+    Warning (332126): Node "mess[207]~1298|datad"
+    Warning (332126): Node "mess[207]~1298|combout"
+    Warning (332126): Node "mess~2399|datac"
+    Warning (332126): Node "mess~2438|datab"
+    Warning (332126): Node "mess~2438|combout"
+    Warning (332126): Node "mess[200]~1354|datad"
+    Warning (332126): Node "mess[200]~1354|combout"
+    Warning (332126): Node "mess~2438|datac"
+    Warning (332126): Node "mess~2445|datad"
+    Warning (332126): Node "mess~2445|combout"
+    Warning (332126): Node "mess[193]~1382|datab"
+    Warning (332126): Node "mess[193]~1382|combout"
+    Warning (332126): Node "mess~2445|datac"
+    Warning (332126): Node "mess~2413|datac"
+    Warning (332126): Node "mess~2413|combout"
+    Warning (332126): Node "mess[186]~1326|datad"
+    Warning (332126): Node "mess[186]~1326|combout"
+    Warning (332126): Node "mess~2413|datad"
+    Warning (332126): Node "mess~2371|datad"
+    Warning (332126): Node "mess~2371|combout"
+    Warning (332126): Node "mess[179]~1270|datab"
+    Warning (332126): Node "mess[179]~1270|combout"
+    Warning (332126): Node "mess~2371|datac"
+    Warning (332126): Node "mess~2329|datad"
+    Warning (332126): Node "mess~2329|combout"
+    Warning (332126): Node "mess[172]~1214|datad"
+    Warning (332126): Node "mess[172]~1214|combout"
+    Warning (332126): Node "mess~2329|datac"
+    Warning (332126): Node "mess~2287|dataa"
+    Warning (332126): Node "mess~2287|combout"
+    Warning (332126): Node "mess[165]~1158|dataa"
+    Warning (332126): Node "mess[165]~1158|combout"
+    Warning (332126): Node "mess~2287|datac"
+    Warning (332126): Node "mess~2245|datad"
+    Warning (332126): Node "mess~2245|combout"
+    Warning (332126): Node "mess[158]~1102|datad"
+    Warning (332126): Node "mess[158]~1102|combout"
+    Warning (332126): Node "mess~2245|datac"
+    Warning (332126): Node "mess~2203|datad"
+    Warning (332126): Node "mess~2203|combout"
+    Warning (332126): Node "mess[151]~1046|datab"
+    Warning (332126): Node "mess[151]~1046|combout"
+    Warning (332126): Node "mess~2203|datac"
+    Warning (332126): Node "mess~2161|datad"
+    Warning (332126): Node "mess~2161|combout"
+    Warning (332126): Node "mess[144]~990|datab"
+    Warning (332126): Node "mess[144]~990|combout"
+    Warning (332126): Node "mess~2161|datac"
+    Warning (332126): Node "mess~2119|datac"
+    Warning (332126): Node "mess~2119|combout"
+    Warning (332126): Node "mess[137]~934|datab"
+    Warning (332126): Node "mess[137]~934|combout"
+    Warning (332126): Node "mess~2119|datad"
+    Warning (332126): Node "mess~2077|datad"
+    Warning (332126): Node "mess~2077|combout"
+    Warning (332126): Node "mess[130]~878|dataa"
+    Warning (332126): Node "mess[130]~878|combout"
+    Warning (332126): Node "mess~2077|datac"
+    Warning (332126): Node "mess~2035|datad"
+    Warning (332126): Node "mess~2035|combout"
+    Warning (332126): Node "mess[123]~822|datac"
+    Warning (332126): Node "mess[123]~822|combout"
+    Warning (332126): Node "mess~2035|datac"
+    Warning (332126): Node "mess~1993|dataa"
+    Warning (332126): Node "mess~1993|combout"
+    Warning (332126): Node "mess[116]~766|datac"
+    Warning (332126): Node "mess[116]~766|combout"
+    Warning (332126): Node "mess~1993|datac"
+    Warning (332126): Node "mess~1951|datac"
+    Warning (332126): Node "mess~1951|combout"
+    Warning (332126): Node "mess[109]~710|datab"
+    Warning (332126): Node "mess[109]~710|combout"
+    Warning (332126): Node "mess~1951|dataa"
+    Warning (332126): Node "mess~1909|dataa"
+    Warning (332126): Node "mess~1909|combout"
+    Warning (332126): Node "mess[102]~654|datac"
+    Warning (332126): Node "mess[102]~654|combout"
+    Warning (332126): Node "mess~1909|datac"
+    Warning (332126): Node "mess~1867|datac"
+    Warning (332126): Node "mess~1867|combout"
+    Warning (332126): Node "mess[95]~598|datad"
+    Warning (332126): Node "mess[95]~598|combout"
+    Warning (332126): Node "mess~1867|datad"
+    Warning (332126): Node "mess~1825|dataa"
+    Warning (332126): Node "mess~1825|combout"
+    Warning (332126): Node "mess[88]~542|datab"
+    Warning (332126): Node "mess[88]~542|combout"
+    Warning (332126): Node "mess~1825|datac"
+    Warning (332126): Node "mess~1783|datac"
+    Warning (332126): Node "mess~1783|combout"
+    Warning (332126): Node "mess[81]~486|datac"
+    Warning (332126): Node "mess[81]~486|combout"
+    Warning (332126): Node "mess~1783|dataa"
+    Warning (332126): Node "mess~1741|datab"
+    Warning (332126): Node "mess~1741|combout"
+    Warning (332126): Node "mess[74]~430|datab"
+    Warning (332126): Node "mess[74]~430|combout"
+    Warning (332126): Node "mess~1699|datac"
+    Warning (332126): Node "mess~1699|combout"
+    Warning (332126): Node "mess[67]~374|datab"
+    Warning (332126): Node "mess[67]~374|combout"
+    Warning (332126): Node "mess~1699|dataa"
+    Warning (332126): Node "mess~1657|datac"
+    Warning (332126): Node "mess~1657|combout"
+    Warning (332126): Node "mess[60]~318|datac"
+    Warning (332126): Node "mess[60]~318|combout"
+    Warning (332126): Node "mess~1657|datad"
+    Warning (332126): Node "mess~1615|datad"
+    Warning (332126): Node "mess~1615|combout"
+    Warning (332126): Node "mess[53]~262|datad"
+    Warning (332126): Node "mess[53]~262|combout"
+    Warning (332126): Node "mess~1573|datad"
+    Warning (332126): Node "mess~1573|combout"
+    Warning (332126): Node "mess[46]~206|dataa"
+    Warning (332126): Node "mess[46]~206|combout"
+    Warning (332126): Node "mess~1531|datad"
+    Warning (332126): Node "mess~1531|combout"
+    Warning (332126): Node "mess[39]~150|datab"
+    Warning (332126): Node "mess[39]~150|combout"
+    Warning (332126): Node "mess~1531|datac"
+    Warning (332126): Node "mess~1521|dataa"
+    Warning (332126): Node "mess~1521|combout"
+    Warning (332126): Node "mess[32]~122|datad"
+    Warning (332126): Node "mess[32]~122|combout"
+    Warning (332126): Node "mess~1521|datad"
+    Warning (332126): Node "mess~1514|datad"
+    Warning (332126): Node "mess~1514|combout"
+    Warning (332126): Node "mess[25]~94|datac"
+    Warning (332126): Node "mess[25]~94|combout"
+    Warning (332126): Node "mess~1514|datac"
+    Warning (332126): Node "mess~1507|datac"
+    Warning (332126): Node "mess~1507|combout"
+    Warning (332126): Node "mess[18]~66|datab"
+    Warning (332126): Node "mess[18]~66|combout"
+    Warning (332126): Node "mess~1507|datad"
+    Warning (332126): Node "mess~1500|datac"
+    Warning (332126): Node "mess~1500|combout"
+    Warning (332126): Node "mess[11]~38|dataa"
+    Warning (332126): Node "mess[11]~38|combout"
+    Warning (332126): Node "mess~1500|datad"
+    Warning (332126): Node "mess~1489|dataa"
+    Warning (332126): Node "mess~1573|datac"
+    Warning (332126): Node "mess~1615|dataa"
+    Warning (332126): Node "mess~1741|datac"
+    Warning (332126): Node "mess~1685|datac"
+    Warning (332126): Node "mess~1643|datac"
+    Warning (332126): Node "mess~1489|datac"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 30
+    Warning (332126): Node "mess~1487|combout"
+    Warning (332126): Node "mess[5]~6|datad"
+    Warning (332126): Node "mess[5]~6|combout"
+    Warning (332126): Node "mess~1557|dataa"
+    Warning (332126): Node "mess~1557|combout"
+    Warning (332126): Node "mess[348]~174|datab"
+    Warning (332126): Node "mess[348]~174|combout"
+    Warning (332126): Node "mess~1599|datad"
+    Warning (332126): Node "mess~1599|combout"
+    Warning (332126): Node "mess[341]~230|dataa"
+    Warning (332126): Node "mess[341]~230|combout"
+    Warning (332126): Node "mess~1599|datac"
+    Warning (332126): Node "mess~1641|datad"
+    Warning (332126): Node "mess~1641|combout"
+    Warning (332126): Node "mess[334]~286|datab"
+    Warning (332126): Node "mess[334]~286|combout"
+    Warning (332126): Node "mess~1641|datab"
+    Warning (332126): Node "mess~1683|datab"
+    Warning (332126): Node "mess~1683|combout"
+    Warning (332126): Node "mess[327]~342|datac"
+    Warning (332126): Node "mess[327]~342|combout"
+    Warning (332126): Node "mess~1683|datad"
+    Warning (332126): Node "mess~1725|datad"
+    Warning (332126): Node "mess~1725|combout"
+    Warning (332126): Node "mess[320]~398|dataa"
+    Warning (332126): Node "mess[320]~398|combout"
+    Warning (332126): Node "mess~1725|datac"
+    Warning (332126): Node "mess~1767|datac"
+    Warning (332126): Node "mess~1767|combout"
+    Warning (332126): Node "mess[313]~454|datac"
+    Warning (332126): Node "mess[313]~454|combout"
+    Warning (332126): Node "mess~1767|datad"
+    Warning (332126): Node "mess~1809|datad"
+    Warning (332126): Node "mess~1809|combout"
+    Warning (332126): Node "mess[306]~510|datad"
+    Warning (332126): Node "mess[306]~510|combout"
+    Warning (332126): Node "mess~1809|datac"
+    Warning (332126): Node "mess~1851|datad"
+    Warning (332126): Node "mess~1851|combout"
+    Warning (332126): Node "mess[299]~566|datad"
+    Warning (332126): Node "mess[299]~566|combout"
+    Warning (332126): Node "mess~1851|datab"
+    Warning (332126): Node "mess~1893|datab"
+    Warning (332126): Node "mess~1893|combout"
+    Warning (332126): Node "mess[292]~622|datad"
+    Warning (332126): Node "mess[292]~622|combout"
+    Warning (332126): Node "mess~1893|datad"
+    Warning (332126): Node "mess~1935|datad"
+    Warning (332126): Node "mess~1935|combout"
+    Warning (332126): Node "mess[285]~678|datad"
+    Warning (332126): Node "mess[285]~678|combout"
+    Warning (332126): Node "mess~1935|datac"
+    Warning (332126): Node "mess~1977|datad"
+    Warning (332126): Node "mess~1977|combout"
+    Warning (332126): Node "mess[278]~734|datad"
+    Warning (332126): Node "mess[278]~734|combout"
+    Warning (332126): Node "mess~1977|datac"
+    Warning (332126): Node "mess~2019|datac"
+    Warning (332126): Node "mess~2019|combout"
+    Warning (332126): Node "mess[271]~790|dataa"
+    Warning (332126): Node "mess[271]~790|combout"
+    Warning (332126): Node "mess~2019|datad"
+    Warning (332126): Node "mess~2061|datad"
+    Warning (332126): Node "mess~2061|combout"
+    Warning (332126): Node "mess[264]~846|dataa"
+    Warning (332126): Node "mess[264]~846|combout"
+    Warning (332126): Node "mess~2061|datac"
+    Warning (332126): Node "mess~2103|datac"
+    Warning (332126): Node "mess~2103|combout"
+    Warning (332126): Node "mess[257]~902|datad"
+    Warning (332126): Node "mess[257]~902|combout"
+    Warning (332126): Node "mess~2103|datad"
+    Warning (332126): Node "mess~2145|datad"
+    Warning (332126): Node "mess~2145|combout"
+    Warning (332126): Node "mess[250]~958|dataa"
+    Warning (332126): Node "mess[250]~958|combout"
+    Warning (332126): Node "mess~2187|datac"
+    Warning (332126): Node "mess~2187|combout"
+    Warning (332126): Node "mess[243]~1014|datab"
+    Warning (332126): Node "mess[243]~1014|combout"
+    Warning (332126): Node "mess~2187|datad"
+    Warning (332126): Node "mess~2229|datab"
+    Warning (332126): Node "mess~2229|combout"
+    Warning (332126): Node "mess[236]~1070|datad"
+    Warning (332126): Node "mess[236]~1070|combout"
+    Warning (332126): Node "mess~2229|datad"
+    Warning (332126): Node "mess~2271|datad"
+    Warning (332126): Node "mess~2271|combout"
+    Warning (332126): Node "mess[229]~1126|datad"
+    Warning (332126): Node "mess[229]~1126|combout"
+    Warning (332126): Node "mess~2271|datac"
+    Warning (332126): Node "mess~2313|datac"
+    Warning (332126): Node "mess~2313|combout"
+    Warning (332126): Node "mess[222]~1182|datab"
+    Warning (332126): Node "mess[222]~1182|combout"
+    Warning (332126): Node "mess~2313|datad"
+    Warning (332126): Node "mess~2355|datad"
+    Warning (332126): Node "mess~2355|combout"
+    Warning (332126): Node "mess[215]~1238|datac"
+    Warning (332126): Node "mess[215]~1238|combout"
+    Warning (332126): Node "mess~2355|datab"
+    Warning (332126): Node "mess~2397|datad"
+    Warning (332126): Node "mess~2397|combout"
+    Warning (332126): Node "mess[208]~1294|datab"
+    Warning (332126): Node "mess[208]~1294|combout"
+    Warning (332126): Node "mess~2397|datac"
+    Warning (332126): Node "mess~2437|datac"
+    Warning (332126): Node "mess~2437|combout"
+    Warning (332126): Node "mess[201]~1350|dataa"
+    Warning (332126): Node "mess[201]~1350|combout"
+    Warning (332126): Node "mess~2437|datad"
+    Warning (332126): Node "mess~2444|datac"
+    Warning (332126): Node "mess~2444|combout"
+    Warning (332126): Node "mess[194]~1378|datad"
+    Warning (332126): Node "mess[194]~1378|combout"
+    Warning (332126): Node "mess~2444|datad"
+    Warning (332126): Node "mess~2411|datac"
+    Warning (332126): Node "mess~2411|combout"
+    Warning (332126): Node "mess[187]~1322|datad"
+    Warning (332126): Node "mess[187]~1322|combout"
+    Warning (332126): Node "mess~2411|datad"
+    Warning (332126): Node "mess~2369|datad"
+    Warning (332126): Node "mess~2369|combout"
+    Warning (332126): Node "mess[180]~1266|dataa"
+    Warning (332126): Node "mess[180]~1266|combout"
+    Warning (332126): Node "mess~2369|datac"
+    Warning (332126): Node "mess~2327|datac"
+    Warning (332126): Node "mess~2327|combout"
+    Warning (332126): Node "mess[173]~1210|datad"
+    Warning (332126): Node "mess[173]~1210|combout"
+    Warning (332126): Node "mess~2327|datad"
+    Warning (332126): Node "mess~2285|datad"
+    Warning (332126): Node "mess~2285|combout"
+    Warning (332126): Node "mess[166]~1154|datab"
+    Warning (332126): Node "mess[166]~1154|combout"
+    Warning (332126): Node "mess~2285|dataa"
+    Warning (332126): Node "mess~2243|datad"
+    Warning (332126): Node "mess~2243|combout"
+    Warning (332126): Node "mess[159]~1098|datad"
+    Warning (332126): Node "mess[159]~1098|combout"
+    Warning (332126): Node "mess~2243|datac"
+    Warning (332126): Node "mess~2201|datad"
+    Warning (332126): Node "mess~2201|combout"
+    Warning (332126): Node "mess[152]~1042|datab"
+    Warning (332126): Node "mess[152]~1042|combout"
+    Warning (332126): Node "mess~2201|datac"
+    Warning (332126): Node "mess~2159|datac"
+    Warning (332126): Node "mess~2159|combout"
+    Warning (332126): Node "mess[145]~986|datad"
+    Warning (332126): Node "mess[145]~986|combout"
+    Warning (332126): Node "mess~2159|datad"
+    Warning (332126): Node "mess~2117|datad"
+    Warning (332126): Node "mess~2117|combout"
+    Warning (332126): Node "mess[138]~930|datab"
+    Warning (332126): Node "mess[138]~930|combout"
+    Warning (332126): Node "mess~2117|datac"
+    Warning (332126): Node "mess~2075|datac"
+    Warning (332126): Node "mess~2075|combout"
+    Warning (332126): Node "mess[131]~874|dataa"
+    Warning (332126): Node "mess[131]~874|combout"
+    Warning (332126): Node "mess~2075|datad"
+    Warning (332126): Node "mess~2033|dataa"
+    Warning (332126): Node "mess~2033|combout"
+    Warning (332126): Node "mess[124]~818|datad"
+    Warning (332126): Node "mess[124]~818|combout"
+    Warning (332126): Node "mess~2033|datad"
+    Warning (332126): Node "mess~1991|datad"
+    Warning (332126): Node "mess~1991|combout"
+    Warning (332126): Node "mess[117]~762|datad"
+    Warning (332126): Node "mess[117]~762|combout"
+    Warning (332126): Node "mess~1991|datac"
+    Warning (332126): Node "mess~1949|datac"
+    Warning (332126): Node "mess~1949|combout"
+    Warning (332126): Node "mess[110]~706|datad"
+    Warning (332126): Node "mess[110]~706|combout"
+    Warning (332126): Node "mess~1949|datad"
+    Warning (332126): Node "mess~1907|datac"
+    Warning (332126): Node "mess~1907|combout"
+    Warning (332126): Node "mess[103]~650|datad"
+    Warning (332126): Node "mess[103]~650|combout"
+    Warning (332126): Node "mess~1907|datad"
+    Warning (332126): Node "mess~1865|datab"
+    Warning (332126): Node "mess~1865|combout"
+    Warning (332126): Node "mess[96]~594|datab"
+    Warning (332126): Node "mess[96]~594|combout"
+    Warning (332126): Node "mess~1865|datad"
+    Warning (332126): Node "mess~1823|datab"
+    Warning (332126): Node "mess~1823|combout"
+    Warning (332126): Node "mess[89]~538|datad"
+    Warning (332126): Node "mess[89]~538|combout"
+    Warning (332126): Node "mess~1823|datad"
+    Warning (332126): Node "mess~1781|datad"
+    Warning (332126): Node "mess~1781|combout"
+    Warning (332126): Node "mess[82]~482|datad"
+    Warning (332126): Node "mess[82]~482|combout"
+    Warning (332126): Node "mess~1781|dataa"
+    Warning (332126): Node "mess~1739|datad"
+    Warning (332126): Node "mess~1739|combout"
+    Warning (332126): Node "mess[75]~426|datac"
+    Warning (332126): Node "mess[75]~426|combout"
+    Warning (332126): Node "mess~1739|datac"
+    Warning (332126): Node "mess~1697|datac"
+    Warning (332126): Node "mess~1697|combout"
+    Warning (332126): Node "mess[68]~370|datad"
+    Warning (332126): Node "mess[68]~370|combout"
+    Warning (332126): Node "mess~1697|datad"
+    Warning (332126): Node "mess~1655|datad"
+    Warning (332126): Node "mess~1655|combout"
+    Warning (332126): Node "mess[61]~314|datab"
+    Warning (332126): Node "mess[61]~314|combout"
+    Warning (332126): Node "mess~1655|datac"
+    Warning (332126): Node "mess~1613|datad"
+    Warning (332126): Node "mess~1613|combout"
+    Warning (332126): Node "mess[54]~258|datad"
+    Warning (332126): Node "mess[54]~258|combout"
+    Warning (332126): Node "mess~1613|datab"
+    Warning (332126): Node "mess~1571|datac"
+    Warning (332126): Node "mess~1571|combout"
+    Warning (332126): Node "mess[47]~202|datab"
+    Warning (332126): Node "mess[47]~202|combout"
+    Warning (332126): Node "mess~1571|datad"
+    Warning (332126): Node "mess~1529|datab"
+    Warning (332126): Node "mess~1529|combout"
+    Warning (332126): Node "mess[40]~146|datad"
+    Warning (332126): Node "mess[40]~146|combout"
+    Warning (332126): Node "mess~1529|datad"
+    Warning (332126): Node "mess~1520|datac"
+    Warning (332126): Node "mess~1520|combout"
+    Warning (332126): Node "mess[33]~118|dataa"
+    Warning (332126): Node "mess[33]~118|combout"
+    Warning (332126): Node "mess~1513|datac"
+    Warning (332126): Node "mess~1513|combout"
+    Warning (332126): Node "mess[26]~90|dataa"
+    Warning (332126): Node "mess[26]~90|combout"
+    Warning (332126): Node "mess~1506|datab"
+    Warning (332126): Node "mess~1506|combout"
+    Warning (332126): Node "mess[19]~62|dataa"
+    Warning (332126): Node "mess[19]~62|combout"
+    Warning (332126): Node "mess~1506|datac"
+    Warning (332126): Node "mess~1499|datac"
+    Warning (332126): Node "mess~1499|combout"
+    Warning (332126): Node "mess[12]~34|datad"
+    Warning (332126): Node "mess[12]~34|combout"
+    Warning (332126): Node "mess~1499|datad"
+    Warning (332126): Node "mess~1487|datac"
+    Warning (332126): Node "mess~1513|datab"
+    Warning (332126): Node "mess~1520|datad"
+    Warning (332126): Node "mess~2145|datac"
+    Warning (332126): Node "mess~1557|datad"
+    Warning (332126): Node "mess~1487|datad"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
+Warning (332125): Found combinational loop of 250 nodes File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 62
+    Warning (332126): Node "mess[6]~2|combout"
+    Warning (332126): Node "mess~1485|datac"
+    Warning (332126): Node "mess~1485|combout"
+    Warning (332126): Node "mess[6]~2|dataa"
+    Warning (332126): Node "mess~1555|datad"
+    Warning (332126): Node "mess~1555|combout"
+    Warning (332126): Node "mess[349]~170|datac"
+    Warning (332126): Node "mess[349]~170|combout"
+    Warning (332126): Node "mess~1597|datac"
+    Warning (332126): Node "mess~1597|combout"
+    Warning (332126): Node "mess[342]~226|datac"
+    Warning (332126): Node "mess[342]~226|combout"
+    Warning (332126): Node "mess~1597|dataa"
+    Warning (332126): Node "mess~1639|datad"
+    Warning (332126): Node "mess~1639|combout"
+    Warning (332126): Node "mess[335]~282|datac"
+    Warning (332126): Node "mess[335]~282|combout"
+    Warning (332126): Node "mess~1639|datac"
+    Warning (332126): Node "mess~1681|dataa"
+    Warning (332126): Node "mess~1681|combout"
+    Warning (332126): Node "mess[328]~338|datad"
+    Warning (332126): Node "mess[328]~338|combout"
+    Warning (332126): Node "mess~1681|datad"
+    Warning (332126): Node "mess~1723|datad"
+    Warning (332126): Node "mess~1723|combout"
+    Warning (332126): Node "mess[321]~394|dataa"
+    Warning (332126): Node "mess[321]~394|combout"
+    Warning (332126): Node "mess~1723|datac"
+    Warning (332126): Node "mess~1765|datab"
+    Warning (332126): Node "mess~1765|combout"
+    Warning (332126): Node "mess[314]~450|datad"
+    Warning (332126): Node "mess[314]~450|combout"
+    Warning (332126): Node "mess~1765|datac"
+    Warning (332126): Node "mess~1807|datad"
+    Warning (332126): Node "mess~1807|combout"
+    Warning (332126): Node "mess[307]~506|datad"
+    Warning (332126): Node "mess[307]~506|combout"
+    Warning (332126): Node "mess~1849|datac"
+    Warning (332126): Node "mess~1849|combout"
+    Warning (332126): Node "mess[300]~562|datab"
+    Warning (332126): Node "mess[300]~562|combout"
+    Warning (332126): Node "mess~1849|datad"
+    Warning (332126): Node "mess~1891|dataa"
+    Warning (332126): Node "mess~1891|combout"
+    Warning (332126): Node "mess[293]~618|datab"
+    Warning (332126): Node "mess[293]~618|combout"
+    Warning (332126): Node "mess~1891|datad"
+    Warning (332126): Node "mess~1933|datad"
+    Warning (332126): Node "mess~1933|combout"
+    Warning (332126): Node "mess[286]~674|dataa"
+    Warning (332126): Node "mess[286]~674|combout"
+    Warning (332126): Node "mess~1933|datac"
+    Warning (332126): Node "mess~1975|datac"
+    Warning (332126): Node "mess~1975|combout"
+    Warning (332126): Node "mess[279]~730|datad"
+    Warning (332126): Node "mess[279]~730|combout"
+    Warning (332126): Node "mess~1975|datad"
+    Warning (332126): Node "mess~2017|datac"
+    Warning (332126): Node "mess~2017|combout"
+    Warning (332126): Node "mess[272]~786|datad"
+    Warning (332126): Node "mess[272]~786|combout"
+    Warning (332126): Node "mess~2017|datad"
+    Warning (332126): Node "mess~2059|datab"
+    Warning (332126): Node "mess~2059|combout"
+    Warning (332126): Node "mess[265]~842|datac"
+    Warning (332126): Node "mess[265]~842|combout"
+    Warning (332126): Node "mess~2059|datad"
+    Warning (332126): Node "mess~2101|datad"
+    Warning (332126): Node "mess~2101|combout"
+    Warning (332126): Node "mess[258]~898|datad"
+    Warning (332126): Node "mess[258]~898|combout"
+    Warning (332126): Node "mess~2101|datac"
+    Warning (332126): Node "mess~2143|datad"
+    Warning (332126): Node "mess~2143|combout"
+    Warning (332126): Node "mess[251]~954|datac"
+    Warning (332126): Node "mess[251]~954|combout"
+    Warning (332126): Node "mess~2143|datab"
+    Warning (332126): Node "mess~2185|datab"
+    Warning (332126): Node "mess~2185|combout"
+    Warning (332126): Node "mess[244]~1010|dataa"
+    Warning (332126): Node "mess[244]~1010|combout"
+    Warning (332126): Node "mess~2185|datac"
+    Warning (332126): Node "mess~2227|datac"
+    Warning (332126): Node "mess~2227|combout"
+    Warning (332126): Node "mess[237]~1066|datab"
+    Warning (332126): Node "mess[237]~1066|combout"
+    Warning (332126): Node "mess~2227|datad"
+    Warning (332126): Node "mess~2269|datad"
+    Warning (332126): Node "mess~2269|combout"
+    Warning (332126): Node "mess[230]~1122|datad"
+    Warning (332126): Node "mess[230]~1122|combout"
+    Warning (332126): Node "mess~2311|dataa"
+    Warning (332126): Node "mess~2311|combout"
+    Warning (332126): Node "mess[223]~1178|dataa"
+    Warning (332126): Node "mess[223]~1178|combout"
+    Warning (332126): Node "mess~2311|datac"
+    Warning (332126): Node "mess~2353|datac"
+    Warning (332126): Node "mess~2353|combout"
+    Warning (332126): Node "mess[216]~1234|datab"
+    Warning (332126): Node "mess[216]~1234|combout"
+    Warning (332126): Node "mess~2353|datad"
+    Warning (332126): Node "mess~2395|datad"
+    Warning (332126): Node "mess~2395|combout"
+    Warning (332126): Node "mess[209]~1290|dataa"
+    Warning (332126): Node "mess[209]~1290|combout"
+    Warning (332126): Node "mess~2395|datac"
+    Warning (332126): Node "mess~2436|datac"
+    Warning (332126): Node "mess~2436|combout"
+    Warning (332126): Node "mess[202]~1346|datac"
+    Warning (332126): Node "mess[202]~1346|combout"
+    Warning (332126): Node "mess~2436|datad"
+    Warning (332126): Node "mess~2443|datac"
+    Warning (332126): Node "mess~2443|combout"
+    Warning (332126): Node "mess[195]~1374|datad"
+    Warning (332126): Node "mess[195]~1374|combout"
+    Warning (332126): Node "mess~2443|datad"
+    Warning (332126): Node "mess~2409|datab"
+    Warning (332126): Node "mess~2409|combout"
+    Warning (332126): Node "mess[188]~1318|datab"
+    Warning (332126): Node "mess[188]~1318|combout"
+    Warning (332126): Node "mess~2409|datad"
+    Warning (332126): Node "mess~2367|datad"
+    Warning (332126): Node "mess~2367|combout"
+    Warning (332126): Node "mess[181]~1262|datad"
+    Warning (332126): Node "mess[181]~1262|combout"
+    Warning (332126): Node "mess~2367|datac"
+    Warning (332126): Node "mess~2325|dataa"
+    Warning (332126): Node "mess~2325|combout"
+    Warning (332126): Node "mess[174]~1206|datab"
+    Warning (332126): Node "mess[174]~1206|combout"
+    Warning (332126): Node "mess~2325|datad"
+    Warning (332126): Node "mess~2283|datad"
+    Warning (332126): Node "mess~2283|combout"
+    Warning (332126): Node "mess[167]~1150|datad"
+    Warning (332126): Node "mess[167]~1150|combout"
+    Warning (332126): Node "mess~2283|dataa"
+    Warning (332126): Node "mess~2241|datac"
+    Warning (332126): Node "mess~2241|combout"
+    Warning (332126): Node "mess[160]~1094|datad"
+    Warning (332126): Node "mess[160]~1094|combout"
+    Warning (332126): Node "mess~2241|datad"
+    Warning (332126): Node "mess~2199|datad"
+    Warning (332126): Node "mess~2199|combout"
+    Warning (332126): Node "mess[153]~1038|datad"
+    Warning (332126): Node "mess[153]~1038|combout"
+    Warning (332126): Node "mess~2199|datab"
+    Warning (332126): Node "mess~2157|datac"
+    Warning (332126): Node "mess~2157|combout"
+    Warning (332126): Node "mess[146]~982|datad"
+    Warning (332126): Node "mess[146]~982|combout"
+    Warning (332126): Node "mess~2157|datad"
+    Warning (332126): Node "mess~2115|datac"
+    Warning (332126): Node "mess~2115|combout"
+    Warning (332126): Node "mess[139]~926|dataa"
+    Warning (332126): Node "mess[139]~926|combout"
+    Warning (332126): Node "mess~2115|datad"
+    Warning (332126): Node "mess~2073|datad"
+    Warning (332126): Node "mess~2073|combout"
+    Warning (332126): Node "mess[132]~870|datab"
+    Warning (332126): Node "mess[132]~870|combout"
+    Warning (332126): Node "mess~2073|dataa"
+    Warning (332126): Node "mess~2031|dataa"
+    Warning (332126): Node "mess~2031|combout"
+    Warning (332126): Node "mess[125]~814|datad"
+    Warning (332126): Node "mess[125]~814|combout"
+    Warning (332126): Node "mess~2031|datad"
+    Warning (332126): Node "mess~1989|datad"
+    Warning (332126): Node "mess~1989|combout"
+    Warning (332126): Node "mess[118]~758|datad"
+    Warning (332126): Node "mess[118]~758|combout"
+    Warning (332126): Node "mess~1989|datac"
+    Warning (332126): Node "mess~1947|datac"
+    Warning (332126): Node "mess~1947|combout"
+    Warning (332126): Node "mess[111]~702|datac"
+    Warning (332126): Node "mess[111]~702|combout"
+    Warning (332126): Node "mess~1947|datad"
+    Warning (332126): Node "mess~1905|datac"
+    Warning (332126): Node "mess~1905|combout"
+    Warning (332126): Node "mess[104]~646|datac"
+    Warning (332126): Node "mess[104]~646|combout"
+    Warning (332126): Node "mess~1905|datad"
+    Warning (332126): Node "mess~1863|dataa"
+    Warning (332126): Node "mess~1863|combout"
+    Warning (332126): Node "mess[97]~590|datac"
+    Warning (332126): Node "mess[97]~590|combout"
+    Warning (332126): Node "mess~1863|datad"
+    Warning (332126): Node "mess~1821|datad"
+    Warning (332126): Node "mess~1821|combout"
+    Warning (332126): Node "mess[90]~534|datac"
+    Warning (332126): Node "mess[90]~534|combout"
+    Warning (332126): Node "mess~1821|datab"
+    Warning (332126): Node "mess~1779|datac"
+    Warning (332126): Node "mess~1779|combout"
+    Warning (332126): Node "mess[83]~478|datad"
+    Warning (332126): Node "mess[83]~478|combout"
+    Warning (332126): Node "mess~1779|datad"
+    Warning (332126): Node "mess~1737|datad"
+    Warning (332126): Node "mess~1737|combout"
+    Warning (332126): Node "mess[76]~422|datab"
+    Warning (332126): Node "mess[76]~422|combout"
+    Warning (332126): Node "mess~1737|datac"
+    Warning (332126): Node "mess~1695|datac"
+    Warning (332126): Node "mess~1695|combout"
+    Warning (332126): Node "mess[69]~366|datab"
+    Warning (332126): Node "mess[69]~366|combout"
+    Warning (332126): Node "mess~1695|datad"
+    Warning (332126): Node "mess~1653|datad"
+    Warning (332126): Node "mess~1653|combout"
+    Warning (332126): Node "mess[62]~310|datad"
+    Warning (332126): Node "mess[62]~310|combout"
+    Warning (332126): Node "mess~1653|datac"
+    Warning (332126): Node "mess~1611|datac"
+    Warning (332126): Node "mess~1611|combout"
+    Warning (332126): Node "mess[55]~254|dataa"
+    Warning (332126): Node "mess[55]~254|combout"
+    Warning (332126): Node "mess~1611|datad"
+    Warning (332126): Node "mess~1569|datad"
+    Warning (332126): Node "mess~1569|combout"
+    Warning (332126): Node "mess[48]~198|dataa"
+    Warning (332126): Node "mess[48]~198|combout"
+    Warning (332126): Node "mess~1569|datac"
+    Warning (332126): Node "mess~1527|datac"
+    Warning (332126): Node "mess~1527|combout"
+    Warning (332126): Node "mess[41]~142|dataa"
+    Warning (332126): Node "mess[41]~142|combout"
+    Warning (332126): Node "mess~1527|datad"
+    Warning (332126): Node "mess~1519|datad"
+    Warning (332126): Node "mess~1519|combout"
+    Warning (332126): Node "mess[34]~114|datac"
+    Warning (332126): Node "mess[34]~114|combout"
+    Warning (332126): Node "mess~1519|datab"
+    Warning (332126): Node "mess~1512|datad"
+    Warning (332126): Node "mess~1512|combout"
+    Warning (332126): Node "mess[27]~86|datac"
+    Warning (332126): Node "mess[27]~86|combout"
+    Warning (332126): Node "mess~1505|datad"
+    Warning (332126): Node "mess~1505|combout"
+    Warning (332126): Node "mess[20]~58|datac"
+    Warning (332126): Node "mess[20]~58|combout"
+    Warning (332126): Node "mess~1505|datab"
+    Warning (332126): Node "mess~1498|datad"
+    Warning (332126): Node "mess~1498|combout"
+    Warning (332126): Node "mess[13]~30|datad"
+    Warning (332126): Node "mess[13]~30|combout"
+    Warning (332126): Node "mess~1498|datac"
+    Warning (332126): Node "mess~1485|datad"
+    Warning (332126): Node "mess~1512|datab"
+    Warning (332126): Node "mess~2269|datab"
+    Warning (332126): Node "mess~1807|datac"
+    Warning (332126): Node "mess~1555|datab"
+Critical Warning (332081): Design contains combinational loop of 250 nodes. Estimating the delays through the loop.
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.707
+Info (332146): Worst-case setup slack is -12.299
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.707             -89.661 clk 
-    Info (332119):    -2.334            -776.701 s_clk_lent 
+    Info (332119):   -12.299           -2223.462 s_clk_lent 
+    Info (332119):   -11.370           -1838.525 trigger0 
+    Info (332119):    -3.586             -87.039 clk 
 Info (332146): Worst-case hold slack is 0.417
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.417               0.000 s_clk_lent 
-    Info (332119):     0.435               0.000 clk 
-Info (332146): Worst-case recovery slack is -0.819
+    Info (332119):     0.417               0.000 clk 
+    Info (332119):     1.056               0.000 trigger0 
+    Info (332119):     1.078               0.000 s_clk_lent 
+Info (332146): Worst-case recovery slack is -2.635
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.819             -24.770 s_clk_lent 
-Info (332146): Worst-case removal slack is 0.354
+    Info (332119):    -2.635             -89.930 trigger0 
+    Info (332119):    -2.489            -795.916 s_clk_lent 
+Info (332146): Worst-case removal slack is 0.888
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.354               0.000 s_clk_lent 
+    Info (332119):     0.888               0.000 trigger0 
+    Info (332119):     1.069               0.000 s_clk_lent 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -817,24 +2817,28 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.283
+Info (332146): Worst-case setup slack is -11.431
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.283             -79.088 clk 
-    Info (332119):    -2.161            -721.173 s_clk_lent 
-Info (332146): Worst-case hold slack is 0.381
+    Info (332119):   -11.431           -2040.757 s_clk_lent 
+    Info (332119):   -10.566           -1689.948 trigger0 
+    Info (332119):    -3.163             -76.644 clk 
+Info (332146): Worst-case hold slack is 0.382
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.381               0.000 s_clk_lent 
-    Info (332119):     0.399               0.000 clk 
-Info (332146): Worst-case recovery slack is -0.708
+    Info (332119):     0.382               0.000 clk 
+    Info (332119):     0.861               0.000 trigger0 
+    Info (332119):     1.047               0.000 s_clk_lent 
+Info (332146): Worst-case recovery slack is -2.332
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.708             -21.106 s_clk_lent 
-Info (332146): Worst-case removal slack is 0.425
+    Info (332119):    -2.332             -77.731 trigger0 
+    Info (332119):    -2.292            -733.849 s_clk_lent 
+Info (332146): Worst-case removal slack is 0.956
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.425               0.000 s_clk_lent 
+    Info (332119):     0.956               0.000 trigger0 
+    Info (332119):     1.114               0.000 s_clk_lent 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -844,36 +2848,40 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.986
+Info (332146): Worst-case setup slack is -4.730
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.986             -21.670 clk 
-    Info (332119):    -0.810            -265.344 s_clk_lent 
-Info (332146): Worst-case hold slack is 0.164
+    Info (332119):    -4.730            -741.617 s_clk_lent 
+    Info (332119):    -4.446            -635.973 trigger0 
+    Info (332119):    -0.936             -20.606 clk 
+Info (332146): Worst-case hold slack is 0.128
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.164               0.000 s_clk_lent 
-    Info (332119):     0.175               0.000 clk 
-Info (332146): Worst-case recovery slack is -0.274
+    Info (332119):     0.128               0.000 s_clk_lent 
+    Info (332119):     0.167               0.000 clk 
+    Info (332119):     0.308               0.000 trigger0 
+Info (332146): Worst-case recovery slack is -1.352
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.274              -7.211 s_clk_lent 
-Info (332146): Worst-case removal slack is -0.120
+    Info (332119):    -1.352             -46.277 trigger0 
+    Info (332119):    -1.012            -313.114 s_clk_lent 
+Info (332146): Worst-case removal slack is 0.188
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.120              -3.656 s_clk_lent 
+    Info (332119):     0.188               0.000 s_clk_lent 
+    Info (332119):     0.214               0.000 trigger0 
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -31.034 clk 
+    Info (332119):    -3.000             -30.928 clk 
     Info (332119):    -3.000              -3.000 trigger0 
     Info (332119):    -1.000            -393.000 s_clk_lent 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4793 megabytes
-    Info: Processing ended: Fri Mar 06 10:49:17 2020
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1980 warnings
+    Info: Peak virtual memory: 4815 megabytes
+    Info: Processing ended: Fri Mar 06 11:22:23 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:13
 
 

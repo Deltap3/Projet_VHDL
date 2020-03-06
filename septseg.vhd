@@ -77,6 +77,15 @@ BEGIN
 			END IF;
 			
 		else led1<='1';
+			if(bouton1='0') then
+				HEX5<=mess(0 to 6);
+				HEX4<=mess(7 to 13);
+				HEX3<=mess(14 to 20);
+				HEX2<=mess(21 to 27);
+				HEX1<=mess(28 to 34);
+				HEX0<=mess(35 to 41);
+				mess <= mess(7 to 349) & mess(0 to 6);
+			end if;
 		end if;
 		
 	else led0<='1';

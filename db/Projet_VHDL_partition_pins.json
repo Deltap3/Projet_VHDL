@@ -198,6 +198,10 @@
 				{
 					"name" : "clk",
 					"strict" : false
+				},
+				{
+					"name" : "bouton1",
+					"strict" : false
 				}
 			]
 		}
