@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Thu Mar 05 21:53:04 2020
+Fri Mar 06 08:54:33 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,12 +13,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,15 +43,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 05 21:53:04 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 06 08:54:33 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 173                                         ;
-;     Total combinational functions  ; 87                                          ;
-;     Dedicated logic registers      ; 159                                         ;
-; Total registers                    ; 159                                         ;
+; Total logic elements               ; 433                                         ;
+;     Total combinational functions  ; 195                                         ;
+;     Dedicated logic registers      ; 419                                         ;
+; Total registers                    ; 419                                         ;
 ; Total pins                         ; 43                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -184,20 +183,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimated Total logic elements              ; 173        ;
+; Estimated Total logic elements              ; 433        ;
 ;                                             ;            ;
-; Total combinational functions               ; 87         ;
+; Total combinational functions               ; 195        ;
 ; Logic element usage by number of LUT inputs ;            ;
 ;     -- 4 input functions                    ; 10         ;
 ;     -- 3 input functions                    ; 5          ;
-;     -- <=2 input functions                  ; 72         ;
+;     -- <=2 input functions                  ; 180        ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 62         ;
+;     -- normal mode                          ; 170        ;
 ;     -- arithmetic mode                      ; 25         ;
 ;                                             ;            ;
-; Total registers                             ; 159        ;
-;     -- Dedicated logic registers            ; 159        ;
+; Total registers                             ; 419        ;
+;     -- Dedicated logic registers            ; 419        ;
 ;     -- I/O registers                        ; 0          ;
 ;                                             ;            ;
 ; I/O pins                                    ; 43         ;
@@ -205,9 +204,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; s_clk_lent ;
-; Maximum fan-out                             ; 132        ;
-; Total fan-out                               ; 581        ;
-; Average fan-out                             ; 1.75       ;
+; Maximum fan-out                             ; 392        ;
+; Total fan-out                               ; 1209       ;
+; Average fan-out                             ; 1.73       ;
 +---------------------------------------------+------------+
 
 
@@ -216,33 +215,9 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |septseg                   ; 87 (87)             ; 159 (159)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
+; |septseg                   ; 195 (195)           ; 419 (419)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------+
-; Registers Removed During Synthesis                             ;
-+----------------------------------------+-----------------------+
-; Register name                          ; Reason for Removal    ;
-+----------------------------------------+-----------------------+
-; mess[5]                                ; Merged with mess[4]   ;
-; mess[103]                              ; Merged with mess[102] ;
-; mess[96]                               ; Merged with mess[95]  ;
-; mess[33]                               ; Merged with mess[32]  ;
-; mess[26]                               ; Merged with mess[25]  ;
-; mess[19]                               ; Merged with mess[18]  ;
-; mess[12]                               ; Merged with mess[11]  ;
-; mess[54]                               ; Merged with mess[53]  ;
-; mess[47]                               ; Merged with mess[46]  ;
-; mess[40]                               ; Merged with mess[39]  ;
-; mess[89]                               ; Merged with mess[88]  ;
-; mess[82]                               ; Merged with mess[81]  ;
-; mess[75]                               ; Merged with mess[74]  ;
-; mess[68]                               ; Merged with mess[67]  ;
-; mess[61]                               ; Merged with mess[60]  ;
-; Total Number of Removed Registers = 15 ;                       ;
-+----------------------------------------+-----------------------+
 
 
 +------------------------------------------------------+
@@ -250,7 +225,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 159   ;
+; Total registers                              ; 419   ;
 ; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -260,79 +235,114 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; HEX5[3]~reg0                            ; 1       ;
-; HEX5[2]~reg0                            ; 1       ;
-; HEX4[6]~reg0                            ; 1       ;
-; HEX4[3]~reg0                            ; 1       ;
-; HEX4[2]~reg0                            ; 1       ;
-; HEX4[1]~reg0                            ; 1       ;
-; HEX4[0]~reg0                            ; 1       ;
-; HEX3[2]~reg0                            ; 1       ;
-; HEX3[1]~reg0                            ; 1       ;
-; HEX2[6]~reg0                            ; 1       ;
-; HEX2[3]~reg0                            ; 1       ;
-; HEX2[2]~reg0                            ; 1       ;
-; HEX1[6]~reg0                            ; 1       ;
-; HEX1[3]~reg0                            ; 1       ;
-; HEX1[2]~reg0                            ; 1       ;
-; HEX0[2]~reg0                            ; 1       ;
-; HEX0[1]~reg0                            ; 1       ;
-; mess[3]                                 ; 2       ;
-; mess[2]                                 ; 2       ;
-; mess[13]                                ; 2       ;
-; mess[10]                                ; 2       ;
-; mess[9]                                 ; 2       ;
-; mess[8]                                 ; 2       ;
-; mess[7]                                 ; 2       ;
-; mess[16]                                ; 2       ;
-; mess[15]                                ; 2       ;
-; mess[27]                                ; 2       ;
-; mess[24]                                ; 2       ;
-; mess[23]                                ; 2       ;
-; mess[34]                                ; 2       ;
-; mess[31]                                ; 2       ;
-; mess[30]                                ; 2       ;
-; mess[37]                                ; 2       ;
-; mess[36]                                ; 2       ;
-; mess[48]                                ; 1       ;
-; mess[46]                                ; 1       ;
-; mess[45]                                ; 1       ;
-; mess[44]                                ; 1       ;
-; mess[43]                                ; 1       ;
-; mess[42]                                ; 1       ;
-; mess[55]                                ; 1       ;
-; mess[51]                                ; 1       ;
-; mess[50]                                ; 1       ;
-; mess[59]                                ; 1       ;
-; mess[57]                                ; 1       ;
-; mess[56]                                ; 1       ;
-; mess[65]                                ; 1       ;
-; mess[64]                                ; 1       ;
-; mess[76]                                ; 1       ;
-; mess[73]                                ; 1       ;
-; mess[72]                                ; 1       ;
-; mess[83]                                ; 1       ;
-; mess[80]                                ; 1       ;
-; mess[79]                                ; 1       ;
-; mess[78]                                ; 1       ;
-; mess[77]                                ; 1       ;
-; mess[90]                                ; 1       ;
-; mess[87]                                ; 1       ;
-; mess[93]                                ; 1       ;
-; mess[92]                                ; 1       ;
-; mess[104]                               ; 1       ;
-; mess[102]                               ; 1       ;
-; mess[101]                               ; 1       ;
-; mess[100]                               ; 1       ;
-; mess[99]                                ; 1       ;
-; mess[98]                                ; 1       ;
-; Total number of inverted registers = 66 ;         ;
-+-----------------------------------------+---------+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; HEX5[3]~reg0                              ; 1       ;
+; HEX5[2]~reg0                              ; 1       ;
+; HEX4[6]~reg0                              ; 1       ;
+; HEX4[3]~reg0                              ; 1       ;
+; HEX4[2]~reg0                              ; 1       ;
+; HEX4[1]~reg0                              ; 1       ;
+; HEX4[0]~reg0                              ; 1       ;
+; HEX3[2]~reg0                              ; 1       ;
+; HEX3[1]~reg0                              ; 1       ;
+; HEX2[6]~reg0                              ; 1       ;
+; HEX2[3]~reg0                              ; 1       ;
+; HEX2[2]~reg0                              ; 1       ;
+; HEX1[6]~reg0                              ; 1       ;
+; HEX1[3]~reg0                              ; 1       ;
+; HEX1[2]~reg0                              ; 1       ;
+; HEX0[2]~reg0                              ; 1       ;
+; HEX0[1]~reg0                              ; 1       ;
+; mess[3]                                   ; 2       ;
+; mess[2]                                   ; 2       ;
+; mess[13]                                  ; 2       ;
+; mess[10]                                  ; 2       ;
+; mess[9]                                   ; 2       ;
+; mess[8]                                   ; 2       ;
+; mess[7]                                   ; 2       ;
+; mess[16]                                  ; 2       ;
+; mess[15]                                  ; 2       ;
+; mess[27]                                  ; 2       ;
+; mess[24]                                  ; 2       ;
+; mess[23]                                  ; 2       ;
+; mess[34]                                  ; 2       ;
+; mess[31]                                  ; 2       ;
+; mess[30]                                  ; 2       ;
+; mess[37]                                  ; 2       ;
+; mess[36]                                  ; 2       ;
+; mess[48]                                  ; 1       ;
+; mess[47]                                  ; 1       ;
+; mess[46]                                  ; 1       ;
+; mess[45]                                  ; 1       ;
+; mess[44]                                  ; 1       ;
+; mess[43]                                  ; 1       ;
+; mess[42]                                  ; 1       ;
+; mess[55]                                  ; 1       ;
+; mess[54]                                  ; 1       ;
+; mess[52]                                  ; 1       ;
+; mess[50]                                  ; 1       ;
+; mess[59]                                  ; 1       ;
+; mess[69]                                  ; 1       ;
+; mess[66]                                  ; 1       ;
+; mess[65]                                  ; 1       ;
+; mess[64]                                  ; 1       ;
+; mess[63]                                  ; 1       ;
+; mess[74]                                  ; 1       ;
+; mess[71]                                  ; 1       ;
+; mess[79]                                  ; 1       ;
+; mess[78]                                  ; 1       ;
+; mess[77]                                  ; 1       ;
+; mess[86]                                  ; 1       ;
+; mess[85]                                  ; 1       ;
+; mess[97]                                  ; 1       ;
+; mess[94]                                  ; 1       ;
+; mess[93]                                  ; 1       ;
+; mess[104]                                 ; 1       ;
+; mess[101]                                 ; 1       ;
+; mess[100]                                 ; 1       ;
+; mess[107]                                 ; 1       ;
+; mess[106]                                 ; 1       ;
+; mess[118]                                 ; 1       ;
+; mess[115]                                 ; 1       ;
+; mess[122]                                 ; 1       ;
+; mess[132]                                 ; 1       ;
+; mess[131]                                 ; 1       ;
+; mess[130]                                 ; 1       ;
+; mess[129]                                 ; 1       ;
+; mess[128]                                 ; 1       ;
+; mess[127]                                 ; 1       ;
+; mess[126]                                 ; 1       ;
+; mess[139]                                 ; 1       ;
+; mess[135]                                 ; 1       ;
+; mess[134]                                 ; 1       ;
+; mess[143]                                 ; 1       ;
+; mess[141]                                 ; 1       ;
+; mess[140]                                 ; 1       ;
+; mess[149]                                 ; 1       ;
+; mess[148]                                 ; 1       ;
+; mess[160]                                 ; 1       ;
+; mess[157]                                 ; 1       ;
+; mess[156]                                 ; 1       ;
+; mess[167]                                 ; 1       ;
+; mess[164]                                 ; 1       ;
+; mess[163]                                 ; 1       ;
+; mess[162]                                 ; 1       ;
+; mess[161]                                 ; 1       ;
+; mess[174]                                 ; 1       ;
+; mess[171]                                 ; 1       ;
+; mess[177]                                 ; 1       ;
+; mess[176]                                 ; 1       ;
+; mess[188]                                 ; 1       ;
+; mess[187]                                 ; 1       ;
+; mess[186]                                 ; 1       ;
+; mess[185]                                 ; 1       ;
+; Total number of inverted registers = 181* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +-----------------------------------------------------+
@@ -341,19 +351,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 43                          ;
-; cycloneiii_ff         ; 159                         ;
+; cycloneiii_ff         ; 419                         ;
 ;     SCLR              ; 26                          ;
-;     plain             ; 133                         ;
-; cycloneiii_lcell_comb ; 104                         ;
+;     plain             ; 393                         ;
+; cycloneiii_lcell_comb ; 212                         ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 25                          ;
-;     normal            ; 79                          ;
-;         1 data inputs ; 64                          ;
+;     normal            ; 187                         ;
+;         1 data inputs ; 172                         ;
 ;         3 data inputs ; 5                           ;
 ;         4 data inputs ; 10                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.53                        ;
+; Average LUT depth     ; 1.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -372,7 +382,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Mar 05 21:52:50 2020
+    Info: Processing started: Fri Mar 06 08:54:19 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -383,14 +393,14 @@ Info (12127): Elaborating entity "septseg" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 216 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 476 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 173 logic cells
+    Info (21061): Implemented 433 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4777 megabytes
-    Info: Processing ended: Thu Mar 05 21:53:04 2020
+    Info: Processing ended: Fri Mar 06 08:54:33 2020
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Total CPU time (on all processors): 00:00:26
 
 

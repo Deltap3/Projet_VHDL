@@ -1,5 +1,5 @@
 Flow report for Projet_VHDL
-Thu Mar 05 21:53:30 2020
+Fri Mar 06 08:54:59 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 05 21:53:30 2020       ;
+; Flow Status                        ; Successful - Fri Mar 06 08:54:59 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 179 / 49,760 ( < 1 % )                      ;
-;     Total combinational functions  ; 88 / 49,760 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 159 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 159                                         ;
+; Total logic elements               ; 439 / 49,760 ( < 1 % )                      ;
+;     Total combinational functions  ; 196 / 49,760 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 419 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 419                                         ;
 ; Total pins                         ; 43 / 360 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/05/2020 21:52:52 ;
+; Start date & time ; 03/06/2020 08:54:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Projet_VHDL         ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id           ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------------+
-; COMPILER_SIGNATURE_ID               ; 66160497188361.158344157111824         ; --            ; --          ; --                   ;
+; COMPILER_SIGNATURE_ID               ; 66160497188361.158348126001336         ; --            ; --          ; --                   ;
 ; EDA_DESIGN_ENTRY_SYNTHESIS_TOOL     ; Synplify Pro                           ; <None>        ; --          ; --                   ;
 ; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --          ; eda_design_synthesis ;
 ; EDA_LMF_FILE                        ; synplcty.lmf                           ; --            ; --          ; eda_design_synthesis ;
@@ -99,12 +99,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4777 MB             ; 00:00:26                           ;
-; Fitter               ; 00:00:12     ; 1.0                     ; 5550 MB             ; 00:00:17                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4673 MB             ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4800 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4638 MB             ; 00:00:02                           ;
-; Total                ; 00:00:35     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4777 MB             ; 00:00:25                           ;
+; Fitter               ; 00:00:12     ; 1.0                     ; 5572 MB             ; 00:00:16                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4676 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4806 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4639 MB             ; 00:00:02                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:50                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
