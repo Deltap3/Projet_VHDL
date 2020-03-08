@@ -16,6 +16,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "led3",
+					"strict" : false
+				},
+				{
+					"name" : "led4",
+					"strict" : false
+				},
+				{
 					"name" : "HEX5[6]",
 					"strict" : false
 				},
@@ -196,11 +204,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "trigger3",
 					"strict" : false
 				},
 				{
-					"name" : "bouton1",
+					"name" : "trigger4",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
 					"strict" : false
 				}
 			]

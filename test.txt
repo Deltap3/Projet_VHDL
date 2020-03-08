@@ -10,8 +10,8 @@ ENTITY septseg IS
  trigger2 : IN STD_LOGIC;
  trigger3 : IN STD_LOGIC;
  trigger4 : IN STD_LOGIC;
- bouton0 : IN STD_LOGIC;
- bouton1 : IN STD_LOGIC;
+ bouton0 : IN STD_LOGIC:='0';
+ bouton1 : IN STD_LOGIC:='0';
  led0 : OUT STD_LOGIC;
  led1 : OUT STD_LOGIC;
  led2 : OUT STD_LOGIC;

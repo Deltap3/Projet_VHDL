@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Fri Mar 06 11:25:17 2020
+Fri Mar 06 18:25:37 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -36,22 +45,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Mar 06 11:25:17 2020           ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 06 18:25:37 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 586                                         ;
+;     Total combinational functions  ; 568                                         ;
+;     Dedicated logic registers      ; 420                                         ;
+; Total registers                    ; 420                                         ;
+; Total pins                         ; 55                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -150,15 +159,248 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; septseg.vhd                      ; yes             ; User VHDL File  ; D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 586        ;
+;                                             ;            ;
+; Total combinational functions               ; 568        ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 86         ;
+;     -- 3 input functions                    ; 356        ;
+;     -- <=2 input functions                  ; 126        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 474        ;
+;     -- arithmetic mode                      ; 94         ;
+;                                             ;            ;
+; Total registers                             ; 420        ;
+;     -- Dedicated logic registers            ; 420        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 55         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; s_clk_lent ;
+; Maximum fan-out                             ; 393        ;
+; Total fan-out                               ; 3012       ;
+; Average fan-out                             ; 2.74       ;
++---------------------------------------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |septseg                   ; 568 (568)           ; 420 (420)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; led1$latch                                         ; trigger0            ; yes                    ;
+; led3$latch                                         ; trigger0            ; yes                    ;
+; led4$latch                                         ; trigger0            ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 420   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 42    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 393   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; HEX5[6]~reg0                              ; 1       ;
+; HEX5[5]~reg0                              ; 1       ;
+; HEX5[4]~reg0                              ; 1       ;
+; HEX5[3]~reg0                              ; 1       ;
+; HEX5[2]~reg0                              ; 1       ;
+; HEX5[1]~reg0                              ; 1       ;
+; HEX5[0]~reg0                              ; 1       ;
+; HEX4[6]~reg0                              ; 1       ;
+; HEX4[5]~reg0                              ; 1       ;
+; HEX4[4]~reg0                              ; 1       ;
+; HEX4[3]~reg0                              ; 1       ;
+; HEX4[2]~reg0                              ; 1       ;
+; HEX4[1]~reg0                              ; 1       ;
+; HEX4[0]~reg0                              ; 1       ;
+; HEX3[6]~reg0                              ; 1       ;
+; HEX3[5]~reg0                              ; 1       ;
+; HEX3[4]~reg0                              ; 1       ;
+; HEX3[3]~reg0                              ; 1       ;
+; HEX3[2]~reg0                              ; 1       ;
+; HEX3[1]~reg0                              ; 1       ;
+; HEX3[0]~reg0                              ; 1       ;
+; HEX2[6]~reg0                              ; 1       ;
+; HEX2[5]~reg0                              ; 1       ;
+; HEX2[4]~reg0                              ; 1       ;
+; HEX2[3]~reg0                              ; 1       ;
+; HEX2[2]~reg0                              ; 1       ;
+; HEX2[1]~reg0                              ; 1       ;
+; HEX2[0]~reg0                              ; 1       ;
+; HEX1[6]~reg0                              ; 1       ;
+; HEX1[5]~reg0                              ; 1       ;
+; HEX1[4]~reg0                              ; 1       ;
+; HEX1[3]~reg0                              ; 1       ;
+; HEX1[2]~reg0                              ; 1       ;
+; HEX1[1]~reg0                              ; 1       ;
+; HEX1[0]~reg0                              ; 1       ;
+; HEX0[6]~reg0                              ; 1       ;
+; HEX0[5]~reg0                              ; 1       ;
+; HEX0[4]~reg0                              ; 1       ;
+; HEX0[3]~reg0                              ; 1       ;
+; HEX0[2]~reg0                              ; 1       ;
+; HEX0[1]~reg0                              ; 1       ;
+; HEX0[0]~reg0                              ; 1       ;
+; mess[3]                                   ; 3       ;
+; mess[2]                                   ; 3       ;
+; mess[13]                                  ; 3       ;
+; mess[10]                                  ; 3       ;
+; mess[9]                                   ; 3       ;
+; mess[8]                                   ; 3       ;
+; mess[7]                                   ; 3       ;
+; mess[16]                                  ; 3       ;
+; mess[15]                                  ; 3       ;
+; mess[27]                                  ; 3       ;
+; mess[24]                                  ; 3       ;
+; mess[23]                                  ; 3       ;
+; mess[34]                                  ; 3       ;
+; mess[31]                                  ; 3       ;
+; mess[30]                                  ; 3       ;
+; mess[37]                                  ; 3       ;
+; mess[36]                                  ; 3       ;
+; mess[349]                                 ; 2       ;
+; mess[348]                                 ; 2       ;
+; mess[347]                                 ; 2       ;
+; mess[346]                                 ; 2       ;
+; mess[345]                                 ; 2       ;
+; mess[344]                                 ; 2       ;
+; mess[343]                                 ; 2       ;
+; mess[48]                                  ; 2       ;
+; mess[47]                                  ; 2       ;
+; mess[46]                                  ; 2       ;
+; mess[45]                                  ; 2       ;
+; mess[44]                                  ; 2       ;
+; mess[43]                                  ; 2       ;
+; mess[42]                                  ; 2       ;
+; mess[342]                                 ; 2       ;
+; mess[339]                                 ; 2       ;
+; mess[338]                                 ; 2       ;
+; mess[337]                                 ; 2       ;
+; mess[336]                                 ; 2       ;
+; mess[55]                                  ; 2       ;
+; mess[54]                                  ; 2       ;
+; mess[52]                                  ; 2       ;
+; mess[50]                                  ; 2       ;
+; mess[335]                                 ; 2       ;
+; mess[331]                                 ; 2       ;
+; mess[330]                                 ; 2       ;
+; mess[329]                                 ; 2       ;
+; mess[59]                                  ; 2       ;
+; mess[328]                                 ; 2       ;
+; mess[324]                                 ; 2       ;
+; mess[323]                                 ; 2       ;
+; mess[322]                                 ; 2       ;
+; mess[69]                                  ; 2       ;
+; mess[66]                                  ; 2       ;
+; mess[65]                                  ; 2       ;
+; mess[64]                                  ; 2       ;
+; mess[63]                                  ; 2       ;
+; mess[317]                                 ; 2       ;
+; mess[316]                                 ; 2       ;
+; mess[74]                                  ; 2       ;
+; mess[71]                                  ; 2       ;
+; Total number of inverted registers = 206* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 23 bits   ; 69 LEs        ; 69 LEs               ; 0 LEs                  ; Yes        ; |septseg|s_clk_compte[18]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 55                          ;
+; cycloneiii_ff         ; 420                         ;
+;     ENA               ; 351                         ;
+;     ENA CLR           ; 42                          ;
+;     plain             ; 27                          ;
+; cycloneiii_lcell_comb ; 610                         ;
+;     arith             ; 94                          ;
+;         2 data inputs ; 94                          ;
+;     normal            ; 516                         ;
+;         1 data inputs ; 71                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 356                         ;
+;         4 data inputs ; 86                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.50                        ;
+; Average LUT depth     ; 2.17                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -167,31 +409,66 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Mar 06 11:24:55 2020
+    Info: Processing started: Fri Mar 06 18:25:15 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file septseg.vhd
-    Info (12022): Found design unit 1: septseg-rtl File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 26
-    Info (12023): Found entity 1: septseg File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 5
+    Info (12022): Found design unit 1: septseg-rtl File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 30
+    Info (12023): Found entity 1: septseg File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 5
 Info (12127): Elaborating entity "septseg" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at septseg.vhd(56): signal "trigger0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 56
-Warning (10492): VHDL Process Statement warning at septseg.vhd(59): signal "trigger1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at septseg.vhd(80): signal "bouton1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at septseg.vhd(81): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 81
-Warning (10492): VHDL Process Statement warning at septseg.vhd(82): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 82
-Warning (10492): VHDL Process Statement warning at septseg.vhd(83): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at septseg.vhd(84): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 84
-Warning (10492): VHDL Process Statement warning at septseg.vhd(85): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at septseg.vhd(86): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at septseg.vhd(87): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 87
-Error (10533): VHDL Wait Statement error at septseg.vhd(88): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 88
-Error (10441): VHDL Process Statement error at septseg.vhd(53): Process Statement cannot contain both a sensitivity list and a Wait Statement File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 53
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 11 warnings
-    Error: Peak virtual memory: 4777 megabytes
-    Error: Processing ended: Fri Mar 06 11:25:17 2020
-    Error: Elapsed time: 00:00:22
-    Error: Total CPU time (on all processors): 00:00:50
+Warning (10492): VHDL Process Statement warning at septseg.vhd(68): signal "trigger0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at septseg.vhd(70): signal "trigger3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at septseg.vhd(75): signal "trigger4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at septseg.vhd(81): signal "trigger1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 81
+Warning (10631): VHDL Process Statement warning at septseg.vhd(65): inferring latch(es) for signal or variable "led3", which holds its previous value in one or more paths through the process File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at septseg.vhd(65): inferring latch(es) for signal or variable "led4", which holds its previous value in one or more paths through the process File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at septseg.vhd(65): inferring latch(es) for signal or variable "led1", which holds its previous value in one or more paths through the process File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Info (10041): Inferred latch for "led1" at septseg.vhd(65) File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Info (10041): Inferred latch for "led4" at septseg.vhd(65) File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Info (10041): Inferred latch for "led3" at septseg.vhd(65) File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 65
+Info (13000): Registers with preset signals will power-up high File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register HEX5[6]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX5[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX5[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX5[1]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX5[0]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX4[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX4[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX3[6]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX3[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX3[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX3[3]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX3[0]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX2[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX2[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX2[1]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX2[0]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX1[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX1[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX1[1]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX1[0]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX0[6]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX0[5]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX0[4]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX0[3]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+    Critical Warning (18010): Register HEX0[0]~reg0 will power up to High File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 84
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "bouton0" File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 13
+    Warning (15610): No output dependent on input pin "bouton1" File: D:/intelFPGA_lite/18.1/Projet_VHDL/septseg.vhd Line: 14
+Info (21057): Implemented 641 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 586 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4788 megabytes
+    Info: Processing ended: Fri Mar 06 18:25:37 2020
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:41
 
 
