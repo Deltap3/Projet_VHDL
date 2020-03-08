@@ -29,6 +29,7 @@ SIGNAL s_clk_compte : STD_LOGIC_VECTOR(25 DOWNTO 0);
 SIGNAL s_clk_lent : STD_LOGIC;
 signal mess : std_logic_vector(0 to 349):=("00110001111001011000000110010011001011000011111110101011000100011110010100100111000001100000011001001100101100000001001000100011111110110001110100001100000011001111100100010010110000111111101001000110000000000111111111000011100000101001001110000111100100010010110000111111101010110001000001100111100001111001000100101100001110001111000111110011111111");
 signal texte : std_logic_vector(0 to 6);
+signal bufferbouton    : std_logic := '0';
 
 BEGIN
 
@@ -77,7 +78,7 @@ BEGIN
 			END IF;
 			
 		else led1<='1';
-			if(bouton1='0') then
+			if(bouton1='0' and bufferbouton='0') then
 				HEX5<=mess(0 to 6);
 				HEX4<=mess(7 to 13);
 				HEX3<=mess(14 to 20);
@@ -86,6 +87,7 @@ BEGIN
 				HEX0<=mess(35 to 41);
 				mess <= mess(7 to 349) & mess(0 to 6);
 			end if;
+			bufferbouton <= bouton1;
 		end if;
 		
 	else led0<='1';

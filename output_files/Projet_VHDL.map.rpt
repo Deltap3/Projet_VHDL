@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projet_VHDL
-Fri Mar 06 11:25:17 2020
+Fri Mar 06 11:42:38 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -36,22 +43,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Mar 06 11:25:17 2020           ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 06 11:42:38 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Projet_VHDL                                 ;
 ; Top-level Entity Name              ; septseg                                     ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 1,657                                       ;
+;     Total combinational functions  ; 1,657                                       ;
+;     Dedicated logic registers      ; 420                                         ;
+; Total registers                    ; 420                                         ;
+; Total pins                         ; 51                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -153,12 +160,125 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   2.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; septseg.vhd                      ; yes             ; User VHDL File  ; C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 1,657      ;
+;                                             ;            ;
+; Total combinational functions               ; 1657       ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 1188       ;
+;     -- 3 input functions                    ; 357        ;
+;     -- <=2 input functions                  ; 112        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 1632       ;
+;     -- arithmetic mode                      ; 25         ;
+;                                             ;            ;
+; Total registers                             ; 420        ;
+;     -- Dedicated logic registers            ; 420        ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 51         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; HEX5[0]~50 ;
+; Maximum fan-out                             ; 1136       ;
+; Total fan-out                               ; 7750       ;
+; Average fan-out                             ; 3.56       ;
++---------------------------------------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |septseg                   ; 1657 (1657)         ; 420 (420)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 51   ; 0            ; 0          ; |septseg            ; septseg     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; led1$latch                                         ; trigger0            ; yes                    ;
+; bufferbouton                                       ; HEX5[0]             ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 420   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 392   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 350   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 51                          ;
+; cycloneiii_ff         ; 420                         ;
+;     CLR               ; 42                          ;
+;     ENA CLR           ; 350                         ;
+;     SCLR              ; 26                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 1657                        ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 1632                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 86                          ;
+;         3 data inputs ; 357                         ;
+;         4 data inputs ; 1188                        ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 1.66                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:08     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -167,7 +287,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Mar 06 11:24:55 2020
+    Info: Processing started: Fri Mar 06 11:42:08 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projet_VHDL -c Projet_VHDL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -175,23 +295,428 @@ Info (12021): Found 2 design units, including 1 entities, in source file septseg
     Info (12022): Found design unit 1: septseg-rtl File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 26
     Info (12023): Found entity 1: septseg File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 5
 Info (12127): Elaborating entity "septseg" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at septseg.vhd(56): signal "trigger0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 56
-Warning (10492): VHDL Process Statement warning at septseg.vhd(59): signal "trigger1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at septseg.vhd(80): signal "bouton1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 80
-Warning (10492): VHDL Process Statement warning at septseg.vhd(81): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at septseg.vhd(57): signal "trigger0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at septseg.vhd(60): signal "trigger1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at septseg.vhd(81): signal "bouton1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at septseg.vhd(81): signal "bufferbouton" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 81
 Warning (10492): VHDL Process Statement warning at septseg.vhd(82): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 82
 Warning (10492): VHDL Process Statement warning at septseg.vhd(83): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 83
 Warning (10492): VHDL Process Statement warning at septseg.vhd(84): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 84
 Warning (10492): VHDL Process Statement warning at septseg.vhd(85): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 85
 Warning (10492): VHDL Process Statement warning at septseg.vhd(86): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 86
 Warning (10492): VHDL Process Statement warning at septseg.vhd(87): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 87
-Error (10533): VHDL Wait Statement error at septseg.vhd(88): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 88
-Error (10441): VHDL Process Statement error at septseg.vhd(53): Process Statement cannot contain both a sensitivity list and a Wait Statement File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 53
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 11 warnings
-    Error: Peak virtual memory: 4777 megabytes
-    Error: Processing ended: Fri Mar 06 11:25:17 2020
-    Error: Elapsed time: 00:00:22
-    Error: Total CPU time (on all processors): 00:00:50
+Warning (10492): VHDL Process Statement warning at septseg.vhd(88): signal "mess" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at septseg.vhd(90): signal "bouton1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 90
+Warning (10631): VHDL Process Statement warning at septseg.vhd(54): inferring latch(es) for signal or variable "led1", which holds its previous value in one or more paths through the process File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 54
+Warning (10631): VHDL Process Statement warning at septseg.vhd(54): inferring latch(es) for signal or variable "bufferbouton", which holds its previous value in one or more paths through the process File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 54
+Info (10041): Inferred latch for "bufferbouton" at septseg.vhd(54) File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 54
+Info (10041): Inferred latch for "led1" at septseg.vhd(54) File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 54
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "HEX5[6]~reg0" is converted into an equivalent circuit using register "HEX5[6]~reg0_emulated" and latch "HEX5[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[5]~reg0" is converted into an equivalent circuit using register "HEX5[5]~reg0_emulated" and latch "HEX5[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[4]~reg0" is converted into an equivalent circuit using register "HEX5[4]~reg0_emulated" and latch "HEX5[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[3]~reg0" is converted into an equivalent circuit using register "HEX5[3]~reg0_emulated" and latch "HEX5[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[2]~reg0" is converted into an equivalent circuit using register "HEX5[2]~reg0_emulated" and latch "HEX5[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[1]~reg0" is converted into an equivalent circuit using register "HEX5[1]~reg0_emulated" and latch "HEX5[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX5[0]~reg0" is converted into an equivalent circuit using register "HEX5[0]~reg0_emulated" and latch "HEX5[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[6]~reg0" is converted into an equivalent circuit using register "HEX4[6]~reg0_emulated" and latch "HEX4[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[5]~reg0" is converted into an equivalent circuit using register "HEX4[5]~reg0_emulated" and latch "HEX4[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[4]~reg0" is converted into an equivalent circuit using register "HEX4[4]~reg0_emulated" and latch "HEX4[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[3]~reg0" is converted into an equivalent circuit using register "HEX4[3]~reg0_emulated" and latch "HEX4[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[2]~reg0" is converted into an equivalent circuit using register "HEX4[2]~reg0_emulated" and latch "HEX4[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[1]~reg0" is converted into an equivalent circuit using register "HEX4[1]~reg0_emulated" and latch "HEX4[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX4[0]~reg0" is converted into an equivalent circuit using register "HEX4[0]~reg0_emulated" and latch "HEX4[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[6]~reg0" is converted into an equivalent circuit using register "HEX3[6]~reg0_emulated" and latch "HEX3[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[5]~reg0" is converted into an equivalent circuit using register "HEX3[5]~reg0_emulated" and latch "HEX3[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[4]~reg0" is converted into an equivalent circuit using register "HEX3[4]~reg0_emulated" and latch "HEX3[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[3]~reg0" is converted into an equivalent circuit using register "HEX3[3]~reg0_emulated" and latch "HEX3[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[2]~reg0" is converted into an equivalent circuit using register "HEX3[2]~reg0_emulated" and latch "HEX3[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[1]~reg0" is converted into an equivalent circuit using register "HEX3[1]~reg0_emulated" and latch "HEX3[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX3[0]~reg0" is converted into an equivalent circuit using register "HEX3[0]~reg0_emulated" and latch "HEX3[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[6]~reg0" is converted into an equivalent circuit using register "HEX2[6]~reg0_emulated" and latch "HEX2[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[5]~reg0" is converted into an equivalent circuit using register "HEX2[5]~reg0_emulated" and latch "HEX2[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[4]~reg0" is converted into an equivalent circuit using register "HEX2[4]~reg0_emulated" and latch "HEX2[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[3]~reg0" is converted into an equivalent circuit using register "HEX2[3]~reg0_emulated" and latch "HEX2[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[2]~reg0" is converted into an equivalent circuit using register "HEX2[2]~reg0_emulated" and latch "HEX2[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[1]~reg0" is converted into an equivalent circuit using register "HEX2[1]~reg0_emulated" and latch "HEX2[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX2[0]~reg0" is converted into an equivalent circuit using register "HEX2[0]~reg0_emulated" and latch "HEX2[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[6]~reg0" is converted into an equivalent circuit using register "HEX1[6]~reg0_emulated" and latch "HEX1[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[5]~reg0" is converted into an equivalent circuit using register "HEX1[5]~reg0_emulated" and latch "HEX1[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[4]~reg0" is converted into an equivalent circuit using register "HEX1[4]~reg0_emulated" and latch "HEX1[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[3]~reg0" is converted into an equivalent circuit using register "HEX1[3]~reg0_emulated" and latch "HEX1[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[2]~reg0" is converted into an equivalent circuit using register "HEX1[2]~reg0_emulated" and latch "HEX1[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[1]~reg0" is converted into an equivalent circuit using register "HEX1[1]~reg0_emulated" and latch "HEX1[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX1[0]~reg0" is converted into an equivalent circuit using register "HEX1[0]~reg0_emulated" and latch "HEX1[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[6]~reg0" is converted into an equivalent circuit using register "HEX0[6]~reg0_emulated" and latch "HEX0[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[5]~reg0" is converted into an equivalent circuit using register "HEX0[5]~reg0_emulated" and latch "HEX0[5]~6" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[4]~reg0" is converted into an equivalent circuit using register "HEX0[4]~reg0_emulated" and latch "HEX0[4]~11" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[3]~reg0" is converted into an equivalent circuit using register "HEX0[3]~reg0_emulated" and latch "HEX0[3]~16" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[2]~reg0" is converted into an equivalent circuit using register "HEX0[2]~reg0_emulated" and latch "HEX0[2]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[1]~reg0" is converted into an equivalent circuit using register "HEX0[1]~reg0_emulated" and latch "HEX0[1]~26" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "HEX0[0]~reg0" is converted into an equivalent circuit using register "HEX0[0]~reg0_emulated" and latch "HEX0[0]~31" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[6]" is converted into an equivalent circuit using register "mess[6]~_emulated" and latch "mess[6]~1" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[5]" is converted into an equivalent circuit using register "mess[5]~_emulated" and latch "mess[5]~5" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[4]" is converted into an equivalent circuit using register "mess[4]~_emulated" and latch "mess[4]~9" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[3]" is converted into an equivalent circuit using register "mess[3]~_emulated" and latch "mess[3]~13" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[2]" is converted into an equivalent circuit using register "mess[2]~_emulated" and latch "mess[2]~17" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[1]" is converted into an equivalent circuit using register "mess[1]~_emulated" and latch "mess[1]~21" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[0]" is converted into an equivalent circuit using register "mess[0]~_emulated" and latch "mess[0]~25" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[13]" is converted into an equivalent circuit using register "mess[13]~_emulated" and latch "mess[13]~29" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[12]" is converted into an equivalent circuit using register "mess[12]~_emulated" and latch "mess[12]~33" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[11]" is converted into an equivalent circuit using register "mess[11]~_emulated" and latch "mess[11]~37" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[10]" is converted into an equivalent circuit using register "mess[10]~_emulated" and latch "mess[10]~41" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[9]" is converted into an equivalent circuit using register "mess[9]~_emulated" and latch "mess[9]~45" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[8]" is converted into an equivalent circuit using register "mess[8]~_emulated" and latch "mess[8]~49" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[7]" is converted into an equivalent circuit using register "mess[7]~_emulated" and latch "mess[7]~53" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[20]" is converted into an equivalent circuit using register "mess[20]~_emulated" and latch "mess[20]~57" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[19]" is converted into an equivalent circuit using register "mess[19]~_emulated" and latch "mess[19]~61" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[18]" is converted into an equivalent circuit using register "mess[18]~_emulated" and latch "mess[18]~65" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[17]" is converted into an equivalent circuit using register "mess[17]~_emulated" and latch "mess[17]~69" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[16]" is converted into an equivalent circuit using register "mess[16]~_emulated" and latch "mess[16]~73" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[15]" is converted into an equivalent circuit using register "mess[15]~_emulated" and latch "mess[15]~77" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[14]" is converted into an equivalent circuit using register "mess[14]~_emulated" and latch "mess[14]~81" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[27]" is converted into an equivalent circuit using register "mess[27]~_emulated" and latch "mess[27]~85" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[26]" is converted into an equivalent circuit using register "mess[26]~_emulated" and latch "mess[26]~89" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[25]" is converted into an equivalent circuit using register "mess[25]~_emulated" and latch "mess[25]~93" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[24]" is converted into an equivalent circuit using register "mess[24]~_emulated" and latch "mess[24]~97" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[23]" is converted into an equivalent circuit using register "mess[23]~_emulated" and latch "mess[23]~101" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[22]" is converted into an equivalent circuit using register "mess[22]~_emulated" and latch "mess[22]~105" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[21]" is converted into an equivalent circuit using register "mess[21]~_emulated" and latch "mess[21]~109" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[34]" is converted into an equivalent circuit using register "mess[34]~_emulated" and latch "mess[34]~113" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[33]" is converted into an equivalent circuit using register "mess[33]~_emulated" and latch "mess[33]~117" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[32]" is converted into an equivalent circuit using register "mess[32]~_emulated" and latch "mess[32]~121" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[31]" is converted into an equivalent circuit using register "mess[31]~_emulated" and latch "mess[31]~125" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[30]" is converted into an equivalent circuit using register "mess[30]~_emulated" and latch "mess[30]~129" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[29]" is converted into an equivalent circuit using register "mess[29]~_emulated" and latch "mess[29]~133" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[28]" is converted into an equivalent circuit using register "mess[28]~_emulated" and latch "mess[28]~137" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[41]" is converted into an equivalent circuit using register "mess[41]~_emulated" and latch "mess[41]~141" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[40]" is converted into an equivalent circuit using register "mess[40]~_emulated" and latch "mess[40]~145" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[39]" is converted into an equivalent circuit using register "mess[39]~_emulated" and latch "mess[39]~149" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[38]" is converted into an equivalent circuit using register "mess[38]~_emulated" and latch "mess[38]~153" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[37]" is converted into an equivalent circuit using register "mess[37]~_emulated" and latch "mess[37]~157" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[36]" is converted into an equivalent circuit using register "mess[36]~_emulated" and latch "mess[36]~161" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[35]" is converted into an equivalent circuit using register "mess[35]~_emulated" and latch "mess[35]~165" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[349]" is converted into an equivalent circuit using register "mess[349]~_emulated" and latch "mess[349]~169" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[348]" is converted into an equivalent circuit using register "mess[348]~_emulated" and latch "mess[348]~173" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[347]" is converted into an equivalent circuit using register "mess[347]~_emulated" and latch "mess[347]~177" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[346]" is converted into an equivalent circuit using register "mess[346]~_emulated" and latch "mess[346]~181" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[345]" is converted into an equivalent circuit using register "mess[345]~_emulated" and latch "mess[345]~185" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[344]" is converted into an equivalent circuit using register "mess[344]~_emulated" and latch "mess[344]~189" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[343]" is converted into an equivalent circuit using register "mess[343]~_emulated" and latch "mess[343]~193" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[48]" is converted into an equivalent circuit using register "mess[48]~_emulated" and latch "mess[48]~197" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[47]" is converted into an equivalent circuit using register "mess[47]~_emulated" and latch "mess[47]~201" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[46]" is converted into an equivalent circuit using register "mess[46]~_emulated" and latch "mess[46]~205" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[45]" is converted into an equivalent circuit using register "mess[45]~_emulated" and latch "mess[45]~209" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[44]" is converted into an equivalent circuit using register "mess[44]~_emulated" and latch "mess[44]~213" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[43]" is converted into an equivalent circuit using register "mess[43]~_emulated" and latch "mess[43]~217" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[42]" is converted into an equivalent circuit using register "mess[42]~_emulated" and latch "mess[42]~221" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[342]" is converted into an equivalent circuit using register "mess[342]~_emulated" and latch "mess[342]~225" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[341]" is converted into an equivalent circuit using register "mess[341]~_emulated" and latch "mess[341]~229" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[340]" is converted into an equivalent circuit using register "mess[340]~_emulated" and latch "mess[340]~233" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[339]" is converted into an equivalent circuit using register "mess[339]~_emulated" and latch "mess[339]~237" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[338]" is converted into an equivalent circuit using register "mess[338]~_emulated" and latch "mess[338]~241" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[337]" is converted into an equivalent circuit using register "mess[337]~_emulated" and latch "mess[337]~245" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[336]" is converted into an equivalent circuit using register "mess[336]~_emulated" and latch "mess[336]~249" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[55]" is converted into an equivalent circuit using register "mess[55]~_emulated" and latch "mess[55]~253" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[54]" is converted into an equivalent circuit using register "mess[54]~_emulated" and latch "mess[54]~257" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[53]" is converted into an equivalent circuit using register "mess[53]~_emulated" and latch "mess[53]~261" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[52]" is converted into an equivalent circuit using register "mess[52]~_emulated" and latch "mess[52]~265" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[51]" is converted into an equivalent circuit using register "mess[51]~_emulated" and latch "mess[51]~269" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[50]" is converted into an equivalent circuit using register "mess[50]~_emulated" and latch "mess[50]~273" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[49]" is converted into an equivalent circuit using register "mess[49]~_emulated" and latch "mess[49]~277" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[335]" is converted into an equivalent circuit using register "mess[335]~_emulated" and latch "mess[335]~281" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[334]" is converted into an equivalent circuit using register "mess[334]~_emulated" and latch "mess[334]~285" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[333]" is converted into an equivalent circuit using register "mess[333]~_emulated" and latch "mess[333]~289" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[332]" is converted into an equivalent circuit using register "mess[332]~_emulated" and latch "mess[332]~293" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[331]" is converted into an equivalent circuit using register "mess[331]~_emulated" and latch "mess[331]~297" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[330]" is converted into an equivalent circuit using register "mess[330]~_emulated" and latch "mess[330]~301" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[329]" is converted into an equivalent circuit using register "mess[329]~_emulated" and latch "mess[329]~305" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[62]" is converted into an equivalent circuit using register "mess[62]~_emulated" and latch "mess[62]~309" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[61]" is converted into an equivalent circuit using register "mess[61]~_emulated" and latch "mess[61]~313" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[60]" is converted into an equivalent circuit using register "mess[60]~_emulated" and latch "mess[60]~317" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[59]" is converted into an equivalent circuit using register "mess[59]~_emulated" and latch "mess[59]~321" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[58]" is converted into an equivalent circuit using register "mess[58]~_emulated" and latch "mess[58]~325" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[57]" is converted into an equivalent circuit using register "mess[57]~_emulated" and latch "mess[57]~329" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[56]" is converted into an equivalent circuit using register "mess[56]~_emulated" and latch "mess[56]~333" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[328]" is converted into an equivalent circuit using register "mess[328]~_emulated" and latch "mess[328]~337" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[327]" is converted into an equivalent circuit using register "mess[327]~_emulated" and latch "mess[327]~341" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[326]" is converted into an equivalent circuit using register "mess[326]~_emulated" and latch "mess[326]~345" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[325]" is converted into an equivalent circuit using register "mess[325]~_emulated" and latch "mess[325]~349" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[324]" is converted into an equivalent circuit using register "mess[324]~_emulated" and latch "mess[324]~353" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[323]" is converted into an equivalent circuit using register "mess[323]~_emulated" and latch "mess[323]~357" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[322]" is converted into an equivalent circuit using register "mess[322]~_emulated" and latch "mess[322]~361" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[69]" is converted into an equivalent circuit using register "mess[69]~_emulated" and latch "mess[69]~365" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[68]" is converted into an equivalent circuit using register "mess[68]~_emulated" and latch "mess[68]~369" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[67]" is converted into an equivalent circuit using register "mess[67]~_emulated" and latch "mess[67]~373" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[66]" is converted into an equivalent circuit using register "mess[66]~_emulated" and latch "mess[66]~377" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[65]" is converted into an equivalent circuit using register "mess[65]~_emulated" and latch "mess[65]~381" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[64]" is converted into an equivalent circuit using register "mess[64]~_emulated" and latch "mess[64]~385" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[63]" is converted into an equivalent circuit using register "mess[63]~_emulated" and latch "mess[63]~389" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[321]" is converted into an equivalent circuit using register "mess[321]~_emulated" and latch "mess[321]~393" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[320]" is converted into an equivalent circuit using register "mess[320]~_emulated" and latch "mess[320]~397" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[319]" is converted into an equivalent circuit using register "mess[319]~_emulated" and latch "mess[319]~401" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[318]" is converted into an equivalent circuit using register "mess[318]~_emulated" and latch "mess[318]~405" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[317]" is converted into an equivalent circuit using register "mess[317]~_emulated" and latch "mess[317]~409" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[316]" is converted into an equivalent circuit using register "mess[316]~_emulated" and latch "mess[316]~413" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[315]" is converted into an equivalent circuit using register "mess[315]~_emulated" and latch "mess[315]~417" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[76]" is converted into an equivalent circuit using register "mess[76]~_emulated" and latch "mess[76]~421" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[75]" is converted into an equivalent circuit using register "mess[75]~_emulated" and latch "mess[75]~425" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[74]" is converted into an equivalent circuit using register "mess[74]~_emulated" and latch "mess[74]~429" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[73]" is converted into an equivalent circuit using register "mess[73]~_emulated" and latch "mess[73]~433" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[72]" is converted into an equivalent circuit using register "mess[72]~_emulated" and latch "mess[72]~437" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[71]" is converted into an equivalent circuit using register "mess[71]~_emulated" and latch "mess[71]~441" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[70]" is converted into an equivalent circuit using register "mess[70]~_emulated" and latch "mess[70]~445" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[314]" is converted into an equivalent circuit using register "mess[314]~_emulated" and latch "mess[314]~449" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[313]" is converted into an equivalent circuit using register "mess[313]~_emulated" and latch "mess[313]~453" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[312]" is converted into an equivalent circuit using register "mess[312]~_emulated" and latch "mess[312]~457" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[311]" is converted into an equivalent circuit using register "mess[311]~_emulated" and latch "mess[311]~461" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[310]" is converted into an equivalent circuit using register "mess[310]~_emulated" and latch "mess[310]~465" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[309]" is converted into an equivalent circuit using register "mess[309]~_emulated" and latch "mess[309]~469" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[308]" is converted into an equivalent circuit using register "mess[308]~_emulated" and latch "mess[308]~473" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[83]" is converted into an equivalent circuit using register "mess[83]~_emulated" and latch "mess[83]~477" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[82]" is converted into an equivalent circuit using register "mess[82]~_emulated" and latch "mess[82]~481" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[81]" is converted into an equivalent circuit using register "mess[81]~_emulated" and latch "mess[81]~485" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[80]" is converted into an equivalent circuit using register "mess[80]~_emulated" and latch "mess[80]~489" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[79]" is converted into an equivalent circuit using register "mess[79]~_emulated" and latch "mess[79]~493" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[78]" is converted into an equivalent circuit using register "mess[78]~_emulated" and latch "mess[78]~497" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[77]" is converted into an equivalent circuit using register "mess[77]~_emulated" and latch "mess[77]~501" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[307]" is converted into an equivalent circuit using register "mess[307]~_emulated" and latch "mess[307]~505" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[306]" is converted into an equivalent circuit using register "mess[306]~_emulated" and latch "mess[306]~509" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[305]" is converted into an equivalent circuit using register "mess[305]~_emulated" and latch "mess[305]~513" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[304]" is converted into an equivalent circuit using register "mess[304]~_emulated" and latch "mess[304]~517" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[303]" is converted into an equivalent circuit using register "mess[303]~_emulated" and latch "mess[303]~521" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[302]" is converted into an equivalent circuit using register "mess[302]~_emulated" and latch "mess[302]~525" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[301]" is converted into an equivalent circuit using register "mess[301]~_emulated" and latch "mess[301]~529" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[90]" is converted into an equivalent circuit using register "mess[90]~_emulated" and latch "mess[90]~533" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[89]" is converted into an equivalent circuit using register "mess[89]~_emulated" and latch "mess[89]~537" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[88]" is converted into an equivalent circuit using register "mess[88]~_emulated" and latch "mess[88]~541" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[87]" is converted into an equivalent circuit using register "mess[87]~_emulated" and latch "mess[87]~545" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[86]" is converted into an equivalent circuit using register "mess[86]~_emulated" and latch "mess[86]~549" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[85]" is converted into an equivalent circuit using register "mess[85]~_emulated" and latch "mess[85]~553" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[84]" is converted into an equivalent circuit using register "mess[84]~_emulated" and latch "mess[84]~557" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[300]" is converted into an equivalent circuit using register "mess[300]~_emulated" and latch "mess[300]~561" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[299]" is converted into an equivalent circuit using register "mess[299]~_emulated" and latch "mess[299]~565" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[298]" is converted into an equivalent circuit using register "mess[298]~_emulated" and latch "mess[298]~569" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[297]" is converted into an equivalent circuit using register "mess[297]~_emulated" and latch "mess[297]~573" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[296]" is converted into an equivalent circuit using register "mess[296]~_emulated" and latch "mess[296]~577" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[295]" is converted into an equivalent circuit using register "mess[295]~_emulated" and latch "mess[295]~581" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[294]" is converted into an equivalent circuit using register "mess[294]~_emulated" and latch "mess[294]~585" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[97]" is converted into an equivalent circuit using register "mess[97]~_emulated" and latch "mess[97]~589" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[96]" is converted into an equivalent circuit using register "mess[96]~_emulated" and latch "mess[96]~593" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[95]" is converted into an equivalent circuit using register "mess[95]~_emulated" and latch "mess[95]~597" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[94]" is converted into an equivalent circuit using register "mess[94]~_emulated" and latch "mess[94]~601" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[93]" is converted into an equivalent circuit using register "mess[93]~_emulated" and latch "mess[93]~605" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[92]" is converted into an equivalent circuit using register "mess[92]~_emulated" and latch "mess[92]~609" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[91]" is converted into an equivalent circuit using register "mess[91]~_emulated" and latch "mess[91]~613" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[293]" is converted into an equivalent circuit using register "mess[293]~_emulated" and latch "mess[293]~617" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[292]" is converted into an equivalent circuit using register "mess[292]~_emulated" and latch "mess[292]~621" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[291]" is converted into an equivalent circuit using register "mess[291]~_emulated" and latch "mess[291]~625" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[290]" is converted into an equivalent circuit using register "mess[290]~_emulated" and latch "mess[290]~629" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[289]" is converted into an equivalent circuit using register "mess[289]~_emulated" and latch "mess[289]~633" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[288]" is converted into an equivalent circuit using register "mess[288]~_emulated" and latch "mess[288]~637" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[287]" is converted into an equivalent circuit using register "mess[287]~_emulated" and latch "mess[287]~641" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[104]" is converted into an equivalent circuit using register "mess[104]~_emulated" and latch "mess[104]~645" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[103]" is converted into an equivalent circuit using register "mess[103]~_emulated" and latch "mess[103]~649" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[102]" is converted into an equivalent circuit using register "mess[102]~_emulated" and latch "mess[102]~653" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[101]" is converted into an equivalent circuit using register "mess[101]~_emulated" and latch "mess[101]~657" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[100]" is converted into an equivalent circuit using register "mess[100]~_emulated" and latch "mess[100]~661" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[99]" is converted into an equivalent circuit using register "mess[99]~_emulated" and latch "mess[99]~665" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[98]" is converted into an equivalent circuit using register "mess[98]~_emulated" and latch "mess[98]~669" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[286]" is converted into an equivalent circuit using register "mess[286]~_emulated" and latch "mess[286]~673" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[285]" is converted into an equivalent circuit using register "mess[285]~_emulated" and latch "mess[285]~677" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[284]" is converted into an equivalent circuit using register "mess[284]~_emulated" and latch "mess[284]~681" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[283]" is converted into an equivalent circuit using register "mess[283]~_emulated" and latch "mess[283]~685" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[282]" is converted into an equivalent circuit using register "mess[282]~_emulated" and latch "mess[282]~689" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[281]" is converted into an equivalent circuit using register "mess[281]~_emulated" and latch "mess[281]~693" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[280]" is converted into an equivalent circuit using register "mess[280]~_emulated" and latch "mess[280]~697" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[111]" is converted into an equivalent circuit using register "mess[111]~_emulated" and latch "mess[111]~701" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[110]" is converted into an equivalent circuit using register "mess[110]~_emulated" and latch "mess[110]~705" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[109]" is converted into an equivalent circuit using register "mess[109]~_emulated" and latch "mess[109]~709" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[108]" is converted into an equivalent circuit using register "mess[108]~_emulated" and latch "mess[108]~713" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[107]" is converted into an equivalent circuit using register "mess[107]~_emulated" and latch "mess[107]~717" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[106]" is converted into an equivalent circuit using register "mess[106]~_emulated" and latch "mess[106]~721" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[105]" is converted into an equivalent circuit using register "mess[105]~_emulated" and latch "mess[105]~725" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[279]" is converted into an equivalent circuit using register "mess[279]~_emulated" and latch "mess[279]~729" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[278]" is converted into an equivalent circuit using register "mess[278]~_emulated" and latch "mess[278]~733" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[277]" is converted into an equivalent circuit using register "mess[277]~_emulated" and latch "mess[277]~737" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[276]" is converted into an equivalent circuit using register "mess[276]~_emulated" and latch "mess[276]~741" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[275]" is converted into an equivalent circuit using register "mess[275]~_emulated" and latch "mess[275]~745" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[274]" is converted into an equivalent circuit using register "mess[274]~_emulated" and latch "mess[274]~749" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[273]" is converted into an equivalent circuit using register "mess[273]~_emulated" and latch "mess[273]~753" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[118]" is converted into an equivalent circuit using register "mess[118]~_emulated" and latch "mess[118]~757" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[117]" is converted into an equivalent circuit using register "mess[117]~_emulated" and latch "mess[117]~761" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[116]" is converted into an equivalent circuit using register "mess[116]~_emulated" and latch "mess[116]~765" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[115]" is converted into an equivalent circuit using register "mess[115]~_emulated" and latch "mess[115]~769" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[114]" is converted into an equivalent circuit using register "mess[114]~_emulated" and latch "mess[114]~773" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[113]" is converted into an equivalent circuit using register "mess[113]~_emulated" and latch "mess[113]~777" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[112]" is converted into an equivalent circuit using register "mess[112]~_emulated" and latch "mess[112]~781" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[272]" is converted into an equivalent circuit using register "mess[272]~_emulated" and latch "mess[272]~785" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[271]" is converted into an equivalent circuit using register "mess[271]~_emulated" and latch "mess[271]~789" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[270]" is converted into an equivalent circuit using register "mess[270]~_emulated" and latch "mess[270]~793" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[269]" is converted into an equivalent circuit using register "mess[269]~_emulated" and latch "mess[269]~797" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[268]" is converted into an equivalent circuit using register "mess[268]~_emulated" and latch "mess[268]~801" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[267]" is converted into an equivalent circuit using register "mess[267]~_emulated" and latch "mess[267]~805" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[266]" is converted into an equivalent circuit using register "mess[266]~_emulated" and latch "mess[266]~809" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[125]" is converted into an equivalent circuit using register "mess[125]~_emulated" and latch "mess[125]~813" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[124]" is converted into an equivalent circuit using register "mess[124]~_emulated" and latch "mess[124]~817" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[123]" is converted into an equivalent circuit using register "mess[123]~_emulated" and latch "mess[123]~821" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[122]" is converted into an equivalent circuit using register "mess[122]~_emulated" and latch "mess[122]~825" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[121]" is converted into an equivalent circuit using register "mess[121]~_emulated" and latch "mess[121]~829" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[120]" is converted into an equivalent circuit using register "mess[120]~_emulated" and latch "mess[120]~833" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[119]" is converted into an equivalent circuit using register "mess[119]~_emulated" and latch "mess[119]~837" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[265]" is converted into an equivalent circuit using register "mess[265]~_emulated" and latch "mess[265]~841" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[264]" is converted into an equivalent circuit using register "mess[264]~_emulated" and latch "mess[264]~845" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[263]" is converted into an equivalent circuit using register "mess[263]~_emulated" and latch "mess[263]~849" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[262]" is converted into an equivalent circuit using register "mess[262]~_emulated" and latch "mess[262]~853" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[261]" is converted into an equivalent circuit using register "mess[261]~_emulated" and latch "mess[261]~857" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[260]" is converted into an equivalent circuit using register "mess[260]~_emulated" and latch "mess[260]~861" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[259]" is converted into an equivalent circuit using register "mess[259]~_emulated" and latch "mess[259]~865" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[132]" is converted into an equivalent circuit using register "mess[132]~_emulated" and latch "mess[132]~869" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[131]" is converted into an equivalent circuit using register "mess[131]~_emulated" and latch "mess[131]~873" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[130]" is converted into an equivalent circuit using register "mess[130]~_emulated" and latch "mess[130]~877" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[129]" is converted into an equivalent circuit using register "mess[129]~_emulated" and latch "mess[129]~881" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[128]" is converted into an equivalent circuit using register "mess[128]~_emulated" and latch "mess[128]~885" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[127]" is converted into an equivalent circuit using register "mess[127]~_emulated" and latch "mess[127]~889" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[126]" is converted into an equivalent circuit using register "mess[126]~_emulated" and latch "mess[126]~893" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[258]" is converted into an equivalent circuit using register "mess[258]~_emulated" and latch "mess[258]~897" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[257]" is converted into an equivalent circuit using register "mess[257]~_emulated" and latch "mess[257]~901" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[256]" is converted into an equivalent circuit using register "mess[256]~_emulated" and latch "mess[256]~905" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[255]" is converted into an equivalent circuit using register "mess[255]~_emulated" and latch "mess[255]~909" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[254]" is converted into an equivalent circuit using register "mess[254]~_emulated" and latch "mess[254]~913" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[253]" is converted into an equivalent circuit using register "mess[253]~_emulated" and latch "mess[253]~917" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[252]" is converted into an equivalent circuit using register "mess[252]~_emulated" and latch "mess[252]~921" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[139]" is converted into an equivalent circuit using register "mess[139]~_emulated" and latch "mess[139]~925" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[138]" is converted into an equivalent circuit using register "mess[138]~_emulated" and latch "mess[138]~929" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[137]" is converted into an equivalent circuit using register "mess[137]~_emulated" and latch "mess[137]~933" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[136]" is converted into an equivalent circuit using register "mess[136]~_emulated" and latch "mess[136]~937" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[135]" is converted into an equivalent circuit using register "mess[135]~_emulated" and latch "mess[135]~941" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[134]" is converted into an equivalent circuit using register "mess[134]~_emulated" and latch "mess[134]~945" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[133]" is converted into an equivalent circuit using register "mess[133]~_emulated" and latch "mess[133]~949" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[251]" is converted into an equivalent circuit using register "mess[251]~_emulated" and latch "mess[251]~953" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[250]" is converted into an equivalent circuit using register "mess[250]~_emulated" and latch "mess[250]~957" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[249]" is converted into an equivalent circuit using register "mess[249]~_emulated" and latch "mess[249]~961" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[248]" is converted into an equivalent circuit using register "mess[248]~_emulated" and latch "mess[248]~965" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[247]" is converted into an equivalent circuit using register "mess[247]~_emulated" and latch "mess[247]~969" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[246]" is converted into an equivalent circuit using register "mess[246]~_emulated" and latch "mess[246]~973" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[245]" is converted into an equivalent circuit using register "mess[245]~_emulated" and latch "mess[245]~977" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[146]" is converted into an equivalent circuit using register "mess[146]~_emulated" and latch "mess[146]~981" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[145]" is converted into an equivalent circuit using register "mess[145]~_emulated" and latch "mess[145]~985" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[144]" is converted into an equivalent circuit using register "mess[144]~_emulated" and latch "mess[144]~989" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[143]" is converted into an equivalent circuit using register "mess[143]~_emulated" and latch "mess[143]~993" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[142]" is converted into an equivalent circuit using register "mess[142]~_emulated" and latch "mess[142]~997" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[141]" is converted into an equivalent circuit using register "mess[141]~_emulated" and latch "mess[141]~1001" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[140]" is converted into an equivalent circuit using register "mess[140]~_emulated" and latch "mess[140]~1005" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[244]" is converted into an equivalent circuit using register "mess[244]~_emulated" and latch "mess[244]~1009" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[243]" is converted into an equivalent circuit using register "mess[243]~_emulated" and latch "mess[243]~1013" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[242]" is converted into an equivalent circuit using register "mess[242]~_emulated" and latch "mess[242]~1017" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[241]" is converted into an equivalent circuit using register "mess[241]~_emulated" and latch "mess[241]~1021" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[240]" is converted into an equivalent circuit using register "mess[240]~_emulated" and latch "mess[240]~1025" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[239]" is converted into an equivalent circuit using register "mess[239]~_emulated" and latch "mess[239]~1029" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[238]" is converted into an equivalent circuit using register "mess[238]~_emulated" and latch "mess[238]~1033" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[153]" is converted into an equivalent circuit using register "mess[153]~_emulated" and latch "mess[153]~1037" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[152]" is converted into an equivalent circuit using register "mess[152]~_emulated" and latch "mess[152]~1041" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[151]" is converted into an equivalent circuit using register "mess[151]~_emulated" and latch "mess[151]~1045" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[150]" is converted into an equivalent circuit using register "mess[150]~_emulated" and latch "mess[150]~1049" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[149]" is converted into an equivalent circuit using register "mess[149]~_emulated" and latch "mess[149]~1053" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[148]" is converted into an equivalent circuit using register "mess[148]~_emulated" and latch "mess[148]~1057" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[147]" is converted into an equivalent circuit using register "mess[147]~_emulated" and latch "mess[147]~1061" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[237]" is converted into an equivalent circuit using register "mess[237]~_emulated" and latch "mess[237]~1065" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[236]" is converted into an equivalent circuit using register "mess[236]~_emulated" and latch "mess[236]~1069" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[235]" is converted into an equivalent circuit using register "mess[235]~_emulated" and latch "mess[235]~1073" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[234]" is converted into an equivalent circuit using register "mess[234]~_emulated" and latch "mess[234]~1077" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[233]" is converted into an equivalent circuit using register "mess[233]~_emulated" and latch "mess[233]~1081" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[232]" is converted into an equivalent circuit using register "mess[232]~_emulated" and latch "mess[232]~1085" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[231]" is converted into an equivalent circuit using register "mess[231]~_emulated" and latch "mess[231]~1089" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[160]" is converted into an equivalent circuit using register "mess[160]~_emulated" and latch "mess[160]~1093" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[159]" is converted into an equivalent circuit using register "mess[159]~_emulated" and latch "mess[159]~1097" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[158]" is converted into an equivalent circuit using register "mess[158]~_emulated" and latch "mess[158]~1101" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[157]" is converted into an equivalent circuit using register "mess[157]~_emulated" and latch "mess[157]~1105" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[156]" is converted into an equivalent circuit using register "mess[156]~_emulated" and latch "mess[156]~1109" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[155]" is converted into an equivalent circuit using register "mess[155]~_emulated" and latch "mess[155]~1113" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[154]" is converted into an equivalent circuit using register "mess[154]~_emulated" and latch "mess[154]~1117" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[230]" is converted into an equivalent circuit using register "mess[230]~_emulated" and latch "mess[230]~1121" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[229]" is converted into an equivalent circuit using register "mess[229]~_emulated" and latch "mess[229]~1125" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[228]" is converted into an equivalent circuit using register "mess[228]~_emulated" and latch "mess[228]~1129" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[227]" is converted into an equivalent circuit using register "mess[227]~_emulated" and latch "mess[227]~1133" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[226]" is converted into an equivalent circuit using register "mess[226]~_emulated" and latch "mess[226]~1137" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[225]" is converted into an equivalent circuit using register "mess[225]~_emulated" and latch "mess[225]~1141" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[224]" is converted into an equivalent circuit using register "mess[224]~_emulated" and latch "mess[224]~1145" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[167]" is converted into an equivalent circuit using register "mess[167]~_emulated" and latch "mess[167]~1149" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[166]" is converted into an equivalent circuit using register "mess[166]~_emulated" and latch "mess[166]~1153" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[165]" is converted into an equivalent circuit using register "mess[165]~_emulated" and latch "mess[165]~1157" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[164]" is converted into an equivalent circuit using register "mess[164]~_emulated" and latch "mess[164]~1161" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[163]" is converted into an equivalent circuit using register "mess[163]~_emulated" and latch "mess[163]~1165" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[162]" is converted into an equivalent circuit using register "mess[162]~_emulated" and latch "mess[162]~1169" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[161]" is converted into an equivalent circuit using register "mess[161]~_emulated" and latch "mess[161]~1173" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[223]" is converted into an equivalent circuit using register "mess[223]~_emulated" and latch "mess[223]~1177" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[222]" is converted into an equivalent circuit using register "mess[222]~_emulated" and latch "mess[222]~1181" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[221]" is converted into an equivalent circuit using register "mess[221]~_emulated" and latch "mess[221]~1185" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[220]" is converted into an equivalent circuit using register "mess[220]~_emulated" and latch "mess[220]~1189" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[219]" is converted into an equivalent circuit using register "mess[219]~_emulated" and latch "mess[219]~1193" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[218]" is converted into an equivalent circuit using register "mess[218]~_emulated" and latch "mess[218]~1197" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[217]" is converted into an equivalent circuit using register "mess[217]~_emulated" and latch "mess[217]~1201" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[174]" is converted into an equivalent circuit using register "mess[174]~_emulated" and latch "mess[174]~1205" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[173]" is converted into an equivalent circuit using register "mess[173]~_emulated" and latch "mess[173]~1209" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[172]" is converted into an equivalent circuit using register "mess[172]~_emulated" and latch "mess[172]~1213" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[171]" is converted into an equivalent circuit using register "mess[171]~_emulated" and latch "mess[171]~1217" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[170]" is converted into an equivalent circuit using register "mess[170]~_emulated" and latch "mess[170]~1221" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[169]" is converted into an equivalent circuit using register "mess[169]~_emulated" and latch "mess[169]~1225" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[168]" is converted into an equivalent circuit using register "mess[168]~_emulated" and latch "mess[168]~1229" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[216]" is converted into an equivalent circuit using register "mess[216]~_emulated" and latch "mess[216]~1233" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[215]" is converted into an equivalent circuit using register "mess[215]~_emulated" and latch "mess[215]~1237" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[214]" is converted into an equivalent circuit using register "mess[214]~_emulated" and latch "mess[214]~1241" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[213]" is converted into an equivalent circuit using register "mess[213]~_emulated" and latch "mess[213]~1245" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[212]" is converted into an equivalent circuit using register "mess[212]~_emulated" and latch "mess[212]~1249" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[211]" is converted into an equivalent circuit using register "mess[211]~_emulated" and latch "mess[211]~1253" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[210]" is converted into an equivalent circuit using register "mess[210]~_emulated" and latch "mess[210]~1257" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[181]" is converted into an equivalent circuit using register "mess[181]~_emulated" and latch "mess[181]~1261" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[180]" is converted into an equivalent circuit using register "mess[180]~_emulated" and latch "mess[180]~1265" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[179]" is converted into an equivalent circuit using register "mess[179]~_emulated" and latch "mess[179]~1269" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[178]" is converted into an equivalent circuit using register "mess[178]~_emulated" and latch "mess[178]~1273" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[177]" is converted into an equivalent circuit using register "mess[177]~_emulated" and latch "mess[177]~1277" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[176]" is converted into an equivalent circuit using register "mess[176]~_emulated" and latch "mess[176]~1281" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[175]" is converted into an equivalent circuit using register "mess[175]~_emulated" and latch "mess[175]~1285" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[209]" is converted into an equivalent circuit using register "mess[209]~_emulated" and latch "mess[209]~1289" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[208]" is converted into an equivalent circuit using register "mess[208]~_emulated" and latch "mess[208]~1293" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[207]" is converted into an equivalent circuit using register "mess[207]~_emulated" and latch "mess[207]~1297" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[206]" is converted into an equivalent circuit using register "mess[206]~_emulated" and latch "mess[206]~1301" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[205]" is converted into an equivalent circuit using register "mess[205]~_emulated" and latch "mess[205]~1305" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[204]" is converted into an equivalent circuit using register "mess[204]~_emulated" and latch "mess[204]~1309" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[203]" is converted into an equivalent circuit using register "mess[203]~_emulated" and latch "mess[203]~1313" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[188]" is converted into an equivalent circuit using register "mess[188]~_emulated" and latch "mess[188]~1317" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[187]" is converted into an equivalent circuit using register "mess[187]~_emulated" and latch "mess[187]~1321" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[186]" is converted into an equivalent circuit using register "mess[186]~_emulated" and latch "mess[186]~1325" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[185]" is converted into an equivalent circuit using register "mess[185]~_emulated" and latch "mess[185]~1329" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[184]" is converted into an equivalent circuit using register "mess[184]~_emulated" and latch "mess[184]~1333" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[183]" is converted into an equivalent circuit using register "mess[183]~_emulated" and latch "mess[183]~1337" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[182]" is converted into an equivalent circuit using register "mess[182]~_emulated" and latch "mess[182]~1341" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[202]" is converted into an equivalent circuit using register "mess[202]~_emulated" and latch "mess[202]~1345" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[201]" is converted into an equivalent circuit using register "mess[201]~_emulated" and latch "mess[201]~1349" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[200]" is converted into an equivalent circuit using register "mess[200]~_emulated" and latch "mess[200]~1353" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[199]" is converted into an equivalent circuit using register "mess[199]~_emulated" and latch "mess[199]~1357" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[198]" is converted into an equivalent circuit using register "mess[198]~_emulated" and latch "mess[198]~1361" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[197]" is converted into an equivalent circuit using register "mess[197]~_emulated" and latch "mess[197]~1365" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[196]" is converted into an equivalent circuit using register "mess[196]~_emulated" and latch "mess[196]~1369" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[195]" is converted into an equivalent circuit using register "mess[195]~_emulated" and latch "mess[195]~1373" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[194]" is converted into an equivalent circuit using register "mess[194]~_emulated" and latch "mess[194]~1377" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[193]" is converted into an equivalent circuit using register "mess[193]~_emulated" and latch "mess[193]~1381" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[192]" is converted into an equivalent circuit using register "mess[192]~_emulated" and latch "mess[192]~1385" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[191]" is converted into an equivalent circuit using register "mess[191]~_emulated" and latch "mess[191]~1389" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[190]" is converted into an equivalent circuit using register "mess[190]~_emulated" and latch "mess[190]~1393" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+    Warning (13310): Register "mess[189]" is converted into an equivalent circuit using register "mess[189]~_emulated" and latch "mess[189]~1397" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 63
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "bouton0" File: C:/Users/Principal/3D Objects/Documents/ING2 S2/VHDL/Projet_VHDL/septseg.vhd Line: 11
+Info (21057): Implemented 1708 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 45 output pins
+    Info (21061): Implemented 1657 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 410 warnings
+    Info: Peak virtual memory: 4791 megabytes
+    Info: Processing ended: Fri Mar 06 11:42:38 2020
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:57
 
 
